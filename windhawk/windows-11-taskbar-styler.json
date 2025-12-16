@@ -1,0 +1,23 @@
+{
+  "controlStyles[0].target": "Grid#RootGrid > Taskbar.TaskbarBackground > Grid",
+  "controlStyles[0].styles[0]": "Margin=270,0,270,2",
+  "controlStyles[0].styles[1]": "Background:=<AcrylicBrush TintOpacity=\"0\" TintColor=\"Black\" TintLuminosityOpacity=\"0.12\" Opacity=\"1\" FallbackColor=\"#70262626\"/>",
+  "controlStyles[0].styles[2]": "BorderBrush:=<AcrylicBrush TintColor=\"{ThemeResource SurfaceStrokeColorDefault}\" FallbackColor=\"{ThemeResource SurfaceStrokeColorDefault}\" TintOpacity=\"0\" TintLuminosityOpacity=\".25\" Opacity=\"1\"/>",
+  "controlStyles[0].styles[3]": "CornerRadius=25",
+  "controlStyles[0].styles[4]": "BorderThickness=1",
+  "controlStyles[1].target": "Grid#SystemTrayFrameGrid",
+  "controlStyles[1].styles[0]": "Margin=0,0,275,2",
+  "controlStyles[1].styles[1]": "Padding=10,0,0,0",
+  "controlStyles[1].styles[2]": "Width=260",
+  "controlStyles[2].target": "Rectangle#BackgroundFill",
+  "controlStyles[2].styles[0]": "Fill=Transparent",
+  "controlStyles[3].target": "Rectangle#BackgroundStroke",
+  "controlStyles[3].styles[0]": "Fill=Transparent",
+  "controlStyles[4].target": "Taskbar.AugmentedEntryPointButton#AugmentedEntryPointButton > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel",
+  "controlStyles[4].styles[0]": "Margin=273,0,0,2",
+  "controlStyles[5].target": "Windows.UI.Xaml.Controls.Grid#AugmentedEntryPointContentGrid",
+  "controlStyles[5].styles[0]": "Margin=10,0,0,0",
+  "controlStyles[5].styles[1]": "HorizontalAlignment=Left",
+  "controlStyles[6].target": "Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton]",
+  "controlStyles[6].styles[0]": "Visibility=Collapsed"
+}

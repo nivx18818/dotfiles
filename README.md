@@ -10,6 +10,7 @@ This repository contains my personal dotfiles and editor configuration. It's int
 - [`powershell`](https://github.com/PowerShell/PowerShell) — PowerShell configuration.
 - [`vscode-neovim`](https://github.com/vscode-neovim/vscode-neovim) — Visual Studio Code extension configuration to use Neovim as the editor backend.
 - [`wezterm`](https://github.com/wezterm/wezterm) — terminal emulator configuration.
+- [`windhawk`](https://github.com/windhawk/windhawk) — Windows customization tool configuration.
 - [`windows-terminal`](https://github.com/microsoft/terminal) — Windows Terminal configuration.
 - [`yasb`](https://github.com/amnweb/yasb) — Windows status bar configuration.
 
