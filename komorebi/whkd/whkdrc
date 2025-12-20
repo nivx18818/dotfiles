@@ -13,6 +13,7 @@ alt + m                 : komorebic toggle-shortcuts
 # alt + b                 : if ($wshell.AppActivate('Chrome') -eq $False) { start chrome }
 # alt + return            : wezterm-gui --config-file "D:/.dotfiles/wezterm/wezterm.lua"
 alt + return            : start wt
+alt + n                 : start "$(scoop prefix notion)\Notion.exe"
 
 alt + q                 : komorebic close
 alt + g                 : komorebic manage
