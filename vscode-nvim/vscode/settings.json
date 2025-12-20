@@ -1,4 +1,149 @@
 {
+  "chat.commandCenter.enabled": false,
+  "window.commandCenter": false,
+  "window.menuBarVisibility": "hidden",
+  "window.menuStyle": "custom",
+  "window.title": "${dirty}${rootName}${separator}${activeEditorShort}${separator}${activeFolderMedium}",
+  "window.titleSeparator": " ⯌ ",
+  "window.titleBarStyle": "native",
+  "window.customTitleBarVisibility": "never",
+  "window.zoomLevel": 0.5,
+  "workbench.statusBar.visible": false,
+
+  "workbench.activityBar.location": "hidden",
+  "workbench.colorTheme": "poimandres",
+  "workbench.colorCustomizations": {
+    "[poimandres]": {
+      "disabledForeground": "#767c9d",
+
+      "editorBracketHighlight.foreground3": "#e4f0fb",
+      "editorBracketHighlight.foreground2": "#a6accd",
+      "editorBracketHighlight.foreground1": "#767c9dbb",
+
+      "activityBarTop.background": "#1b1e28",
+      "activityBarTop.foreground": "#a6accd",
+      "activityBarTop.activeBorder": "#a6accd",
+      "activityBarTop.dropBorder": "#a6accd",
+      "activityBarTop.inactiveForeground": "#a6accd66",
+
+      "notebook.cellBorderColor": "#a6accd",
+      "notebook.focusedCellBorder": "#5de4c7",
+      "notebook.focusedEditorBorder": "#5de4c7",
+
+      "scmGraph.historyItemHoverLabelForeground": "#ffffff"
+    }
+  },
+  "workbench.editor.editorActionsLocation": "hidden",
+  "workbench.editor.empty.hint": "hidden",
+  "workbench.editor.showTabs": "single",
+  "workbench.iconTheme": "symbols",
+  "workbench.layoutControl.enabled": false,
+  "workbench.list.smoothScrolling": true,
+  "workbench.navigationControl.enabled": false,
+  "workbench.panel.showLabels": false,
+  "workbench.preferredDarkColorTheme": "poimandres",
+  "workbench.remoteIndicator.showExtensionRecommendations": false,
+  "workbench.sideBar.location": "right",
+  "workbench.secondarySideBar.showLabels": false,
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "workbench.tips.enabled": false,
+  "workbench.tree.enableStickyScroll": false,
+  "workbench.tree.renderIndentGuides": "none",
+
+  "breadcrumbs.enabled": false,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.fontFamily": "'DankMono Nerd Font Mono', Consolas, 'Courier New', monospace",
+  "editor.fontSize": 15,
+  "editor.fontLigatures": false,
+  "editor.lineHeight": 2,
+  "editor.wordWrap": "bounded",
+  "editor.wordWrapColumn": 120,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.cursorBlinking": "expand",
+  "editor.cursorWidth": 3,
+  "editor.smoothScrolling": true,
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.scrollbar.vertical": "hidden",
+  "editor.stickyScroll.enabled": false,
+  "editor.minimap.enabled": false,
+  "editor.renderLineHighlight": "none",
+  "editor.hideCursorInOverviewRuler": true,
+  "editor.overviewRulerBorder": false,
+  "editor.occurrencesHighlight": "off",
+  "editor.selectionHighlight": false,
+  "editor.lineNumbers": "relative",
+  "editor.guides.indentation": false,
+  "editor.matchBrackets": "never",
+  "editor.cursorSurroundingLines": 10,
+  "editor.lightbulb.enabled": "off",
+  "scm.diffDecorations": "gutter",
+
+  "chat.editor.lineHeight": 1.8,
+  "chat.editor.wordWrap": "on",
+
+  "explorer.compactFolders": false,
+
+  "extensions.ignoreRecommendations": true,
+
+  "terminal.integrated.smoothScrolling": true,
+  "terminal.integrated.suggest.enabled": true,
+  "terminal.integrated.fontLigatures.enabled": true,
+
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.associations": {
+    "*.css": "tailwindcss",
+    ".sequelizerc": "javascript",
+    "page.ts": "typescriptreact",
+    "layout.ts": "typescriptreact",
+    "not-found.ts": "typescriptreact"
+  },
+
+  "zenMode.hideLineNumbers": false,
+  "zenMode.silentNotifications": false,
+  "zenMode.centerLayout": false,
+  "zenMode.hideStatusBar": false,
+  "zenMode.showTabs": "single",
+  "zenMode.hideActivityBar": false,
+
+  "symbols.hidesExplorerArrows": true,
+  "symbols.folders.associations": {
+    ".next": "folder-vercel",
+    "schemas": "folder-database",
+    "reducers": "folder-redux-reducer",
+    "server": "folder-database",
+    "components": "folder-assets",
+    "_components": "folder-assets",
+    "(app)": "folder-app",
+    "(auth)": "folder-auth",
+    "bruno": "folder-bruno"
+  },
+
+  "indentRainbow.colors": [
+    "rgba(3, 4, 94, 0.125)",
+    "rgba(2, 62, 138, 0.125)",
+    "rgba(0, 119, 182, 0.125)",
+    "rgba(0, 150, 199, 0.125)",
+    "rgba(0, 180, 216, 0.125)",
+    "rgba(72, 202, 228, 0.125)",
+    "rgba(144, 224, 239, 0.125)",
+    "rgba(173, 232, 244, 0.125)",
+    "rgba(202, 240, 248, 0.125)"
+  ],
+
+  "custom-ui-style.electron": {
+    "frame": false
+  },
+  "custom-ui-style.external.imports": [
+    "file:///C:/Users/Admin/Documents/vscode-custom/general.css"
+  ],
+
+  "telemetry.telemetryLevel": "off",
+
+  // which-key
+  "whichkey.showButtons": false,
   "whichkey.bindings": [
     {
       "key": " ",
