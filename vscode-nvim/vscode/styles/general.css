@@ -1,0 +1,44 @@
+.part.sidebar,
+.part.sidebar .split-view,
+.sidebar {
+    min-width: 300px !important;
+    width: auto !important;
+}
+
+.tab.active {
+    border-radius: 6px !important;
+}
+
+.title-actions {
+    opacity: 0 !important;
+    transition: opacity 0.2s !important;
+    pointer-events: none !important;
+}
+
+*:has(> .title-actions):hover .title-actions {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+.editor-group-container .title-actions {
+    display: none !important;
+}
+
+.title.show-file-icons .label-container .monaco-icon-label {
+    justify-content: center;
+    scale: 1.1;
+}
+
+/* fix Power Mode extension's issue */
+.monaco-editor .lines-content > .view-lines > .view-line > span {
+    width: inherit;
+}
+
+/* replace VSCode watermark */
+.editor-group-watermark {
+    max-width: 404px !important;
+
+    & .letterpress {
+        background-image: url("https://raw.githubusercontent.com/nivx18818/dotfiles/refs/heads/main/vscode-nvim/vscode/assets/pmndrs.png") !important;
+    }
+}

@@ -152,7 +152,10 @@
     "frame": false
   },
   "custom-ui-style.external.imports": [
-    "file:///C:/Users/Admin/Documents/vscode-custom/general.css"
+    {
+      "type": "css",
+      "url": "https://raw.githubusercontent.com/nivx18818/dotfiles/refs/heads/main/vscode-nvim/vscode/styles/general.css"
+    }
   ],
 
   "telemetry.telemetryLevel": "off",
