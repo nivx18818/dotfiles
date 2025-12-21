@@ -85,6 +85,8 @@
   "chat.commandCenter.enabled": false,
   "chat.editor.lineHeight": 1.8,
   "chat.editor.wordWrap": "on",
+  "chat.math.enabled": true,
+  "chat.mcp.gallery.enabled": true,
 
   "explorer.compactFolders": false,
   "extensions.experimental.affinity": {
