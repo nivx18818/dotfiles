@@ -40,5 +40,6 @@
 
     & .letterpress {
         background-image: url("https://raw.githubusercontent.com/nivx18818/dotfiles/refs/heads/main/vscode-nvim/vscode/assets/pmndrs.png") !important;
+        aspect-ratio: 8/5 !important;
     }
 }
