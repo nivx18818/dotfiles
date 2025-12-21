@@ -83,3 +83,11 @@ This setup allows you to use Neovim as the backend for VSCode's editing capabili
   - Copy the contents of `vscode/settings.json` into your VSCode `settings.json`.
   - Similarly, open the Command Palette, type `Preferences: Open Keyboard Shortcuts (JSON)`, and press `Enter`.
   - Copy the contents of `vscode/keybindings.json` into your VSCode `keybindings.json`.
+
+#### Styles
+
+The styles are inspired by:
+
+- [evondev's vscode-custom](https://github.com/evondev/vscode-custom),
+- [Aikoyori's ProgrammingVTuberLogos](https://github.com/Aikoyori/ProgrammingVTuberLogos).
+- [SAWARATSUKI's KawaiiLogos](https://github.com/SAWARATSUKI/KawaiiLogos).
