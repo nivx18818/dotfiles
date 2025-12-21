@@ -91,6 +91,7 @@
     "asvetliakov.vscode-neovim": 1
   },
 
+  "git.postCommitCommand": "push",
   "scm.diffDecorations": "gutter",
   "scm.defaultViewMode": "tree",
   "scm.compactFolders": false,
