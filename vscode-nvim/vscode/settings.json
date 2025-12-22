@@ -118,12 +118,13 @@
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
 
+  "zenMode.centerLayout": true,
+  "zenMode.fullScreen": false,
+  "zenMode.hideActivityBar": true,
   "zenMode.hideLineNumbers": false,
-  "zenMode.silentNotifications": false,
-  "zenMode.centerLayout": false,
-  "zenMode.hideStatusBar": false,
+  "zenMode.hideStatusBar": true,
   "zenMode.showTabs": "single",
-  "zenMode.hideActivityBar": false,
+  "zenMode.silentNotifications": false,
 
   "symbols.hidesExplorerArrows": true,
   "symbols.folders.associations": {
@@ -565,6 +566,12 @@
           "name": "Toggle activity bar",
           "type": "command",
           "command": "workbench.action.toggleActivityBarVisibility"
+        },
+        {
+          "key": "z",
+          "name": "Toggle Zen mode",
+          "type": "command",
+          "command": "workbench.action.toggleZenMode"
         },
         {
           "key": "x",
