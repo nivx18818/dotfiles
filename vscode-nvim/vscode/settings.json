@@ -89,15 +89,15 @@
   "chat.mcp.gallery.enabled": true,
 
   "explorer.compactFolders": false,
-  "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1
-  },
 
   "git.postCommitCommand": "push",
   "scm.diffDecorations": "gutter",
   "scm.defaultViewMode": "tree",
   "scm.compactFolders": false,
 
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
   "extensions.ignoreRecommendations": true,
 
   "terminal.integrated.cursorStyle": "block",
