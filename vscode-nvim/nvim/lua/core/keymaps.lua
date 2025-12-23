@@ -9,6 +9,12 @@ map({ "n", "x", "o" }, "gM", function()
   return "'" .. vim.fn.getcharstr()
 end, { desc = "Goto mark (line start)", expr = true, silent = true })
 
+-- Delete mark
+map({ "n", "x", "o" }, "dm", function()
+  local char = vim.fn.getcharstr()
+  vim.cmd("delmarks " .. char)
+end, { desc = "Delete mark", silent = true })
+
 -- Move Lines
 map("n", "<A-j>", ":m .+1<CR>==", { desc = "Move Down" })
 map("n", "<A-k>", ":m .-2<CR>==", { desc = "Move Up" })
