@@ -11,9 +11,10 @@ alt + m                 : komorebic toggle-shortcuts
 # The apps will be focused if open, or launched if not open
 # alt + f                 : if ($wshell.AppActivate('Firefox') -eq $False) { start firefox }
 # alt + b                 : if ($wshell.AppActivate('Chrome') -eq $False) { start chrome }
-# alt + return            : wezterm-gui --config-file "D:/.dotfiles/wezterm/wezterm.lua"
+# alt + return            : wezterm-gui --config-file "D:/code/dotfiles/wezterm/wezterm.lua"
 alt + return            : start wt
 alt + n                 : start "$(scoop prefix notion)\Notion.exe"
+alt + a                 : if (Get-Process kanata -ErrorAction SilentlyContinue) { Stop-Process -Name kanata } else { Start-Process kanata -ArgumentList "-q", "-c", "D:\code\dotfiles\kanata\kanata.kbd" -WindowStyle Hidden }
 
 alt + q                 : komorebic close
 alt + g                 : komorebic manage
