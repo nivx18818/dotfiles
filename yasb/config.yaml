@@ -37,9 +37,9 @@ bars:
       bottom: 0
       right: 2
     widgets:
-      left: ["komorebi_control", "komorebi_workspaces", "active_window"]
+      left: ["komorebi_workspaces", "active_window"]
       center: ["clock"]
-      right: ["cpu", "memory", "systray", "power_menu"]
+      right: ["systray", "komorebi_control", "power_menu"]
 
 widgets:
   wallpaper:
