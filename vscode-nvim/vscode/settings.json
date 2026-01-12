@@ -103,8 +103,11 @@
   "terminal.integrated.cursorStyle": "block",
   "terminal.integrated.cursorBlinking": false,
   "terminal.integrated.fontLigatures.enabled": true,
+  "terminal.integrated.initialHint": false,
   "terminal.integrated.smoothScrolling": true,
   "terminal.integrated.suggest.enabled": true,
+  "terminal.integrated.suggest.quickSuggestions": true,
+  "terminal.integrated.suggest.suggestOnTriggerCharacters": true,
   "terminal.integrated.tabs.enabled": true,
 
   "files.associations": {
@@ -126,6 +129,9 @@
   "zenMode.showTabs": "single",
   "zenMode.silentNotifications": false,
 
+  "telemetry.telemetryLevel": "off",
+
+  // Symbols
   "symbols.hidesExplorerArrows": true,
   "symbols.folders.associations": {
     ".next": "folder-vercel",
@@ -139,6 +145,7 @@
     "bruno": "folder-bruno"
   },
 
+  // indent-rainbow
   "indentRainbow.colors": [
     "rgba(3, 4, 94, 0.125)",
     "rgba(2, 62, 138, 0.125)",
@@ -151,6 +158,7 @@
     "rgba(202, 240, 248, 0.125)"
   ],
 
+  // Custom UI Style
   "custom-ui-style.electron": {
     "frame": false
   },
@@ -158,9 +166,13 @@
     "file:///D:/code/dotfiles/vscode-nvim/vscode/styles/general.css"
   ],
 
-  "telemetry.telemetryLevel": "off",
+  // VSCode Animations
+  "animations.Install-Method": "Custom UI Style",
+  "animations.Enabled": false,
+  "animations.CursorAnimation": true,
+  "animations.UseCursorColorForCursorAnimation": true,
 
-  // which-key
+  // Which Key
   "whichkey.showButtons": false,
   "whichkey.bindings": [
     {
