@@ -21,6 +21,9 @@ alt + g                 : komorebic manage
 alt + shift + g         : komorebic unmanage
 alt + b                 : komorebic stackbar-mode on-stack
 alt + shift + b         : komorebic stackbar-mode never
+alt + shift +  w        : komorebic stop
+alt + w                 : komorebic start
+alt + y                 : yasbc reload
 
 # Focus windows
 alt + h                 : komorebic focus left
