@@ -24,6 +24,8 @@ alt + shift + b         : komorebic stackbar-mode never
 alt + shift +  w        : komorebic stop
 alt + w                 : komorebic start
 alt + y                 : yasbc reload
+# alt + shift + e         : Stop-Process -Name explorer; Start-Process explorer
+alt + shift + e         : Stop-Process -Name explorer # Let Windows restart Explorer automatically
 
 # Focus windows
 alt + h                 : komorebic focus left
