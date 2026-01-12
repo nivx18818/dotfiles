@@ -113,6 +113,11 @@
       "kind": "Exe",
       "id": "UltraViewer_Desktop.exe",
       "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "pythonw.exe",
+      "matching_strategy": "Equals"
     }
   ]
 }
