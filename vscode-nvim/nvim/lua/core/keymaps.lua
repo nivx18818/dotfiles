@@ -49,7 +49,3 @@ map("n", "Y", "^yg_");
 -- Better indenting
 map("v", "<", "<gv")
 map("v", ">", ">gv")
-
--- Commenting
-map("n", "gco", "o<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", { desc = "Add Comment Below" })
-map("n", "gcO", "O<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", { desc = "Add Comment Above" })
