@@ -3,7 +3,7 @@
 # Reload whkd configuration
 # alt + o                 : taskkill /f /im whkd.exe && start /b whkd # if shell is cmd
 # alt + o                 : taskkill /f /im whkd.exe; Start-Process whkd -WindowStyle hidden # if shell is pwsh / powershell
-alt + shift + o         : komorebic reload-configuration
+# alt + shift + o         : komorebic reload-configuration
 
 alt + m                 : komorebic toggle-shortcuts
 
@@ -13,19 +13,11 @@ alt + m                 : komorebic toggle-shortcuts
 # alt + b                 : if ($wshell.AppActivate('Chrome') -eq $False) { start chrome }
 # alt + return            : wezterm-gui --config-file "D:/code/dotfiles/wezterm/wezterm.lua"
 alt + return            : start wt
-alt + n                 : start "$(scoop prefix notion)\Notion.exe"
-alt + a                 : if (Get-Process kanata -ErrorAction SilentlyContinue) { Stop-Process -Name kanata } else { Start-Process kanata -ArgumentList "-q", "-c", "D:\code\dotfiles\kanata\kanata.kbd" -WindowStyle Hidden }
+alt + shift + b         : start brave --incognito
 
 alt + q                 : komorebic close
 alt + g                 : komorebic manage
 alt + shift + g         : komorebic unmanage
-alt + b                 : komorebic stackbar-mode on-stack
-alt + shift + b         : komorebic stackbar-mode never
-alt + shift +  w        : komorebic stop
-alt + w                 : komorebic start
-alt + y                 : yasbc reload
-# alt + shift + e         : Stop-Process -Name explorer; Start-Process explorer
-alt + shift + e         : Stop-Process -Name explorer # Let Windows restart Explorer automatically
 
 # Focus windows
 alt + h                 : komorebic focus left
@@ -43,11 +35,6 @@ alt + shift + l         : komorebic move right
 alt + shift + return    : komorebic promote
 
 # Stack windows
-alt + shift + u         : komorebic stack left
-alt + shift + i         : komorebic stack down
-alt + shift + o         : komorebic stack up
-alt + shift + p         : komorebic stack right
-alt + oem_1             : komorebic unstack # oem_1 is ;
 alt + oem_4             : komorebic cycle-stack previous # oem_4 is [
 alt + oem_6             : komorebic cycle-stack next # oem_6 is ]
 
@@ -63,7 +50,6 @@ alt + f                 : komorebic toggle-monocle
 
 # Window manager options
 alt + shift + r         : komorebic retile
-alt + p                 : komorebic toggle-pause
 
 # Layouts
 alt + shift + x         : komorebic flip-layout horizontal
