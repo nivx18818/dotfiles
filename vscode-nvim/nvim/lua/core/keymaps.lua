@@ -10,7 +10,7 @@ map({ "n", "x", "o" }, "gM", function()
 end, { desc = "Goto mark (line start)", expr = true, silent = true })
 
 -- Delete mark
-map({ "n", "x", "o" }, "dm", function()
+map("n", "dm", function()
   local char = vim.fn.getcharstr()
   vim.cmd("delmarks " .. char)
 end, { desc = "Delete mark", silent = true })
