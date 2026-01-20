@@ -118,6 +118,11 @@
       "kind": "Exe",
       "id": "pythonw.exe",
       "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "PowerToys.Settings.exe",
+      "matching_strategy": "Equals"
     }
   ]
 }
