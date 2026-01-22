@@ -438,14 +438,14 @@ widgets:
       label_expanded: "▶"
       label_position: "left" # Can be "left" or "right"
       icon_size: 14 # Can be any integer between 8 and 64
-      pin_click_modifier: "alt" # Can be "ctrl", "alt" or "shift"
-      show_unpinned: true
+      pin_click_modifier: "ctrl" # Can be "ctrl", "alt" or "shift"
+      show_unpinned: false
       show_unpinned_button: true
       show_battery: false
       show_volume: false
       show_network: false
       container_padding:
         left: 0
-        top:
+        top: 0
         right: 0
         bottom: 0
