@@ -556,16 +556,10 @@
           "command": "workbench.action.toggleSidebarVisibility"
         },
         {
-          "key": "i",
+          "key": "a",
           "name": "Toggle auxiliary bar",
           "type": "command",
           "command": "workbench.action.toggleAuxiliaryBar"
-        },
-        {
-          "key": "p",
-          "name": "Toggle panel",
-          "type": "command",
-          "command": "workbench.action.togglePanel"
         },
         {
           "key": "t",
@@ -574,7 +568,7 @@
           "command": "workbench.action.toggleStatusbarVisibility"
         },
         {
-          "key": "a",
+          "key": "c",
           "name": "Toggle activity bar",
           "type": "command",
           "command": "workbench.action.toggleActivityBarVisibility"
