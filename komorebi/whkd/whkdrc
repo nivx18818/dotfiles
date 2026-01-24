@@ -13,6 +13,8 @@ alt + m                 : komorebic toggle-shortcuts
 # alt + b                 : if ($wshell.AppActivate('Chrome') -eq $False) { start chrome }
 # alt + return            : wezterm-gui --config-file "D:/code/dotfiles/wezterm/wezterm.lua"
 alt + return            : start wt
+alt + shift + return    : Start-Process wt -Verb runAs
+alt + b                 : start brave --new-window
 alt + shift + b         : start brave --incognito
 
 alt + q                 : komorebic close
@@ -32,7 +34,7 @@ alt + shift + h         : komorebic move left
 alt + shift + j         : komorebic move down
 alt + shift + k         : komorebic move up
 alt + shift + l         : komorebic move right
-alt + shift + return    : komorebic promote
+alt + shift + oem_1     : komorebic promote # oem_1 is ;
 
 # Stack windows
 alt + oem_4             : komorebic cycle-stack previous # oem_4 is [
