@@ -6,7 +6,7 @@
   "mouse_follows_focus": false,
   "default_workspace_padding": 2,
   "default_container_padding": 2,
-  "transparency": true,
+  "transparency": false,
   "transparency_alpha": 220,
   "border": true,
   "border_width": 2,
@@ -73,6 +73,26 @@
         },
         {
           "name": "8",
+          "layout": "BSP"
+        }
+      ]
+    },
+    {
+      "workspaces": [
+        {
+          "name": "1",
+          "layout": "BSP"
+        },
+        {
+          "name": "2",
+          "layout": "BSP"
+        },
+        {
+          "name": "3",
+          "layout": "BSP"
+        },
+        {
+          "name": "4",
           "layout": "BSP"
         }
       ]
