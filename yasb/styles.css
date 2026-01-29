@@ -66,7 +66,7 @@
 }
 
 .widget {
-    padding: 0 15px;
+    padding: 0 12px;
     margin: 0;
     border-radius: var(--widget-border-radius);
     background-color: var(--widget-background);
@@ -242,20 +242,19 @@
 .apps-widget .widget-container,
 .komorebi-workspaces .widget-container,
 .komorebi-active-layout .widget-container {
-    margin: 3px 0 3px 0;
+    margin: 3px 0;
     border-radius: 18px;
 }
 
 .komorebi-workspaces .widget-container {
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
-    margin-left: 4px;
 }
 
 .komorebi-workspaces {
     border-top-right-radius: 108px;
     border-bottom-right-radius: 18px;
-    padding: 0 4px 0 0;
+    padding: 0 4px;
 }
 
 .komorebi-workspaces .offline-status {
@@ -296,6 +295,10 @@
     height: 10px;
     margin: 0 4px;
     border-radius: 5px;
+}
+
+.komorebi-control-widget {
+    padding: 0 4px;
 }
 
 .komorebi-control-widget .label {
