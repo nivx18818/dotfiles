@@ -1,4 +1,6 @@
-# Configuration
+# PowerShell
+
+## Configuration
 
 - Open PowerShell and run the following command to check whether you already have a profile file:
 
@@ -31,3 +33,20 @@
   ```
 
 - Restart your PowerShell session to apply the changes.
+
+## Modules
+
+- [Terminal-Icons](https://github.com/devblackops/Terminal-Icons) — PowerShell module to display file icons in the terminal.
+
+  Install via PowerShell Gallery:
+
+  ```powershell
+  Install-Module -Name Terminal-Icons -Repository PSGallery -Scope CurrentUser
+  ```
+
+  Or via Scoop:
+
+  ```powershell
+  scoop bucket add extras
+  scoop install terminal-icons
+  ```
