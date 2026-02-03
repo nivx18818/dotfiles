@@ -127,5 +127,9 @@ function symlink {
         [Parameter(Mandatory)] [string]$target
     )
 
+    if (Test-Path $link) {
+        Remove-Item $link
+    }
+
     New-Item -ItemType SymbolicLink -Path $link -Target $target
 }
