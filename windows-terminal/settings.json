@@ -4,6 +4,7 @@
   "alwaysShowNotificationIcon": false,
   "alwaysShowTabs": true,
   "autoHideWindow": false,
+  "launchMode": "focus",
   "centerOnLaunch": true,
   "compatibility.allowHeadless": true,
   "copyFormatting": "none",
