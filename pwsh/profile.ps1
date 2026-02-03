@@ -119,3 +119,13 @@ function which {
     param([Parameter(Mandatory)] [string]$name)
     (Get-Command $name).Source
 }
+
+# Symbolic link command
+function symlink {
+    param(
+        [Parameter(Mandatory)] [string]$link,
+        [Parameter(Mandatory)] [string]$target
+    )
+
+    New-Item -ItemType SymbolicLink -Path $link -Target $target
+}
