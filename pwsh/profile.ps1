@@ -1,7 +1,8 @@
-$Env:KOMOREBI_CONFIG_HOME="D:\code\dotfiles\komorebi"
-$Env:WHKD_CONFIG_HOME="D:\code\dotfiles\komorebi\whkd"
-$Env:YASB_CONFIG_HOME="D:\code\dotfiles\yasb"
-$Env:XDG_CONFIG_HOME="D:\code\dotfiles\vscode-nvim"
+$Env:DOTFILES="D:\code\dotfiles"
+$Env:KOMOREBI_CONFIG_HOME="$Env:DOTFILES\komorebi"
+$Env:WHKD_CONFIG_HOME="$Env:DOTFILES\komorebi\whkd"
+$Env:YASB_CONFIG_HOME="$Env:DOTFILES\yasb"
+$Env:XDG_CONFIG_HOME="$HOME\.config"
 
 Import-Module Terminal-Icons
 

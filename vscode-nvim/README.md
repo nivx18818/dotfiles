@@ -44,13 +44,13 @@ This setup allows you to use Neovim as the backend for VSCode's editing capabili
 - Open the profile file with your favorite text editor and add the following lines at the end of the file:
 
   ```powershell
-  $Env:XDG_CONFIG_HOME="<path-to-this-repository>\vscode-nvim"
+  $Env:XDG_CONFIG_HOME="$HOME\.config"
   ```
 
-  For example:
+- Create a symbolic link from this repository's `nvim` folder to your Neovim configuration directory:
 
   ```powershell
-  $Env:XDG_CONFIG_HOME="D:\code\dotfiles\vscode-nvim"
+  New-Item -ItemType SymbolicLink -Path "$Env:XDG_CONFIG_HOME\nvim" -Target "<path-to-this-repository>\vscode-nvim\nvim"
   ```
 
 - Allow the execution of PowerShell scripts if you haven't already done so:
