@@ -3,7 +3,7 @@
   {
     "key": "space",
     "command": "whichkey.show",
-    "when": "neovim.init && neovim.mode != insert && (editorFocus || !textInputFocus) && !inSettingsEditor && !searchInputBoxFocus && !terminalFocus && !inQuickOpen && !whichkeyVisible"
+    "when": "neovim.init && neovim.mode != insert && neovim.mode != replace && (editorFocus || !textInputFocus) && !inSettingsEditor && !searchInputBoxFocus && !terminalFocus && !inQuickOpen && !whichkeyVisible"
   },
   {
     "key": "tab",
