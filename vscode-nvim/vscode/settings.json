@@ -17,6 +17,8 @@
       "editorBracketHighlight.foreground3": "#e4f0fb",
       "editorBracketHighlight.foreground2": "#a6accd",
       "editorBracketHighlight.foreground1": "#767c9dbb",
+      "editorBracketMatch.foreground": "#5de4c7",
+      "editorBracketMatch.border": "#00000000",
 
       "activityBarTop.background": "#1b1e28",
       "activityBarTop.foreground": "#a6accd",
@@ -71,7 +73,7 @@
   "editor.occurrencesHighlight": "off",
   "editor.selectionHighlight": false,
   "editor.guides.indentation": false,
-  "editor.matchBrackets": "never",
+  "editor.matchBrackets": "always",
   "editor.stickyScroll.enabled": false,
   "editor.minimap.enabled": false,
   "editor.hideCursorInOverviewRuler": true,
