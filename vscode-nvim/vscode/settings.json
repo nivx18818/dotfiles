@@ -91,7 +91,6 @@
   "editor.scrollbar.vertical": "hidden",
   "editor.defaultFormatter": "none",
 
-  "chat.commandCenter.enabled": false,
   "chat.editor.lineHeight": 1.8,
   "chat.editor.wordWrap": "on",
   "chat.math.enabled": true,
