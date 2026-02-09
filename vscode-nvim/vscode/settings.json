@@ -9,16 +9,18 @@
   "window.zoomLevel": 0.5,
 
   "workbench.activityBar.location": "hidden",
-  "workbench.colorTheme": "poimandres",
+  "workbench.colorTheme": "Vesper",
   "workbench.colorCustomizations": {
+    "editorBracketMatch.border": "#00000000",
+
     "[poimandres]": {
       "disabledForeground": "#767c9d",
 
       "editorBracketHighlight.foreground3": "#e4f0fb",
       "editorBracketHighlight.foreground2": "#a6accd",
-      "editorBracketHighlight.foreground1": "#767c9dbb",
-      "editorBracketMatch.foreground": "#5de4c7",
-      "editorBracketMatch.border": "#00000000",
+      "editorBracketHighlight.foreground1": "#a6accd",
+      "editorBracketMatch.background": "#303340",
+      "editorIndentGuide.activeBackground1": "#7390aaaa",
 
       "activityBarTop.background": "#1b1e28",
       "activityBarTop.foreground": "#a6accd",
@@ -31,6 +33,12 @@
       "notebook.focusedEditorBorder": "#5de4c7",
 
       "scmGraph.historyItemHoverLabelForeground": "#ffffff"
+    },
+
+    "[Vesper]": {
+      "editorBracketMatch.background": "#ffffff25",
+      "editorIndentGuide.background1": "#ffffff15",
+      "editorIndentGuide.activeBackground1": "#ffffff25"
     }
   },
   "workbench.editor.editorActionsLocation": "hidden",
@@ -41,7 +49,6 @@
   "workbench.list.smoothScrolling": true,
   "workbench.navigationControl.enabled": false,
   "workbench.panel.showLabels": false,
-  "workbench.preferredDarkColorTheme": "poimandres",
   "workbench.remoteIndicator.showExtensionRecommendations": false,
   "workbench.sideBar.location": "right",
   "workbench.secondarySideBar.showLabels": false,
