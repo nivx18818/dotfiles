@@ -35,11 +35,14 @@
 }
 
 /* replace VSCode watermark */
-.editor-group-watermark {
-    max-width: 404px !important;
+.editor-group-watermark .letterpress {
+    display: grid;
+    place-items: center;
+    background-image: none !important;
 
-    & .letterpress {
-        background-image: url("https://raw.githubusercontent.com/nivx18818/dotfiles/refs/heads/main/vscode-nvim/vscode/assets/pmndrs.png") !important;
-        aspect-ratio: 8/5 !important;
+    &::before {
+        content: "「善」";
+        font-size: 48px;
+        color: #a0a0a0;
     }
 }
