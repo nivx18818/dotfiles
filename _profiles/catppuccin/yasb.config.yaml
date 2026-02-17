@@ -139,7 +139,11 @@ widgets:
       # label_alt: "<span>\uf017</span>{%a, %b %d | %H:%M:%S}"
       label: "{%a, %b %d | %I:%M %p}"
       label_alt: "{%a, %b %d | %H:%M:%S}"
-      timezones: [] #Looking up time zone info from registry
+      locale: ""
+      timezones: ["Asia/Ho_Chi_Minh"] #Looking up time zone info from registry
+      calendar:
+        country_code: "VN"
+        show_holidays: true
   volume:
     type: "yasb.volume.VolumeWidget"
     options:
