@@ -10,8 +10,10 @@
 # @raycast.author nivx18818
 # @raycast.authorURL https://raycast.com/nivx18818
 
-$Env:DOTFILES="D:\code\dotfiles"
-$Env:KOMOREBI_CONFIG_HOME="$Env:DOTFILES\komorebi"
-$Env:WHKD_CONFIG_HOME="$Env:DOTFILES\komorebi\whkd"
+$envFile = "$PSScriptRoot\..\..\pwsh\env.ps1"
+if (-not (Test-Path $envFile)) {
+    throw "Required env file missing: $envFile"
+}
+. $envFile
 
 komorebic start --whkd

@@ -10,7 +10,10 @@
 # @raycast.author nivx18818
 # @raycast.authorURL https://raycast.com/nivx18818
 
-$Env:DOTFILES="D:\code\dotfiles"
-$Env:YASB_CONFIG_HOME="$Env:DOTFILES\yasb"
+$envFile = "$PSScriptRoot\..\..\pwsh\env.ps1"
+if (-not (Test-Path $envFile)) {
+    throw "Required env file missing: $envFile"
+}
+. $envFile
 
 yasbc start
