@@ -8,6 +8,7 @@ This repository contains my personal dotfiles and editor configuration. It's int
 - [`komorebi`](https://github.com/LGUG2Z/komorebi) — tiling window manager for Windows configuration.
 - [`neovim`](https://github.com/neovim/neovim) — text editor configuration.
 - [`powershell`](https://github.com/PowerShell/PowerShell) — PowerShell configuration.
+- [`raycast`](https://www.raycast.com) — Multi-platform application launcher and productivity tool configuration.
 - [`vscode-neovim`](https://github.com/vscode-neovim/vscode-neovim) — Visual Studio Code extension configuration to use Neovim as the editor backend.
 - [`wezterm`](https://github.com/wezterm/wezterm) — terminal emulator configuration.
 - [`windhawk`](https://github.com/windhawk/windhawk) — Windows customization tool configuration.
