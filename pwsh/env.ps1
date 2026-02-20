@@ -1,6 +1,9 @@
+param(
+    [string]$Theme = "monochrome"
+)
+
 $Env:DOTFILES="D:\code\dotfiles"
-$Env:THEME="catppuccin"
-$Env:KOMOREBI_CONFIG_HOME="$Env:DOTFILES\komorebi\$Env:THEME"
+$Env:KOMOREBI_CONFIG_HOME="$Env:DOTFILES\komorebi\$Theme"
 $Env:WHKD_CONFIG_HOME="$Env:DOTFILES\komorebi\whkd"
-$Env:YASB_CONFIG_HOME="$Env:DOTFILES\yasb\$Env:THEME"
+$Env:YASB_CONFIG_HOME="$Env:DOTFILES\yasb\$Theme"
 $Env:XDG_CONFIG_HOME="$HOME\.config"
