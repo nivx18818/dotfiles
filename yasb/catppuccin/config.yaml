@@ -39,7 +39,7 @@ bars:
     widgets:
       left: ["komorebi_workspaces", "active_window"]
       center: ["clock", "cava"]
-      right: ["systray", "pomodoro", "komorebi_control", "power_menu"]
+      right: ["systray", "pomodoro", "power_menu"]
 
 widgets:
   wallpaper:
