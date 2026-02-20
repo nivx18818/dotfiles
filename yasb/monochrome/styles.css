@@ -1,0 +1,372 @@
+:root {
+    --background: #101010;
+    --foreground: #ececec;
+    --hover: #ececec25;
+    --foreground-secondary: #a0a0a0;
+    --foreground-destructive: #ff8080;
+    --icon-size: 14px;
+    --active-border: 2px solid var(--foreground);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: "JetBrainsMono NFP";
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* ======= */
+/* GENERAL */
+/* ======= */
+
+/* Bar */
+.yasb-bar {
+    padding-right: 4px;
+}
+
+/* Widget Group */
+.container-left .widget {
+    margin: 0 8px;
+}
+
+.container-right .widget {
+    margin: 0 4px;
+}
+
+/* Context menu */
+.context-menu,
+.context-menu .menu-checkbox {
+    padding: 4px 0;
+}
+
+.context-menu::right-arrow {
+    width: 8px;
+    height: 8px;
+    padding-right: 24px;
+}
+
+.context-menu::item,
+.context-menu .menu-checkbox {
+    margin: 2px 6px;
+    padding: 6px 12px;
+    min-width: 100px;
+}
+
+.context-menu::item:selected,
+.context-menu .menu-checkbox:hover {
+    background-color: var(--hover);
+}
+
+.context-menu::separator {
+    height: 0;
+}
+
+.context-menu::item:disabled {
+    color: var(--foreground-secondary);
+}
+
+.context-menu .submenu::item:disabled {
+    margin: 0;
+}
+
+.context-menu .menu-checkbox .checkbox {
+    margin: 0;
+    padding: 8px 16px;
+}
+
+.context-menu .menu-checkbox .checkbox::indicator {
+    width: 4px;
+    height: 4px;
+}
+
+.context-menu .menu-checkbox .checkbox::indicator:checked {
+    background-color: var(--foreground);
+}
+
+.context-menu .menu-checkbox .checkbox::indicator:unchecked {
+    background-color: var(--background);
+}
+
+/* Tooltip */
+.tooltip {
+    padding: 4px 8px;
+    background-color: var(--background);
+}
+
+/* ======= */
+/* WIDGETS */
+/* ======= */
+
+/* Home */
+.home-menu {
+    background-color: var(--background);
+    margin-left: 6px;
+}
+
+.home-menu .menu-item {
+    padding: 8px 10px 10px 8px;
+    margin-left: 6px;
+}
+
+.home-menu .menu-item:hover {
+    background-color: var(--hover);
+}
+
+/* Komorebi Workspaces */
+.komorebi-workspaces .ws-btn {
+    padding: 8px;
+}
+
+.komorebi-workspaces .ws-btn.active {
+    margin-top: 2px;
+    border-bottom: var(--active-border);
+}
+
+.komorebi-layout-menu .menu-item {
+    padding: 4px 8px;
+}
+
+.komorebi-layout-menu .menu-item-icon {
+    background-color: transparent;
+    font-size: var(--icon-size);
+}
+
+.komorebi-layout-menu .menu-item-text {
+    background-color: transparent;
+}
+
+.komorebi-layout-menu .menu-item:hover {
+    background-color: var(--hover);
+}
+
+/* Taskbar */
+.taskbar-widget .app-container.foreground {
+    border-bottom: var(--active-border);
+}
+
+.taskbar-widget .app-container.foreground .app-title:hover {
+    margin: 4px 2px;
+    background-color: var(--foreground);
+    color: var(--background);
+}
+
+.taskbar-widget .app-container.flashing {
+    background-color: #ffc799;
+}
+
+.taskbar-widget .app-container.running {
+    margin: 3px 2px;
+    background-color: var(--background);
+}
+
+.taskbar-widget .app-container.running .app-title:hover {
+    margin: 3px 2px;
+    background-color: var(--foreground);
+    color: var(--background);
+}
+
+.taskbar-widget .app-container .app-title {
+    padding: 0 6px;
+    color: var(--foreground);
+}
+
+/* Taskbar preview popup is very limited in styling options, do not use margins/paddings here */
+
+.taskbar-preview.flashing {
+    background-color: #ffc799;
+}
+
+.taskbar-preview .header {
+    padding: 4px 0 12px 0;
+}
+
+/* Active Window */
+.active-window-widget .widget-container .label,
+.active-window-widget .widget-container .label.alt {
+    margin: 6px 0;
+    padding: 0 4px;
+    background-color: var(--foreground);
+    color: var(--background);
+}
+
+/* Clock */
+.calendar .calendar-table::item {
+    color: var(--foreground-secondary);
+}
+
+.calendar .calendar-table::item:hover {
+    background-color: var(--hover);
+    color: var(--foreground);
+}
+
+.calendar .calendar-table::item:selected {
+    background-color: var(--foreground);
+    color: var(--background);
+}
+
+.calendar .day-label,
+.calendar .month-label,
+.calendar .date-label,
+.calendar .week-label,
+.calendar .holiday-label {
+    min-width: 180px;
+    max-width: 180px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.calendar .holiday-label {
+    color: var(--foreground-secondary);
+    font-size: 12px;
+}
+
+.calendar .month-label {
+    color: var(--foreground-secondary);
+    font-weight: normal;
+}
+
+.calendar .date-label {
+    margin-top: -4px;
+    font-size: 64px;
+    font-weight: 900;
+}
+
+/* Systray */
+.systray .button {
+    padding: 0 2px;
+}
+
+.systray .unpinned-visibility-btn {
+    padding: 4px;
+    font-family: "Segoe Fluent Icons";
+    font-size: var(--icon-size);
+}
+
+/* Media */
+.media-widget .btn {
+    min-width: 0;
+    max-width: 0;
+}
+
+.media-menu {
+    min-width: 420px;
+    max-width: 420px;
+}
+
+.media-menu .thumbnail {
+    border: var(--active-border);
+}
+
+.media-menu .title,
+.media-menu .artist,
+.media-menu .source {
+    font-weight: bold;
+}
+
+.media-menu .title,
+.media-menu .artist {
+    margin-left: 10px;
+    color: var(--foreground);
+    font-size: 16px;
+}
+
+.media-menu .artist {
+    color: var(--foreground-secondary);
+    font-size: 13px;
+}
+
+.media-menu .source {
+    padding: 2px 6px;
+    background-color: var(--foreground);
+    color: var(--background);
+    font-size: 13px;
+}
+
+.media-menu .source.brave {
+    background-color: #fb542b;
+    color: #f0f0f0;
+}
+
+.media-menu .source.spotify {
+    background-color: #1ed760;
+    color: #121212;
+}
+
+.media-menu .btn {
+    min-width: 40px;
+    max-width: 40px;
+    min-height: 40px;
+    max-height: 40px;
+    font-size: 16px;
+}
+
+.media-menu .btn.prev {
+    margin-left: 10px;
+}
+
+.media-menu .btn.play {
+    font-size: 32px;
+}
+
+.media-menu .btn.disabled {
+    color: var(--foreground-secondary);
+}
+
+.media-menu .playback-time {
+    margin: 10px 0 4px 0;
+}
+
+.media-menu .progress-slider {
+    height: 4px;
+    background-color: var(--hover);
+}
+
+.media-menu .progress-slider::groove {
+    border-radius: 0;
+}
+
+.media-menu .progress-slider::sub-page {
+    background-color: var(--foreground);
+}
+
+/* Power Menu */
+.power-menu-overlay,
+.power-menu-popup,
+.power-menu-popup .buttons {
+    background-color: #00000026;
+}
+
+.power-menu-overlay .uptime,
+.power-menu-popup .button .label,
+.power-menu-popup .button .icon,
+.power-menu-popup .button.hover {
+    background-color: transparent;
+}
+
+.power-menu-overlay .uptime {
+    margin-bottom: 20px;
+    color: var(--foreground-secondary);
+    font-size: 14px;
+}
+
+.power-menu-popup .button {
+    width: 160px;
+    height: 240px;
+}
+
+.power-menu-popup .button .label {
+    font-size: 16px;
+}
+
+.power-menu-popup .button .icon {
+    font-size: 64px;
+}
+
+.power-menu-popup .button.cancel .icon,
+.power-menu-popup .button.cancel .label {
+    color: var(--foreground-destructive);
+}

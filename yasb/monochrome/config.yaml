@@ -1,0 +1,420 @@
+watch_stylesheet: true
+watch_config: true
+debug: false
+show_systray: false
+
+komorebi:
+  start_command: "komorebic start --whkd"
+  stop_command: "komorebic stop --whkd"
+  reload_command: "komorebic stop --whkd && komorebic start --whkd"
+
+bars:
+  status-bar:
+    enabled: true
+    screens: ["*"]
+    class_name: "yasb-bar"
+    alignment:
+      position: "top"
+      center: false
+    blur_effect:
+      enabled: true
+      acrylic: true
+      dark_mode: false
+      round_corners: false
+      border_color: none
+    window_flags:
+      always_on_top: false
+      windows_app_bar: true
+      hide_on_fullscreen: true
+    dimensions:
+      width: "100%"
+      height: 30
+    padding:
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
+    widgets:
+      left:
+        [
+          "home",
+          "komorebi_workspaces",
+          "komorebi_active_layout",
+          "active_window",
+        ]
+      center: ["clock"]
+      right:
+        [
+          "systray",
+          "separator",
+          "media",
+          "separator",
+          "cava",
+          "separator",
+          "power_menu",
+        ]
+
+widgets:
+  home:
+    type: "yasb.home.HomeWidget"
+    options:
+      label: "家"
+      menu_list:
+        - { title: "Home", path: "~" }
+        - { title: "Downloads", path: "~\\Downloads" }
+        - { title: "Documents", path: "~\\Documents" }
+        - { title: "Pictures", path: "~\\Pictures" }
+        - { title: "Videos", path: "~\\Videos" }
+      system_menu: false
+      power_menu: false
+      blur: false
+      round_corners: false
+      round_corners_type: "normal"
+      distance: 5
+      container_padding:
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+      alignment: "left"
+      direction: "down"
+      menu_labels:
+        shutdown: "Shutdown"
+        restart: "Restart"
+        logout: "Logout"
+        lock: "Lock"
+        sleep: "Sleep"
+        system: "System Settings"
+        about: "About This PC"
+        task_manager: "Task Manager"
+  komorebi_workspaces:
+    type: "komorebi.workspaces.WorkspaceWidget"
+    options:
+      label_offline: "Komorebi Offline"
+      label_workspace_btn: "{index}"
+      label_workspace_active_btn: "{index}"
+      label_workspace_populated_btn: "{index}"
+      label_default_name: ""
+      label_zero_index: false
+      hide_empty_workspaces: true
+      hide_if_offline: false
+      animation: true
+  komorebi_control:
+    type: "komorebi.control.KomorebiControlWidget"
+    options:
+      label: "<span>\udb80\uddd9</span>"
+      icons:
+        start: "\uead3"
+        stop: "\uead7"
+        reload: "\uead2"
+      run_ahk: false
+      run_whkd: true
+      show_version: true
+      komorebi_menu:
+        blur: True
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "left"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+      label_shadow:
+        enabled: true
+        color: "black"
+        radius: 3
+        offset: [1, 1]
+  komorebi_active_layout:
+    type: "komorebi.active_layout.ActiveLayoutWidget"
+    options:
+      hide_if_offline: true
+      label: "{layout_name}"
+      layouts:
+        [
+          "bsp",
+          "columns",
+          "rows",
+          "grid",
+          "vertical_stack",
+          "horizontal_stack",
+          "ultrawide_vertical_stack",
+          "right_main_vertical_stack",
+        ]
+      layout_icons:
+        bsp: "\uebeb"
+        columns: "\uebf7"
+        rows: "\uec01"
+        grid: "\udb81\udf58"
+        scrolling: "\uebf7"
+        vertical_stack: "\uebee"
+        horizontal_stack: "\uebf0"
+        ultrawide_vertical_stack: "\uebee"
+        right_main_vertical_stack: "\uebf1"
+        monocle: "\uf06f"
+        maximized: "\uf06f"
+        floating: "\uf2d2"
+        paused: "\udb83\udf89"
+        tiling: "\udb81\ude40"
+      layout_menu:
+        blur: false
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "left"
+        direction: "down"
+        offset_top: 5
+        offset_left: 5
+        show_layout_icons: true
+      callbacks:
+        on_left: "toggle_layout_menu"
+        on_middle: "next_layout"
+        on_right: "prev_layout"
+  active_window:
+    type: "yasb.active_window.ActiveWindowWidget"
+    options:
+      label: "{win[title]}"
+      label_alt: "[class_name='{win[class_name]}' exe='{win[process][name]}' hwnd={win[hwnd]}]"
+      label_no_window: ""
+      label_icon: false
+      label_icon_size: 14
+      max_length: 20
+      max_length_ellipsis: "..."
+      monitor_exclusive: true
+  media:
+    type: "yasb.media.MediaWidget"
+    options:
+      label: "{title}{s}{artist}"
+      label_alt: "{artist}"
+      separator: " ⯌ "
+      callbacks:
+        on_left: "toggle_media_menu"
+        on_middle: "do_nothing"
+        on_right: "toggle_label"
+      max_field_size:
+        label: 30
+        label_alt: 30
+      show_thumbnail: false
+      hide_empty: false
+      controls_only: false
+      controls_left: true
+      thumbnail_alpha: 0
+      thumbnail_padding: 0
+      thumbnail_corner_radius: 8
+      icons:
+        prev_track: ""
+        next_track: ""
+        play: "\uf04b"
+        pause: "\uf04c"
+      media_menu:
+        blur: false
+        round_corners: false
+        round_corners_type: "normal"
+        border_color: "transparent"
+        alignment: "right"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+        thumbnail_size: 120
+        thumbnail_corner_radius: 8
+        max_title_size: 60
+        max_artist_size: 50
+        show_source: true
+      media_menu_icons:
+        play: "\uf144"
+        pause: "\uf28b"
+        prev_track: "\uf04a"
+        next_track: "\uf04e"
+      label_shadow:
+        enabled: true
+        color: "black"
+        radius: 3
+        offset: [1, 1]
+  clock:
+    type: "yasb.clock.ClockWidget"
+    options:
+      label: "{%a, %b %d | %I:%M %p}"
+      label_alt: "{%a, %b %d | %H:%M:%S}"
+      locale: ""
+      timezones: ["Asia/Ho_Chi_Minh"] #Looking up time zone info from registry
+      calendar:
+        blur: false
+        round_corners: false
+        alignment: "center"
+        direction: "down"
+        country_code: "VN"
+        show_holidays: true
+        holiday_color: "#FF8080"
+  volume:
+    type: "yasb.volume.VolumeWidget"
+    options:
+      label: "<span>{icon}</span> {level}"
+      label_alt: "{volume}"
+      volume_icons:
+        - "\ueee8" # Icon for muted
+        - "\uf026" # Icon for 0-10% volume
+        - "\uf027" # Icon for 11-30% volume
+        - "\uf027" # Icon for 31-60% volume
+        - "\uf028" # Icon for 61-100% volume
+      audio_menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "transparent"
+        alignment: "right"
+        direction: "down"
+        distance: 6
+      callbacks:
+        on_left: "toggle_volume_menu"
+        on_right: "exec cmd.exe /c start ms-settings:sound"
+  pomodoro:
+    type: "yasb.pomodoro.PomodoroWidget"
+    options:
+      label: "<span>{icon}</span> {remaining}"
+      label_alt: "<span>{icon}</span> {session}/{total_sessions} - {status}"
+      work_duration: 25
+      break_duration: 5
+      long_break_duration: 15
+      long_break_interval: 4
+      auto_start_breaks: true
+      auto_start_work: true
+      sound_notification: true
+      show_notification: true
+      hide_on_break: false
+      session_target: 8
+      icons:
+        work: "\uf252"
+        break: "\uf253"
+        paused: "\uf254"
+      menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "right"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+        circle_background_color: "#09ffffff"
+        circle_work_progress_color: "#88c0d0"
+        circle_break_progress_color: "#a3be8c"
+        circle_thickness: 8
+        circle_size: 160
+      callbacks:
+        on_left: "toggle_menu"
+        on_middle: "reset_timer"
+        on_right: "toggle_label"
+      label_shadow:
+        enabled: true
+        color: "black"
+        radius: 3
+        offset: [1, 1]
+  wallpapers:
+    type: "yasb.wallpapers.WallpapersWidget"
+    options:
+      label: "<span>\udb83\ude09</span>"
+      image_path: "C:\\Users\\<user>\\Pictures\\Wallpapers"
+      change_automatically: false # Automatically change wallpaper
+      update_interval: 60
+      animation:
+        enabled: true
+        type: "fadeInOut"
+        duration: 200
+      gallery:
+        enabled: true
+        blur: true
+        image_width: 250
+        image_per_page: 4
+        show_buttons: true
+        orientation: "portrait"
+        image_spacing: 10
+        lazy_load: true
+        lazy_load_delay: 10
+        lazy_load_fadein: 200
+        image_corner_radius: 8
+        enable_cache: true
+  power_menu:
+    type: "yasb.power_menu.PowerMenuWidget"
+    options:
+      label: "\uf011"
+      uptime: true
+      blur: false
+      blur_background: true
+      animation_duration: 250
+      button_row: 5 # Number of buttons in row, min 1 max 5
+      buttons:
+        signout: ["\udb80\udf43", "Sign out"]
+        shutdown: ["\uf011", "Shut Down"]
+        restart: ["\uead2", "Restart"]
+        hibernate: ["\uf28e", "Hibernate"]
+        cancel: ["\udb81\udf3a", "Cancel"]
+  cava:
+    type: "yasb.cava.CavaWidget"
+    options:
+      bar_height: 12
+      gradient: 0
+      reverse: 0
+      sensitivity: 90
+      foreground: "#ececec"
+      bars_number: 12
+      bar_spacing: 2
+      bar_width: 4
+      sleep_timer: 0
+      hide_empty: true
+      bar_type: "waves"
+      container_padding:
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+  taskbar:
+    type: "yasb.taskbar.TaskbarWidget"
+    options:
+      icon_size: 0
+      tooltip: true
+      show_only_visible: false
+      strict_filtering: true
+      monitor_exclusive: true
+      animation:
+        enabled: true
+      preview:
+        enabled: true
+        width: 240
+        delay: 400
+        padding: 8
+        margin: 8
+      title_label:
+        enabled: true
+        show: "always"
+        min_length: 6
+        max_length: 20
+      ignore_apps:
+        processes: []
+        titles: []
+        classes: []
+  systray:
+    type: "yasb.systray.SystrayWidget"
+    options:
+      class_name: "systray"
+      label_collapsed: "\ue8a9"
+      label_expanded: "\ue76c"
+      label_position: "left" # Can be "left" or "right"
+      icon_size: 14 # Can be any integer between 8 and 64
+      pin_click_modifier: "ctrl" # Can be "ctrl", "alt" or "shift"
+      show_unpinned: false
+      show_unpinned_button: true
+      show_battery: false
+      show_volume: false
+      show_network: false
+      container_padding:
+        left: 0
+        top: 0
+        right: 0
+        bottom: 0
+  separator:
+    type: "yasb.custom.CustomWidget"
+    options:
+      label: "\u007c"
+      label_alt: "\u007c"
+      class_name: "separator"
+      callbacks:
+        on_left: "do_nothing"
