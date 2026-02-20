@@ -224,11 +224,11 @@ widgets:
         pause: "\uf28b"
         prev_track: "\uf04a"
         next_track: "\uf04e"
-      label_shadow:
+      scrolling_label:
         enabled: true
-        color: "black"
-        radius: 3
-        offset: [1, 1]
+        update_interval_ms: 33
+        style: "left"
+        separator: " | "
   clock:
     type: "yasb.clock.ClockWidget"
     options:
