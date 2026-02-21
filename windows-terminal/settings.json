@@ -9,6 +9,7 @@
   "compatibility.allowHeadless": true,
   "copyFormatting": "none",
   "copyOnSelect": false,
+  "defaultProfile": "",
   "firstWindowPreference": "defaultProfile",
   "focusFollowMouse": false,
   "showTabsInTitlebar": true,
@@ -58,7 +59,7 @@
   "profiles": {
     "defaults": {
       "bellStyle": "none",
-      "colorScheme": "Poimandres",
+      "colorScheme": "Vesper",
       "cursorShape": "filledBox",
       "elevate": false,
       "font": {
@@ -117,6 +118,29 @@
       "brightRed": "#D0679D",
       "brightWhite": "#FFFFFF",
       "brightYellow": "#FFFAC2"
+    },
+    {
+      "name": "Vesper",
+      "background": "#101010",
+      "selectionBackground": "#323232",
+      "foreground": "#FFF",
+      "cursorColor": "#FFC799",
+      "black": "#101010",
+      "blue": "#59A4F9",
+      "cyan": "#99FFE4",
+      "green": "#99FFE4",
+      "purple": "#FFC799",
+      "red": "#FF8080",
+      "white": "#FFF",
+      "yellow": "#FFC799",
+      "brightBlack": "#505050",
+      "brightBlue": "#75BEFF",
+      "brightCyan": "#99FFE4",
+      "brightGreen": "#99FFE4",
+      "brightPurple": "#FFCFA8",
+      "brightRed": "#FF8080",
+      "brightWhite": "#FFF",
+      "brightYellow": "#FFCFA8"
     }
   ]
 }

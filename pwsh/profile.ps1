@@ -7,10 +7,19 @@ if (Test-Path $envFile) {
 
 Import-Module Terminal-Icons
 
-oh-my-posh init pwsh --config "D:\code\dotfiles\pwsh\poimandres.omp.json" | Invoke-Expression
+if ($Theme -eq "catppuccin") {
+    oh-my-posh init pwsh --config "$Env:DOTFILES\pwsh\poimandres.omp.json" | Invoke-Expression
+} elseif ($Theme -eq "monochrome") {
+    oh-my-posh init pwsh --config "$Env:DOTFILES\pwsh\vesper.omp.json" | Invoke-Expression
+}
 
 Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
-Set-PSReadLineOption -Colors @{ InlinePrediction  = "#767c9d" }
+
+if ($Theme -eq "catppuccin") {
+    Set-PSReadLineOption -Colors @{ InlinePrediction  = "#767c9d" }
+} elseif ($Theme -eq "monochrome") {
+    Set-PSReadLineOption -Colors @{ InlinePrediction  = "#a0a0a0" }
+}
 
 # Keybindings
 if ($Env:TERM_PROGRAM -ne "vscode") {

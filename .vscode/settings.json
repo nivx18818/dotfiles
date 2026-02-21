@@ -8,6 +8,7 @@
     "https://www.schemastore.org/": true,
     "https://json.schemastore.org/": true,
     "https://json-schema.org/": true,
-    "https://cdn.jsdelivr.net": true
+    "https://cdn.jsdelivr.net": true,
+    "https://aka.ms": true
   }
 }
