@@ -38,7 +38,28 @@
     "[Vesper]": {
       "editorBracketMatch.background": "#ffffff25",
       "editorIndentGuide.background1": "#ffffff15",
-      "editorIndentGuide.activeBackground1": "#ffffff25"
+      "editorIndentGuide.activeBackground1": "#ffffff25",
+
+      "terminal.background": "#101010",
+      "terminal.selectionBackground": "#323232",
+      "terminal.foreground": "#fff",
+      "terminalCursor.foreground": "#fff",
+      "terminal.ansiBlack": "#101010",
+      "terminal.ansiBlue": "#59a4f9",
+      "terminal.ansiCyan": "#99ffe4",
+      "terminal.ansiGreen": "#99ffe4",
+      "terminal.ansiMagenta": "#ffc799",
+      "terminal.ansiRed": "#ff8080",
+      "terminal.ansiWhite": "#fff",
+      "terminal.ansiYellow": "#ffc799",
+      "terminal.ansiBrightBlack": "#505050",
+      "terminal.ansiBrightBlue": "#75beff",
+      "terminal.ansiBrightCyan": "#99ffe4",
+      "terminal.ansiBrightGreen": "#99ffe4",
+      "terminal.ansiBrightMagenta": "#ffcfa8",
+      "terminal.ansiBrightRed": "#ff8080",
+      "terminal.ansiBrightWhite": "#fff",
+      "terminal.ansiBrightYellow": "#ffcfa8"
     }
   },
   "workbench.editor.editorActionsLocation": "hidden",
