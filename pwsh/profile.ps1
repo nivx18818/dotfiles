@@ -5,21 +5,21 @@ if (Test-Path $envFile) {
     Write-Warning "Env file not found: $envFile"
 }
 
-Import-Module Terminal-Icons
+# Lazy-load Terminal-Icons
+function global:Get-ChildItem {
+    Remove-Item Function:\Get-ChildItem -ErrorAction SilentlyContinue
 
-if ($Theme -eq "catppuccin") {
-    oh-my-posh init pwsh --config "$Env:DOTFILES\pwsh\poimandres.omp.json" | Invoke-Expression
-} elseif ($Theme -eq "monochrome") {
-    oh-my-posh init pwsh --config "$Env:DOTFILES\pwsh\vesper.omp.json" | Invoke-Expression
+    if (-not (Get-Module Terminal-Icons)) {
+        Import-Module Terminal-Icons
+    }
+
+    Microsoft.PowerShell.Management\Get-ChildItem @args
 }
+
+. $Env:DOTFILES\oh-my-posh\omp-init.ps1
 
 Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
-
-if ($Theme -eq "catppuccin") {
-    Set-PSReadLineOption -Colors @{ InlinePrediction  = "#767c9d" }
-} elseif ($Theme -eq "monochrome") {
-    Set-PSReadLineOption -Colors @{ InlinePrediction  = "#a0a0a0" }
-}
+Set-PSReadLineOption -Colors @{ InlinePrediction = $InlinePrediction }
 
 # Keybindings
 if ($Env:TERM_PROGRAM -ne "vscode") {
@@ -27,6 +27,10 @@ if ($Env:TERM_PROGRAM -ne "vscode") {
     Set-PSReadLineKeyHandler -Key "Ctrl+w" -Function ForwardWord
     Set-PSReadLineKeyHandler -Key 'Ctrl+p' -Function HistorySearchBackward
     Set-PSReadLineKeyHandler -Key 'Ctrl+n' -Function HistorySearchForward
+}
+
+function omp-init {
+    oh-my-posh init pwsh --config "$Env:DOTFILES\oh-my-posh\$OmpTheme.omp.json" > $Env:DOTFILES\oh-my-posh\omp-init.ps1
 }
 
 # Better git clone

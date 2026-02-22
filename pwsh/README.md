@@ -34,6 +34,14 @@
 
 - Restart your PowerShell session to apply the changes.
 
+- Run `omp-init` to initialize the Oh My Posh theme:
+
+  ```powershell
+  omp-init
+  ```
+
+- Restart your PowerShell session again to see the new theme in action.
+
 ## Modules
 
 - [Terminal-Icons](https://github.com/devblackops/Terminal-Icons) — PowerShell module to display file icons in the terminal.
