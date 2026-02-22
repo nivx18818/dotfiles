@@ -12,7 +12,7 @@
     margin: 0;
     padding: 0;
     border: none;
-    background-color: var(--background);
+    background-color: transparent;
     color: var(--foreground);
     font-family: "JetBrainsMono NFP";
     font-size: 12px;
@@ -26,6 +26,7 @@
 /* Bar */
 .yasb-bar {
     padding-right: 4px;
+    background-color: var(--background);
 }
 
 /* Widget Group */
@@ -38,6 +39,10 @@
 }
 
 /* Context menu */
+.context-menu {
+    background-color: var(--background);
+}
+
 .context-menu,
 .context-menu .menu-checkbox {
     padding: 4px 0;
@@ -103,8 +108,8 @@
 
 /* Home */
 .home-menu {
-    background-color: var(--background);
     margin-left: 6px;
+    background-color: var(--background);
 }
 
 .home-menu .menu-item {
@@ -124,6 +129,12 @@
 .komorebi-workspaces .ws-btn.active {
     margin-top: 2px;
     border-bottom: var(--active-border);
+}
+
+/* Komorebi Active Layout */
+
+.komorebi-layout-menu {
+    background-color: var(--background);
 }
 
 .komorebi-layout-menu .menu-item {
@@ -176,6 +187,10 @@
 
 /* Taskbar preview popup is very limited in styling options, do not use margins/paddings here */
 
+.taskbar-preview {
+    background-color: var(--background);
+}
+
 .taskbar-preview.flashing {
     background-color: #ffc799;
 }
@@ -194,6 +209,10 @@
 }
 
 /* Clock */
+.calendar {
+    background-color: var(--background);
+}
+
 .calendar .calendar-table::item {
     color: var(--foreground-secondary);
 }
@@ -219,9 +238,8 @@
     font-weight: 700;
 }
 
-.calendar .holiday-label {
-    color: var(--foreground-secondary);
-    font-size: 12px;
+.calendar .day-label {
+    margin-top: 20px;
 }
 
 .calendar .month-label {
@@ -233,6 +251,11 @@
     margin-top: -4px;
     font-size: 64px;
     font-weight: 900;
+}
+
+.calendar .holiday-label {
+    color: var(--foreground-secondary);
+    font-size: 12px;
 }
 
 /* Systray */
@@ -255,6 +278,7 @@
 .media-menu {
     min-width: 420px;
     max-width: 420px;
+    background-color: var(--background);
 }
 
 .media-menu .thumbnail {
@@ -334,17 +358,14 @@
 }
 
 /* Power Menu */
-.power-menu-overlay,
 .power-menu-popup,
-.power-menu-popup .buttons {
+.power-menu-popup .buttons,
+.power-menu-overlay {
     background-color: #00000026;
 }
 
-.power-menu-overlay .uptime,
-.power-menu-popup .button .label,
-.power-menu-popup .button .icon,
 .power-menu-popup .button.hover {
-    background-color: transparent;
+    background-color: #ffffff26;
 }
 
 .power-menu-overlay .uptime {
@@ -356,6 +377,7 @@
 .power-menu-popup .button {
     width: 160px;
     height: 240px;
+    background-color: var(--background);
 }
 
 .power-menu-popup .button .label {
