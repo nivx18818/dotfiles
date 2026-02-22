@@ -1,7 +1,7 @@
 :root {
     --background: #101010;
+    --background-hover: #ececec25;
     --foreground: #ececec;
-    --hover: #ececec25;
     --foreground-secondary: #a0a0a0;
     --foreground-destructive: #ff8080;
     --icon-size: 14px;
@@ -58,7 +58,7 @@
 
 .context-menu::item:selected,
 .context-menu .menu-checkbox:hover {
-    background-color: var(--hover);
+    background-color: var(--background-hover);
 }
 
 .context-menu::separator {
@@ -113,7 +113,7 @@
 }
 
 .home-menu .menu-item:hover {
-    background-color: var(--hover);
+    background-color: var(--background-hover);
 }
 
 /* Komorebi Workspaces */
@@ -140,7 +140,7 @@
 }
 
 .komorebi-layout-menu .menu-item:hover {
-    background-color: var(--hover);
+    background-color: var(--background-hover);
 }
 
 /* Taskbar */
@@ -199,7 +199,7 @@
 }
 
 .calendar .calendar-table::item:hover {
-    background-color: var(--hover);
+    background-color: var(--background-hover);
     color: var(--foreground);
 }
 
@@ -322,7 +322,7 @@
 
 .media-menu .progress-slider {
     height: 4px;
-    background-color: var(--hover);
+    background-color: var(--background-hover);
 }
 
 .media-menu .progress-slider::groove {
