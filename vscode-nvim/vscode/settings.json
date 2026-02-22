@@ -423,6 +423,12 @@
           "command": "git.viewHistory"
         },
         {
+          "key": "h",
+          "name": "View file history",
+          "type": "command",
+          "command": "git.viewFileHistory"
+        },
+        {
           "key": "b",
           "name": "Git blame",
           "type": "command",
