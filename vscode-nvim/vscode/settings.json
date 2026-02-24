@@ -628,9 +628,44 @@
         },
         {
           "key": "r",
-          "name": "Redraw",
-          "type": "command",
-          "command": "vscode-neovim.restart"
+          "name": "+reset",
+          "type": "bindings",
+          "bindings": [
+            {
+              "key": "r",
+              "name": "Redraw",
+              "type": "command",
+              "command": "vscode-neovim.restart"
+            },
+            {
+              "key": "b",
+              "name": "Reset sidebar size",
+              "type": "command",
+              "command": "mc.resetSidebarSize"
+            },
+            {
+              "key": "a",
+              "name": "Reset auxiliarybar size",
+              "type": "command",
+              "command": "mc.resetAuxiliarybarSize"
+            },
+            {
+              "key": "p",
+              "name": "Reset panel size",
+              "type": "command",
+              "command": "mc.resetPanelSize"
+            },
+            {
+              "key": "l",
+              "name": "Reset layout size",
+              "type": "commands",
+              "commands": [
+                "mc.resetSidebarSize",
+                "mc.resetAuxiliarybarSize",
+                "mc.resetPanelSize"
+              ]
+            }
+          ]
         }
       ]
     },
@@ -680,6 +715,37 @@
       "name": "Search keybindings",
       "type": "command",
       "command": "whichkey.searchBindings"
+    }
+  ],
+
+  // Multi Command
+  "multiCommand.commands": [
+    {
+      "command": "mc.resetSidebarSize",
+      "sequence": [
+        "workbench.action.focusSideBar",
+        { "command": "workbench.action.decreaseViewSize", "repeat": 10 },
+        { "command": "workbench.action.increaseViewSize", "repeat": 2 },
+        "workbench.action.focusActiveEditorGroup"
+      ]
+    },
+    {
+      "command": "mc.resetAuxiliarybarSize",
+      "sequence": [
+        "workbench.action.focusAuxiliaryBar",
+        { "command": "workbench.action.decreaseViewSize", "repeat": 10 },
+        { "command": "workbench.action.increaseViewSize", "repeat": 7 },
+        "workbench.action.focusActiveEditorGroup"
+      ]
+    },
+    {
+      "command": "mc.resetPanelSize",
+      "sequence": [
+        "workbench.action.focusPanel",
+        { "command": "workbench.action.decreaseViewSize", "repeat": 10 },
+        { "command": "workbench.action.increaseViewSize", "repeat": 6 },
+        "workbench.action.focusActiveEditorGroup"
+      ]
     }
   ]
 }
