@@ -13,7 +13,6 @@ alt + m                 : komorebic toggle-shortcuts
 # alt + b                 : if ($wshell.AppActivate('Chrome') -eq $False) { start chrome }
 # alt + return            : wezterm-gui --config-file "D:/code/dotfiles/wezterm/wezterm.lua"
 alt + return            : start wt
-alt + shift + return    : Start-Process wt -Verb runAs
 alt + b                 : start brave --new-window
 alt + shift + b         : start brave --incognito
 
