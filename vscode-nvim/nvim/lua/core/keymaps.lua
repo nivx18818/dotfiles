@@ -5,7 +5,7 @@ local vscode = require("vscode")
 -- Fix folds were automatically opening when navigating with j, k
 map("n", "j", function()
   if vim.v.count == 0 then
-    vscode.call("cursorDown")
+    vscode.action("cursorDown")
   else
     return "j"
   end
@@ -13,7 +13,7 @@ end, { expr = true })
 
 map("n", "k", function()
   if vim.v.count == 0 then
-    vscode.call("cursorUp")
+    vscode.action("cursorUp")
   else
     return "k"
   end
