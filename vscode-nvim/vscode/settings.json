@@ -262,6 +262,12 @@
           "name": "New File",
           "type": "command",
           "command": "workbench.action.files.newUntitledFile"
+        },
+        {
+          "key": "i",
+          "name": "Change indentation",
+          "type": "command",
+          "command": "editor.action.changeTabDisplaySize"
         }
       ]
     },
@@ -395,19 +401,6 @@
           "name": "Move buffer (editor) into right tab (group)",
           "type": "command",
           "command": "workbench.action.moveEditorToRightGroup"
-        }
-      ]
-    },
-    {
-      "key": "i",
-      "name": "+indentation",
-      "type": "bindings",
-      "bindings": [
-        {
-          "key": "c",
-          "name": "Change tab size",
-          "type": "command",
-          "command": "editor.action.changeTabDisplaySize"
         }
       ]
     },
