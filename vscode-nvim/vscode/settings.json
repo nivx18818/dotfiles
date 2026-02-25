@@ -211,22 +211,10 @@
       "command": "workbench.action.quickOpen"
     },
     {
-      "key": "p",
-      "name": "Command palette",
-      "type": "command",
-      "command": "workbench.action.showCommands"
-    },
-    {
       "key": "e",
       "name": "Explorer",
       "type": "command",
       "command": "workbench.view.explorer"
-    },
-    {
-      "key": "t",
-      "name": "Terminal",
-      "type": "command",
-      "command": "workbench.action.terminal.toggleTerminal"
     },
     {
       "key": "f",
@@ -405,10 +393,47 @@
       ]
     },
     {
-      "key": "c",
-      "name": "+code/chat",
+      "key": "t",
+      "name": "+terminal",
       "type": "bindings",
       "bindings": [
+        {
+          "key": "t",
+          "name": "Terminal",
+          "type": "command",
+          "command": "workbench.action.terminal.toggleTerminal"
+        },
+        {
+          "key": "o",
+          "name": "Output",
+          "type": "command",
+          "command": "workbench.action.output.toggleOutput"
+        },
+        {
+          "key": "d",
+          "name": "Debug console",
+          "type": "command",
+          "command": "workbench.debug.action.toggleRepl"
+        },
+        {
+          "key": "p",
+          "name": "Problems",
+          "type": "command",
+          "command": "workbench.actions.view.problems"
+        }
+      ]
+    },
+    {
+      "key": "c",
+      "name": "+code/chat/command",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "p",
+          "name": "Command palette",
+          "type": "command",
+          "command": "workbench.action.showCommands"
+        },
         {
           "key": "c",
           "name": "Open chat",
