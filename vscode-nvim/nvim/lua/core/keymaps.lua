@@ -68,3 +68,44 @@ map("n", "Y", "^yg_");
 -- Better indenting
 map("v", "<", "<gv")
 map("v", ">", ">gv")
+
+-- Fold
+map("n", "zc", function()
+  vscode.action("editor.fold")
+end, { desc = "Close fold"})
+
+map("n", "zo", function()
+  vscode.action("editor.unfold")
+end, { desc = "Open fold"})
+
+map("n", "za", function()
+  vscode.action("editor.toggleFold")
+end, { desc = "Toggle fold"})
+
+map("n", "zC", function()
+  vscode.action("editor.foldRecursively")
+end, { desc = "Close recursively"})
+
+map("n", "zO", function()
+  vscode.action("editor.unfoldRecursively")
+end, { desc = "Open recursively"})
+
+map("n", "zm", function()
+  vscode.action("editor.foldAll")
+end, { desc = "Close all"})
+
+map("n", "zr", function()
+  vscode.action("editor.openAll")
+end, { desc = "Open all"})
+
+map("n", "zb", function()
+  vscode.action("editor.foldAllBlockComments")
+end, { desc = "Close all block comments"})
+
+map("n", "zg", function()
+  vscode.action("editor.foldAllMarkerRegions")
+end, { desc = "Close all regions"})
+
+map("n", "zG", function()
+  vscode.action("editor.unfoldAllMarkerRegions")
+end, { desc = "Open all regions"})
