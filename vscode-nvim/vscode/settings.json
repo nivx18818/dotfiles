@@ -447,6 +447,12 @@
           "command": "editor.action.quickFix"
         },
         {
+          "key": "i",
+          "name": "Organize imports",
+          "type": "command",
+          "command": "editor.action.organizeImports"
+        },
+        {
           "key": "f",
           "name": "Format",
           "type": "command",
@@ -584,21 +590,9 @@
     },
     {
       "key": "x",
-      "name": "+diagnostics/transform",
+      "name": "+text",
       "type": "bindings",
       "bindings": [
-        {
-          "key": "q",
-          "name": "Quickfix list",
-          "type": "command",
-          "command": "workbench.actions.view.problems"
-        },
-        {
-          "key": "x",
-          "name": "Toggle problems panel",
-          "type": "command",
-          "command": "workbench.actions.view.toggleProblems"
-        },
         {
           "key": "c",
           "name": "Transform to camelCase",
