@@ -327,13 +327,13 @@
           "command": "workbench.action.reloadWindow"
         },
         {
-          "key": "-",
+          "key": "h",
           "name": "Split window below",
           "type": "command",
           "command": "workbench.action.splitEditorDown"
         },
         {
-          "key": "|",
+          "key": "v",
           "name": "Split window right",
           "type": "command",
           "command": "workbench.action.splitEditorRight"
@@ -358,6 +358,12 @@
           "command": "workbench.action.closeOtherEditors"
         },
         {
+          "key": "u",
+          "name": "Reopen closed buffer (editor)",
+          "type": "command",
+          "command": "workbench.action.reopenClosedEditor"
+        },
+        {
           "key": "b",
           "name": "Switch to other buffer (editor)",
           "type": "commands",
@@ -365,6 +371,43 @@
             "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
             "list.select"
           ]
+        },
+        {
+          "key": "h",
+          "name": "Move buffer (editor) into left tab (group)",
+          "type": "command",
+          "command": "workbench.action.moveEditorToLeftGroup"
+        },
+        {
+          "key": "j",
+          "name": "Move buffer (editor) into below tab (group)",
+          "type": "command",
+          "command": "workbench.action.moveEditorToBelowGroup"
+        },
+        {
+          "key": "k",
+          "name": "Move buffer (editor) into above tab (group)",
+          "type": "command",
+          "command": "workbench.action.moveEditorToAboveGroup"
+        },
+        {
+          "key": "l",
+          "name": "Move buffer (editor) into right tab (group)",
+          "type": "command",
+          "command": "workbench.action.moveEditorToRightGroup"
+        }
+      ]
+    },
+    {
+      "key": "i",
+      "name": "+indentation",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "c",
+          "name": "Change tab size",
+          "type": "command",
+          "command": "editor.action.changeTabDisplaySize"
         }
       ]
     },
@@ -585,28 +628,34 @@
       "type": "bindings",
       "bindings": [
         {
-          "key": "b",
-          "name": "Toggle sidebar",
-          "type": "command",
-          "command": "workbench.action.toggleSidebarVisibility"
-        },
-        {
-          "key": "a",
+          "key": "h",
           "name": "Toggle auxiliary bar",
           "type": "command",
           "command": "workbench.action.toggleAuxiliaryBar"
         },
         {
-          "key": "t",
+          "key": "j",
           "name": "Toggle status bar",
           "type": "command",
           "command": "workbench.action.toggleStatusbarVisibility"
         },
         {
-          "key": "c",
+          "key": "l",
+          "name": "Toggle sidebar",
+          "type": "command",
+          "command": "workbench.action.toggleSidebarVisibility"
+        },
+        {
+          "key": ";",
           "name": "Toggle activity bar",
           "type": "command",
           "command": "workbench.action.toggleActivityBarVisibility"
+        },
+        {
+          "key": "t",
+          "name": "Themes",
+          "type": "command",
+          "command": "workbench.action.selectTheme"
         },
         {
           "key": "z",
@@ -638,25 +687,25 @@
               "command": "vscode-neovim.restart"
             },
             {
-              "key": "b",
-              "name": "Reset sidebar size",
-              "type": "command",
-              "command": "mc.resetSidebarSize"
-            },
-            {
-              "key": "a",
+              "key": "h",
               "name": "Reset auxiliarybar size",
               "type": "command",
               "command": "mc.resetAuxiliarybarSize"
             },
             {
-              "key": "p",
+              "key": "j",
               "name": "Reset panel size",
               "type": "command",
               "command": "mc.resetPanelSize"
             },
             {
               "key": "l",
+              "name": "Reset sidebar size",
+              "type": "command",
+              "command": "mc.resetSidebarSize"
+            },
+            {
+              "key": "a",
               "name": "Reset layout size",
               "type": "commands",
               "commands": [
