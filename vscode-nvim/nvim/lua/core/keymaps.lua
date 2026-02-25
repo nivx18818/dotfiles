@@ -1,4 +1,23 @@
 local map = vim.keymap.set
+local vscode = require("vscode")
+
+-- Better up and down
+-- Fix folds were automatically opening when navigating with j, k
+map("n", "j", function()
+  if vim.v.count == 0 then
+    vscode.call("cursorDown")
+  else
+    return "j"
+  end
+end, { expr = true })
+
+map("n", "k", function()
+  if vim.v.count == 0 then
+    vscode.call("cursorUp")
+  else
+    return "k"
+  end
+end, { expr = true })
 
 -- Better mark navigation
 map({ "n", "x", "o" }, "gm", function()
