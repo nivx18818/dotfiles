@@ -185,7 +185,7 @@ widgets:
     options:
       label: "{title}{s}{artist}"
       label_alt: "{artist}"
-      separator: " ⯌ "
+      separator: " • "
       callbacks:
         on_left: "toggle_media_menu"
         on_middle: "do_nothing"
@@ -228,7 +228,7 @@ widgets:
         enabled: true
         update_interval_ms: 33
         style: "left"
-        separator: " | "
+        separator: " ✦ "
   clock:
     type: "yasb.clock.ClockWidget"
     options:
