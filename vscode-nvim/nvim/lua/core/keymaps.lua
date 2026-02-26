@@ -69,43 +69,28 @@ map("n", "Y", "^yg_");
 map("v", "<", "<gv")
 map("v", ">", ">gv")
 
--- Fold
-map("n", "zc", function()
-  vscode.action("editor.fold")
-end, { desc = "Close fold"})
+-- Helper for fold‑related mappings
+-- Allow repeating with `.`
+local function fold(lhs, vscode_cmd, desc)
+  map("n", lhs, function()
+    local op = vscode.to_op(function(ctx)
+      vscode.action(vscode_cmd, { range = ctx.range })
+    end)
+    return op() .. "_"
+  end, { expr = true, desc = desc })
+end
 
-map("n", "zo", function()
-  vscode.action("editor.unfold")
-end, { desc = "Open fold"})
+-- Fold mappings
+fold("zc", "editor.fold", "Close fold")
+fold("zo", "editor.unfold", "Open fold")
+fold("za", "editor.toggleFold", "Toggle fold")
 
-map("n", "za", function()
-  vscode.action("editor.toggleFold")
-end, { desc = "Toggle fold"})
+fold("zC", "editor.foldRecursively", "Close recursively")
+fold("zO", "editor.unfoldRecursively", "Open recursively")
 
-map("n", "zC", function()
-  vscode.action("editor.foldRecursively")
-end, { desc = "Close recursively"})
+fold("zm", "editor.foldAll", "Close all")
+fold("zr", "editor.openAll", "Open all")
 
-map("n", "zO", function()
-  vscode.action("editor.unfoldRecursively")
-end, { desc = "Open recursively"})
-
-map("n", "zm", function()
-  vscode.action("editor.foldAll")
-end, { desc = "Close all"})
-
-map("n", "zr", function()
-  vscode.action("editor.openAll")
-end, { desc = "Open all"})
-
-map("n", "zb", function()
-  vscode.action("editor.foldAllBlockComments")
-end, { desc = "Close all block comments"})
-
-map("n", "zg", function()
-  vscode.action("editor.foldAllMarkerRegions")
-end, { desc = "Close all regions"})
-
-map("n", "zG", function()
-  vscode.action("editor.unfoldAllMarkerRegions")
-end, { desc = "Open all regions"})
+fold("zb", "editor.foldAllBlockComments", "Close all block comments")
+fold("zg", "editor.foldAllMarkerRegions", "Close all regions")
+fold("zG", "editor.unfoldAllMarkerRegions", "Open all regions")
