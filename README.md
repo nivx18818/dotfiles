@@ -28,7 +28,7 @@ This repository contains my personal dotfiles and editor configuration. It's int
 
 **Productivity:**
 
-- [AltSnap](https://github.com/RamonUnch/AltSnap) - easily drag windows when pressing the alt key.
+- [AltSnap](https://github.com/RamonUnch/AltSnap) - a tool for dragging windows with the alt key.
 - [EarTrumpet](https://github.com/File-New-Project/EarTrumpet) - a Windows volume control panel.
 - [gsudo](https://github.com/gerardog/gsudo) - a sudo for Windows.
 - [kanata](https://github.com/jtroo/kanata) - a cross-platform keyboard remapper.
