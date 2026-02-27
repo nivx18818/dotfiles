@@ -9,8 +9,8 @@ This repository contains my personal dotfiles and editor configuration. It's int
 - [`neovim`](https://github.com/neovim/neovim) — text editor configuration.
 - [`oh-my-posh`](https://github.com/JanDeDobbeleer/oh-my-posh) — PowerShell theme configuration.
 - [`powershell`](https://github.com/PowerShell/PowerShell) — PowerShell configuration.
-- [`raycast`](https://www.raycast.com) — Multi-platform application launcher and productivity tool configuration.
-- [`vscode-neovim`](https://github.com/vscode-neovim/vscode-neovim) — Visual Studio Code extension configuration to use Neovim as the editor backend.
+- [`raycast`](https://www.raycast.com) — multi-platform application launcher and productivity tool configuration.
+- `vscode-nvim` — configuration for Visual Studio Code and a dedicated Neovim setup used exclusively within VS Code, powered by the [`vscode-neovim`](https://github.com/vscode-neovim/vscode-neovim) extension.
 - [`wezterm`](https://github.com/wezterm/wezterm) — terminal emulator configuration.
 - [`windhawk`](https://github.com/windhawk/windhawk) — Windows customization tool configuration.
 - [`windows-terminal`](https://github.com/microsoft/terminal) — Windows Terminal configuration.
