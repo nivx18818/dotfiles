@@ -594,43 +594,69 @@
       "type": "bindings",
       "bindings": [
         {
-          "key": "c",
-          "name": "Transform to camelCase",
-          "type": "command",
-          "command": "editor.action.transformToCamelcase"
-        },
-        {
-          "key": "k",
-          "name": "Transform to kebab-case",
-          "type": "command",
-          "command": "editor.action.transformToKebabcase"
-        },
-        {
-          "key": "P",
-          "name": "Transform to PascalCase",
-          "type": "command",
-          "command": "editor.action.transformToPascalcase"
-        },
-        {
           "key": "s",
-          "name": "Transform to snake_case",
-          "type": "command",
-          "command": "editor.action.transformToSnakecase"
-        },
-        {
-          "key": "S",
-          "name": "Transform to UPPER_SNAKE_CASE",
-          "type": "commands",
-          "commands": [
-            "editor.action.transformToSnakecase",
-            "editor.action.transformToUppercase"
+          "name": "+sort",
+          "type": "bindings",
+          "bindings": [
+            {
+              "key": "a",
+              "name": "Sort lines ascending",
+              "type": "command",
+              "command": "editor.action.sortLinesAscending"
+            },
+            {
+              "key": "d",
+              "name": "Sort lines descending",
+              "type": "command",
+              "command": "editor.action.sortLinesDescending"
+            }
           ]
         },
         {
-          "key": "T",
-          "name": "Transform to Title Case",
-          "type": "command",
-          "command": "editor.action.transformToTitlecase"
+          "key": "t",
+          "name": "+transform",
+          "type": "bindings",
+          "bindings": [
+            {
+              "key": "c",
+              "name": "Transform to camelCase",
+              "type": "command",
+              "command": "editor.action.transformToCamelcase"
+            },
+            {
+              "key": "k",
+              "name": "Transform to kebab-case",
+              "type": "command",
+              "command": "editor.action.transformToKebabcase"
+            },
+            {
+              "key": "P",
+              "name": "Transform to PascalCase",
+              "type": "command",
+              "command": "editor.action.transformToPascalcase"
+            },
+            {
+              "key": "s",
+              "name": "Transform to snake_case",
+              "type": "command",
+              "command": "editor.action.transformToSnakecase"
+            },
+            {
+              "key": "S",
+              "name": "Transform to UPPER_SNAKE_CASE",
+              "type": "commands",
+              "commands": [
+                "editor.action.transformToSnakecase",
+                "editor.action.transformToUppercase"
+              ]
+            },
+            {
+              "key": "T",
+              "name": "Transform to Title Case",
+              "type": "command",
+              "command": "editor.action.transformToTitlecase"
+            }
+          ]
         }
       ]
     },
