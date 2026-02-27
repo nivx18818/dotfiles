@@ -18,7 +18,7 @@ This repository contains my personal dotfiles and editor configuration. It's int
 
 ## Notes
 
-This repository contains configuration files and per-tool setups. For installation, usage, and update instructions, please refer to the README or documentation inside each respective folder (for example, check `nvim/` for Neovim-specific guidance).
+This repository contains configuration files and per-tool setups. For installation, usage, and update instructions, please refer to the README or documentation inside each respective folder (for example, check `komorebi/` for komorebi-specific guidance).
 
 If you want to customize or reuse parts of this repo, browse the folder(s) you're interested in and follow the instructions there.
 
