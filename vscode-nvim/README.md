@@ -5,7 +5,6 @@ This setup allows you to use Neovim as the backend for VSCode's editing capabili
 ## Prerequisites
 
 - Install [Neovim](https://neovim.io/).
-
   - Winget
 
     ```powershell
@@ -65,7 +64,6 @@ This setup allows you to use Neovim as the backend for VSCode's editing capabili
 #### Neovim Path
 
 - Configure the **VSCode Neovim** extension to point to your Neovim installation by setting the `neovim.neovimExecutablePaths.windows` option.
-
   - Open VSCode settings (`Ctrl+,`), search for `neovim executable`, and set the path to your Neovim installation, typically:
 
     ```powershell
@@ -79,7 +77,6 @@ This setup allows you to use Neovim as the backend for VSCode's editing capabili
 #### `settings.json` & `keybindings.json`
 
 - Add this folder's `vscode/settings.json` and `vscode/keybindings.json` files to your VSCode configuration.
-
   - Open the Command Palette (`Ctrl+Shift+P`), type `Preferences: Open Settings (JSON)`, and press `Enter`.
   - Copy the contents of `vscode/settings.json` into your VSCode `settings.json`.
   - Similarly, open the Command Palette, type `Preferences: Open Keyboard Shortcuts (JSON)`, and press `Enter`.
