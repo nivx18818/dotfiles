@@ -60,9 +60,10 @@ scoop update komorebi whkd
 
   ```powershell
   $Env:DOTFILES = "path\to\this\repository"
-  ```
-
-  ```powershell
   $Env:KOMOREBI_CONFIG_HOME="$Env:DOTFILES\komorebi"
   $Env:WHKD_CONFIG_HOME="$Env:DOTFILES\komorebi\whkd"
   ```
+
+## Documentation
+
+See the full [documentation](https://lgug2z.github.io/komorebi).

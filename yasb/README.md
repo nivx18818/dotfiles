@@ -41,8 +41,9 @@ scoop install yasb
 
   ```powershell
   $Env:DOTFILES = "path\to\this\repository"
-  ```
-
-  ```powershell
   $Env:YASB_CONFIG_HOME="$Env:DOTFILES\yasb"
   ```
+
+## Documentation
+
+See the full [documentation](https://docs.yasb.dev/latest).
