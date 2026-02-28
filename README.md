@@ -2,10 +2,21 @@
 
 This repository contains my personal dotfiles and editor configuration. It's intended to be a reference and a drop-in configuration for a fast, ergonomic Neovim development setup and a few other tools.
 
+## Prerequisites
+
+- Allow the execution of PowerShell scripts if you haven't already done so:
+
+  ```powershell
+  Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+  ```
+
+- Restart your PowerShell session to apply the changes.
+
 ## What’s in this repo
 
 - [`kanata`](https://github.com/jtroo/kanata/) — keyboard remapper configuration.
 - [`komorebi`](https://github.com/LGUG2Z/komorebi) — tiling window manager for Windows configuration.
+- [`nilesoft-shell`](https://github.com/moudey/Shell) — Windows File Explorer context menu manager configuration.
 - [`neovim`](https://github.com/neovim/neovim) — text editor configuration.
 - [`oh-my-posh`](https://github.com/JanDeDobbeleer/oh-my-posh) — PowerShell theme configuration.
 - [`powershell`](https://github.com/PowerShell/PowerShell) — PowerShell configuration.

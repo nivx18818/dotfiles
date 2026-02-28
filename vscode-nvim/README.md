@@ -50,16 +50,15 @@ This setup allows you to use Neovim as the backend for VSCode's editing capabili
 - Create a symbolic link from this repository's `nvim` folder to your Neovim configuration directory:
 
   ```powershell
-  New-Item -ItemType SymbolicLink -Path "$Env:XDG_CONFIG_HOME\nvim" -Target "<path-to-this-repository>\vscode-nvim\nvim"
+  $Env:DOTFILES = "path\to\this\repository"
   ```
-
-- Allow the execution of PowerShell scripts if you haven't already done so:
 
   ```powershell
-  Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+  # Remove the existing Neovim configuration directory if it exists
+  Remove-Item "$Env:XDG_CONFIG_HOME\nvim" -Recurse -Force -ErrorAction Ignore
+  # Create a symbolic link to the nvim configuration in this repository
+  New-Item -ItemType SymbolicLink -Path "$Env:XDG_CONFIG_HOME\nvim" -Target "$Env:DOTFILES\vscode-nvim\nvim"
   ```
-
-- Restart your PowerShell session to apply the changes.
 
 ### VSCode
 
@@ -73,7 +72,9 @@ This setup allows you to use Neovim as the backend for VSCode's editing capabili
     C:\Program Files\Neovim\bin\nvim.exe
     ```
 
-  > Note: You can leave it blank if Neovim is already in your system's `PATH`.
+  > [!NOTE]
+  >
+  > You can leave it blank if Neovim is already in your system's `PATH`.
 
 #### `settings.json` & `keybindings.json`
 

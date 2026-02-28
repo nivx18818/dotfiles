@@ -59,21 +59,10 @@ scoop update komorebi whkd
 - Open the profile file with your favorite text editor and add the following lines at the end of the file:
 
   ```powershell
-  $Env:KOMOREBI_CONFIG_HOME="<path-to-this-repository>\komorebi"
-  $Env:WHKD_CONFIG_HOME="<path-to-this-repository>\komorebi\whkd"
+  $Env:DOTFILES = "path\to\this\repository"
   ```
-
-  For example:
 
   ```powershell
-  $Env:KOMOREBI_CONFIG_HOME="D:\code\dotfiles\komorebi"
-  $Env:WHKD_CONFIG_HOME="D:\code\dotfiles\komorebi\whkd"
+  $Env:KOMOREBI_CONFIG_HOME="$Env:DOTFILES\komorebi"
+  $Env:WHKD_CONFIG_HOME="$Env:DOTFILES\komorebi\whkd"
   ```
-
-- Allow the execution of PowerShell scripts if you haven't already done so:
-
-  ```powershell
-  Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-  ```
-
-- Restart your PowerShell session to apply the changes.
