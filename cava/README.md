@@ -33,7 +33,14 @@ Or from [GitHub Releases](https://github.com/karlstav/cava/releases).
 - Create a symbolic link from this repository's `nvim` folder to your Neovim configuration directory:
 
   ```powershell
-  New-Item -ItemType SymbolicLink -Path "$Env:XDG_CONFIG_HOME\cava" -Target "<path-to-this-repository>\cava"
+  $Env:DOTFILES = "path\to\this\repository"
+  ```
+
+  ```powershell
+  # Remove the existing Cava configuration directory if it exists
+  Remove-Item "$Env:XDG_CONFIG_HOME\cava" -Recurse -Force -ErrorAction Ignore
+  # Create a symbolic link to the cava configuration in this repository
+  New-Item -ItemType SymbolicLink -Path "$Env:XDG_CONFIG_HOME\cava" -Target "$Env:DOTFILES\cava"
   ```
 
 - Allow the execution of PowerShell scripts if you haven't already done so:
