@@ -1,6 +1,7 @@
 {
   "files.associations": {
-    "*.css": "css"
+    "*.css": "css",
+    "*.nss": "c"
   },
   "json.schemaDownload.trustedDomains": {
     "https://schemastore.azurewebsites.net/": true,
