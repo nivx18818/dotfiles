@@ -5,8 +5,8 @@ menu(
 	sep='top'
 	image=icon.run_with_powershell
 ) {
-	$tip_run_admin=["\xE1A7 Press SHIFT key to run " + this.title + " as administrator", tip.warning, 1.0]
-	$has_admin=key.shift() or key.rbutton()
+	$tip_run_admin = ["\xE1A7 Press SHIFT key to run " + this.title + " as administrator", tip.warning, 1.0]
+	$has_admin = key.shift() || key.rbutton()
 
 	item(
 		title=title.command_prompt
