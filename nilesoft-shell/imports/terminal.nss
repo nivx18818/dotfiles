@@ -1,6 +1,6 @@
 menu(
 	type='*'
-	where=(sel.count || wnd.is_taskbar || wnd.is_edit)
+	where=(sel.count || wnd.is_edit)
 	title=title.terminal
 	sep='top'
 	image=icon.run_with_powershell

@@ -1,4 +1,4 @@
-menu(type='*' where=window.is_taskbar||sel.count mode=mode.multiple title=title.go_to sep=sep.both image=\uE14A) {
+menu(type='*' where=sel.count mode=mode.multiple title=title.go_to sep=sep.both image=\uE14A) {
 	menu(title='Folder' image=\uE1F4) {
 		item(title='Windows' image=inherit cmd=sys.dir)
 		item(title='System' image=inherit cmd=sys.bin)
