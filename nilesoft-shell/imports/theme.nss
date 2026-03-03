@@ -18,7 +18,7 @@
   item {
     opacity = 100
     radius = 0
-    prefix = 1
+    prefix = 0
 
     text {
       normal = foreground
