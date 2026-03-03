@@ -160,6 +160,8 @@
 
   "telemetry.telemetryLevel": "off",
 
+  "update.mode": "none",
+
   // Symbols
   "symbols.hidesExplorerArrows": true,
   "symbols.folders.associations": {
