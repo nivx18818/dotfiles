@@ -7,24 +7,7 @@ menu(
 ) {
 	$tip_run_admin = ["\xE1A7 Press SHIFT key to run " + this.title + " as administrator", tip.warning, 1.0]
 	$has_admin = key.shift() || key.rbutton()
-
-	item(
-		title=title.command_prompt
-		tip=tip_run_admin
-		admin=has_admin
-		image
-		cmd='cmd.exe'
-		args='/K TITLE Command Prompt &ver& PUSHD "@sel.dir"'
-	)
-
-	item(
-		title=title.windows_powershell
-		admin=has_admin
-		tip=tip_run_admin
-		image
-		cmd='powershell.exe'
-		args='-noexit -command Set-Location -Path "@sel.dir\."'
-	)
+	$wezterm_lnk = user.startmenu + '\Programs\Scoop Apps\WezTerm.lnk'
 
 	item(
 		where=package.exists("WindowsTerminal")
@@ -33,6 +16,14 @@ menu(
 		admin=has_admin
 		image='@package.path("WindowsTerminal")\WindowsTerminal.exe'
 		cmd='wt.exe'
+		arg='-d "@sel.path\."'
+	)
+
+	item(
+		where=path.isfile(wezterm_lnk)
+		title="Wezterm"
+		image=path.lnk(wezterm_lnk)
+		cmd='wezterm.exe'
 		arg='-d "@sel.path\."'
 	)
 }
