@@ -7,6 +7,9 @@ import 'imports/file-manage.nss'
 import 'imports/develop.nss'
 import 'imports/taskbar.nss'
 
+$tip_run_admin = ["\xE1A7 Press SHIFT key to run " + this.title + " as administrator", tip.warning, 1.0]
+$has_admin = key.shift() || key.rbutton()
+
 settings {
 	showdelay = 0
 
