@@ -710,12 +710,6 @@
           "command": "workbench.view.extensions"
         },
         {
-          "key": "s",
-          "name": "Open settings",
-          "type": "command",
-          "command": "workbench.action.openSettings"
-        },
-        {
           "key": "r",
           "name": "+reset",
           "type": "bindings",
