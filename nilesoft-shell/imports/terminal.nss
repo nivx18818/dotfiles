@@ -8,7 +8,7 @@ menu(
 	$wezterm_lnk = user.startmenu + '\Programs\Scoop Apps\WezTerm.lnk'
 
 	item(
-		where=package.exists("WindowsTerminal")
+		where=package.exists('WindowsTerminal')
 		title=title.Windows_Terminal
 		tip=tip_run_admin
 		admin=has_admin
@@ -19,7 +19,7 @@ menu(
 
 	item(
 		where=path.isfile(wezterm_lnk)
-		title="Wezterm"
+		title='Wezterm'
 		image=path.lnk(wezterm_lnk)
 		cmd='wezterm.exe'
 		arg='-d "@sel.path\."'

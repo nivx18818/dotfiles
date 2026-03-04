@@ -5,7 +5,7 @@
   $muted_foreground = #a0a0a0
   $transparent = #00000000
 
-  name = "modern"
+  name = 'modern'
   view = view.large
   dark = default
 
@@ -51,7 +51,7 @@
 
   font {
     size = 20
-    name = "JetBrainsMono NFP"
+    name = 'JetBrainsMono NFP'
     weight = 1
     italic = 0
   }

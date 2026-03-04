@@ -1,37 +1,43 @@
 ﻿menu(
-	where=(sel.count > 0)
+	mode=mode.multiple
 	type='file|dir|drive|namespace|back'
-	mode="multiple"
+	where=(sel.count > 0)
 	title='File manage'
 	image=\uE253
 ) {
-	menu(separator="after" title=title.copy_path image=icon.copy_path) {
-		item(where=sel.count > 1 title='Copy (@sel.count) items selected' cmd=command.copy(sel(false, "\n")))
-		item(mode="single" title=@sel.path tip=sel.path cmd=command.copy(sel.path))
-		item(mode="single" type='file' separator="before" find='.lnk' title='open file location')
+	menu(separator='after' title=title.copy_path image=icon.copy_path) {
+		item(where=(sel.count > 1) title='Copy (@sel.count) items selected' cmd=command.copy(sel(false, '\n')))
+		item(mode=mode.single title=@sel.path tip=sel.path cmd=command.copy(sel.path))
+		item(mode=mode.single type='file' separator='before' find='.lnk' title='open file location')
 		separator
-		item(mode="single" where=@sel.parent.len>3 title=sel.parent cmd=@command.copy(sel.parent))
+		item(mode=mode.single where=(@sel.parent.len > 3) title=sel.parent cmd=@command.copy(sel.parent))
 		separator
-		item(mode="single" type='file|dir|back.dir' title=sel.file.name cmd=command.copy(sel.file.name))
-		item(mode="single" type='file' where=sel.file.len != sel.file.title.len title=@sel.file.title cmd=command.copy(sel.file.title))
-		item(mode="single" type='file' where=sel.file.ext.len>0 title=sel.file.ext cmd=command.copy(sel.file.ext))
+		item(mode=mode.single type='file|dir|back.dir' title=sel.file.name cmd=command.copy(sel.file.name))
+		item(
+			mode=mode.single
+			type='file'
+			where=(sel.file.len != sel.file.title.len)
+			title=@sel.file.title
+			cmd=command.copy(sel.file.title)
+		)
+		item(mode=mode.single type='file' where=(sel.file.ext.len > 0) title=sel.file.ext cmd=command.copy(sel.file.ext))
 	}
 
 	item(
-		mode="single"
-		type="file"
-		title="Change extension"
+		mode=mode.single
+		type='file'
+		title='Change extension'
 		image=\uE0B5
 		cmd=if(
-			input("Change extension", "Type extension"),
-			io.rename(sel.path, path.join(sel.dir, sel.file.title + "." + input.result))
+			input('Change extension', 'Type extension'),
+			io.rename(sel.path, path.join(sel.dir, sel.file.title + '.' + input.result))
 		)
 	)
 
-	menu(separator="after" image=\uE290 title=title.select) {
-		item(title="All" image=icon.select_all cmd=command.select_all)
-		item(title="Invert" image=icon.invert_selection cmd=command.invert_selection)
-		item(title="None" image=icon.select_none cmd=command.select_none)
+	menu(separator='after' image=\uE290 title=title.select) {
+		item(title='All' image=icon.select_all cmd=command.select_all)
+		item(title='Invert' image=icon.invert_selection cmd=command.invert_selection)
+		item(title='None' image=icon.select_none cmd=command.select_none)
 	}
 
 	item(
@@ -45,12 +51,12 @@
 
 	separator
 
-	menu(title="Show/Hide" image=icon.show_hidden_files) {
-		item(title="System files" image=inherit cmd='@command.togglehidden')
-		item(title="File name extensions" image=icon.show_file_extensions cmd='@command.toggleext')
+	menu(title='Show/Hide' image=icon.show_hidden_files) {
+		item(title='System files' image=inherit cmd='@command.togglehidden')
+		item(title='File name extensions' image=icon.show_file_extensions cmd='@command.toggleext')
 	}
 
-	menu(type='file|dir|back.dir' mode="single" title='Attributes' image=icon.properties) {
+	menu(type='file|dir|back.dir' mode=mode.single title='Attributes' image=icon.properties) {
 		$atrr = io.attributes(sel.path)
 
 		item(
@@ -87,28 +93,28 @@
 
 		separator
 
-		item(title="Created" keys=io.dt.created(sel.path, 'y/m/d') cmd=io.dt.created(sel.path, 2000, 1, 1) vis=label)
-		item(title="Modified" keys=io.dt.modified(sel.path, 'y/m/d') cmd=io.dt.modified(sel.path, 2000, 1, 1) vis=label)
-		item(title="Accessed" keys=io.dt.accessed(sel.path, 'y/m/d') cmd=io.dt.accessed(sel.path, 2000, 1, 1) vis=label)
+		item(title='Created' keys=io.dt.created(sel.path, 'y/m/d') cmd=io.dt.created(sel.path, 2000, 1, 1) vis=label)
+		item(title='Modified' keys=io.dt.modified(sel.path, 'y/m/d') cmd=io.dt.modified(sel.path, 2000, 1, 1) vis=label)
+		item(title='Accessed' keys=io.dt.accessed(sel.path, 'y/m/d') cmd=io.dt.accessed(sel.path, 2000, 1, 1) vis=label)
 	}
 
-	menu(mode="single" type='file' find='.dll|.ocx' separator="before" title='Register Server' image=\uea86) {
-		item(title='Register' admin cmd='regsvr32.exe' args='@sel.path.quote' invoke="multiple")
-		item(title='Unregister' admin cmd='regsvr32.exe' args='/u @sel.path.quote' invoke="multiple")
+	menu(mode=mode.single type='file' find='.dll|.ocx' separator='before' title='Register Server' image=\uea86) {
+		item(title='Register' admin cmd='regsvr32.exe' args='@sel.path.quote' invoke='multiple')
+		item(title='Unregister' admin cmd='regsvr32.exe' args='/u @sel.path.quote' invoke='multiple')
 	}
 
-	menu(mode="single" type='back' expanded=true) {
-		menu(separator="before" title='New Folder' image=icon.new_folder) {
-			item(title='DateTime' cmd=io.dir.create(sys.datetime("ymdHMSs")))
+	menu(mode=mode.single type='back' expanded=true) {
+		menu(separator='before' title='New Folder' image=icon.new_folder) {
+			item(title='DateTime' cmd=io.dir.create(sys.datetime('ymdHMSs')))
 			item(title='Guid' cmd=io.dir.create(str.guid))
 		}
 
 		menu(title='New File' image=icon.new_file) {
-			$dt = sys.datetime("ymdHMSs")
+			$dt = sys.datetime('ymdHMSs')
 			item(title='TXT' cmd=io.file.create('@(dt).txt', 'Hello World!'))
 			item(title='XML' cmd=io.file.create('@(dt).xml', '<root>Hello World!</root>'))
 			item(title='JSON' cmd=io.file.create('@(dt).json', '[]'))
-			item(title='HTML' cmd=io.file.create('@(dt).html', "<html>\n\t<head>\n\t</head>\n\t<body>Hello World!\n\t</body>\n</html>"))
+			item(title='HTML' cmd=io.file.create('@(dt).html', '<html>\n\t<head>\n\t</head>\n\t<body>Hello World!\n\t</body>\n</html>'))
 		}
 	}
 

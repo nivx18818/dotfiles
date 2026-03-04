@@ -1,5 +1,5 @@
 modify(
-  mode="multiple"
+  mode=mode.multiple
   where=(
     this.id(
       id.cast_to_device,
@@ -11,31 +11,31 @@ modify(
       id.send_to,
       id.share
     ) ||
-    regex.match(this.name, "(edit (with|in)|(create|play) with|add to).*") ||
+    regex.match(this.name, '(edit (with|in)|(create|play) with|add to).*') ||
     str.equals(
       this.name,
-      ["mediainfo", "open in terminal", "open linux shell here"]
+      ['mediainfo', 'open in terminal', 'open linux shell here']
     )
   )
   vis=vis.remove
 )
 
 modify(
-  type="recyclebin"
+  type='recyclebin'
   where=(window.is_desktop && this.id == id.empty_recycle_bin)
   pos=1
   sep
 )
 
 modify(
-  find="pin*"
-  pos="top"
+  find='pin*'
+  pos='top'
   menu=pin_unpin_menu
 )
 
 modify(
-  find="unpin*"
-  pos="bottom"
+  find='unpin*'
+  pos='bottom'
   menu=pin_unpin_menu
 )
 
@@ -45,10 +45,10 @@ modify(
 )
 
 modify(
-  type="dir.back|drive.back"
+  type='dir.back|drive.back'
   where=(this.id == id.customize_this_folder)
   pos=1
-  sep="top"
+  sep='top'
   menu=file_manage_menu
 )
 
