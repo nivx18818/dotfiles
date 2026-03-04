@@ -3,7 +3,7 @@ local vscode = require("vscode")
 local vscode_neovim = require("vscode-neovim")
 
 -- Tell VSCode Neovim to treat `r` as operator-pending mode
-map("n", "r", function()
+map({ "n", "x" }, "r", function()
   vscode_neovim.call("setContext", {
     args = { "neovim.fullMode", "no" }
   })
