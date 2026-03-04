@@ -5,10 +5,10 @@
 	title='File manage'
 	image=\uE253
 ) {
-	menu(separator='after' title=title.copy_path image=icon.copy_path) {
+	menu(sep='after' title=title.copy_path image=icon.copy_path) {
 		item(where=(sel.count > 1) title='Copy (@sel.count) items selected' cmd=command.copy(sel(false, '\n')))
 		item(mode=mode.single title=@sel.path tip=sel.path cmd=command.copy(sel.path))
-		item(mode=mode.single type='file' separator='before' find='.lnk' title='open file location')
+		item(mode=mode.single type='file' sep='before' find='.lnk' title='open file location')
 		separator
 		item(mode=mode.single where=(@sel.parent.len > 3) title=sel.parent cmd=@command.copy(sel.parent))
 		separator
@@ -34,7 +34,7 @@
 		)
 	)
 
-	menu(separator='after' image=\uE290 title=title.select) {
+	menu(sep='after' image=\uE290 title=title.select) {
 		item(title='All' image=icon.select_all cmd=command.select_all)
 		item(title='Invert' image=icon.invert_selection cmd=command.invert_selection)
 		item(title='None' image=icon.select_none cmd=command.select_none)
@@ -98,13 +98,13 @@
 		item(title='Accessed' keys=io.dt.accessed(sel.path, 'y/m/d') cmd=io.dt.accessed(sel.path, 2000, 1, 1) vis=label)
 	}
 
-	menu(mode=mode.single type='file' find='.dll|.ocx' separator='before' title='Register Server' image=\uea86) {
+	menu(mode=mode.single type='file' find='.dll|.ocx' sep='before' title='Register Server' image=\uea86) {
 		item(title='Register' admin cmd='regsvr32.exe' args='@sel.path.quote' invoke='multiple')
 		item(title='Unregister' admin cmd='regsvr32.exe' args='/u @sel.path.quote' invoke='multiple')
 	}
 
 	menu(mode=mode.single type='back' expanded=true) {
-		menu(separator='before' title='New Folder' image=icon.new_folder) {
+		menu(sep='before' title='New Folder' image=icon.new_folder) {
 			item(title='DateTime' cmd=io.dir.create(sys.datetime('ymdHMSs')))
 			item(title='Guid' cmd=io.dir.create(str.guid))
 		}
