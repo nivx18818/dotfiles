@@ -10,6 +10,9 @@ import 'imports/taskbar.nss'
 $tip_run_admin = ["\xE1A7 Press SHIFT key to run " + this.title + " as administrator", tip.warning, 1.0]
 $has_admin = key.shift() || key.rbutton()
 
+$file_manage_menu = "File manage"
+$pin_upin_menu = "Pin/Unpin"
+
 settings {
 	showdelay = 0
 
@@ -22,7 +25,7 @@ settings {
   }
 }
 
-menu(mode="multiple" title="Pin/Unpin" image=icon.pin) {
+menu(mode="multiple" title=pin_unpin_menu image=icon.pin) {
 }
 
 menu(mode="multiple" title=title.more_options image=icon.more_options) {
