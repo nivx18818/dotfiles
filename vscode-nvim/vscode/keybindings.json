@@ -1,9 +1,9 @@
 [
-  // which-key
+  // which key
   {
     "key": "space",
     "command": "whichkey.show",
-    "when": "neovim.init && neovim.mode != insert && neovim.mode != replace && (editorFocus || !textInputFocus) && !inSettingsEditor && !searchInputBoxFocus && !terminalFocus && !inQuickOpen && !whichkeyVisible"
+    "when": "neovim.init && !(neovim.fullMode =~ /^(i|no)/) && (editorFocus || !textInputFocus) && !inSettingsEditor && !searchInputBoxFocus && !terminalFocus && !inQuickOpen && !whichkeyVisible"
   },
   {
     "key": "tab",
@@ -18,7 +18,7 @@
     "when": "!editorFocus && inputFocus && (inSettingsEditor || inKeybindings || sideBarFocus || auxiliaryBarFocus)"
   },
 
-  // vscode-neovim
+  // vscode neovim
   {
     "key": "ctrl+h",
     "command": "workbench.action.navigateLeft",

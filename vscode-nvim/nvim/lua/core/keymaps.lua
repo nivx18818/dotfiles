@@ -1,5 +1,21 @@
 local map = vim.keymap.set
 local vscode = require("vscode")
+local vscode_neovim = require("vscode-neovim")
+
+-- Tell VSCode Neovim to treat `r` as operator-pending mode
+map("n", "r", function()
+  vscode_neovim.call("setContext", {
+    args = { "neovim.fullMode", "no" }
+  })
+
+  vim.schedule(function()
+    vscode_neovim.call("setContext", {
+      args = { "neovim.fullMode", vim.fn.mode(1) }
+    })
+  end)
+
+  return "r"
+end, { expr = true })
 
 -- Better up and down
 -- Fix folds were automatically opening when navigating with j, k

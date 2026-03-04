@@ -1,5 +1,6 @@
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
+local vscode_neovim = require("vscode-neovim")
 
 -- Highlight on yank
 autocmd("TextYankPost", {
@@ -26,5 +27,13 @@ autocmd({ "TextChanged", "TextChangedI" }, {
     if vim.fn.mode() == 'n' then
       vim.cmd('silent! mode')  -- refresh UI after delete/insert
     end
+  end,
+})
+
+vim.api.nvim_create_autocmd({ "VimEnter", "ModeChanged" }, {
+  callback = function(args)
+    vscode_neovim.call("setContext", {
+      args = { "neovim.fullMode", vim.fn.mode(1) },
+    })
   end,
 })
