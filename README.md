@@ -62,6 +62,12 @@ This repository contains my personal dotfiles and editor configuration. It's int
 - [Windhawk](https://github.com/ramensoftware/windhawk) - a Windows customization and tweaking tool.
 - [YASB](https://github.com/amnweb/yasb) - a highly configurable Windows status bar.
 
+## Icon sources
+
+- [Segoe Fluent Icons](https://learn.microsoft.com/en-us/windows/apps/design/style/segoe-fluent-icons-font)
+- [Nerd Fonts](https://www.nerdfonts.com/cheat-sheet)
+- [Nilesoft Shell's built-in icons](https://nilesoft.org/glyphs)
+
 ## Contact
 
 For questions or suggestions, either:
