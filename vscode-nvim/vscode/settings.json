@@ -255,9 +255,28 @@
         },
         {
           "key": "i",
-          "name": "Change indentation",
-          "type": "command",
-          "command": "editor.action.changeTabDisplaySize"
+          "name": "+indentation",
+          "type": "bindings",
+          "bindings": [
+            {
+              "key": "i",
+              "name": "Change indentation",
+              "type": "command",
+              "command": "editor.action.changeTabDisplaySize"
+            },
+            {
+              "key": "t",
+              "name": "Convert indentation to tabs",
+              "type": "command",
+              "command": "editor.action.indentationToTabs"
+            },
+            {
+              "key": "s",
+              "name": "Convert indentation to spaces",
+              "type": "command",
+              "command": "editor.action.indentationToSpaces"
+            }
+          ]
         }
       ]
     },
