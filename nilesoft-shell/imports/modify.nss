@@ -55,13 +55,16 @@ modify(
 modify(
 	mode=mode.multiple
   where=this.id(
+    id.copy,
     id.create_shortcut,
-    id.set_as_desktop_background,
+    id.cut,
+    id.eject,
+    id.format,
+    id.include_in_library,
+    id.rename,
     id.rotate_left,
     id.rotate_right,
-    id.format,
-    id.eject,
-    id.include_in_library
+    id.set_as_desktop_background
   )
   pos=1
 	menu=title.more_options
