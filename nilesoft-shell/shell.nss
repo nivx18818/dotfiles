@@ -7,11 +7,16 @@ import 'imports/file-manage.nss'
 import 'imports/develop.nss'
 import 'imports/taskbar.nss'
 
+/* Global variables */
 $tip_run_admin = ["\xE1A7 Press SHIFT key to run " + this.title + " as administrator", tip.warning, 1.0]
 $has_admin = key.shift() || key.rbutton()
 
+// Menus
 $file_manage_menu = "File manage"
 $pin_upin_menu = "Pin/Unpin"
+
+// Colors
+$windows_blue = #4cc2ff
 
 settings {
 	showdelay = 0

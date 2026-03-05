@@ -34,16 +34,10 @@
 		)
 	)
 
-	menu(sep='after' image=\uE290 title=title.select) {
-		item(title='All' image=icon.select_all cmd=command.select_all)
-		item(title='Invert' image=icon.invert_selection cmd=command.invert_selection)
-		item(title='None' image=icon.select_none cmd=command.select_none)
-	}
-
 	item(
 		type='file|dir|back.dir|drive'
 		title='Take ownership'
-		image=[\uE194,#f00]
+		image=[\uE194, windows_blue]
 		admin
 		cmd
 		args='/K takeown /f "@sel.path" @if(sel.type==1,null,"/r /d y") && icacls "@sel.path" /grant *S-1-5-32-544:F @if(sel.type==1,"/c /l","/t /c /l /q")'
@@ -111,6 +105,17 @@
 
 		menu(title='New File' image=icon.new_file) {
 			$dt = sys.datetime('ymdHMSs')
+
+			item(
+        title='Custom'
+        cmd=if(
+          input('Choose extension', 'Type extension'),
+          io.file.create('@(dt).' + input.result, '')
+        )
+      )
+
+      separator
+
 			item(title='TXT' cmd=io.file.create('@(dt).txt', 'Hello World!'))
 			item(title='XML' cmd=io.file.create('@(dt).xml', '<root>Hello World!</root>'))
 			item(title='JSON' cmd=io.file.create('@(dt).json', '[]'))
