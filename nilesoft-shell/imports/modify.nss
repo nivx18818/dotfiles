@@ -53,7 +53,7 @@ modify(
 )
 
 modify(
-	mode=mode.multiple
+  mode=mode.multiple
   where=this.id(
     id.copy,
     id.create_shortcut,
@@ -67,5 +67,5 @@ modify(
     id.set_as_desktop_background
   )
   pos=1
-	menu=title.more_options
+  menu=title.more_options
 )

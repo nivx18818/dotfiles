@@ -19,7 +19,7 @@ $pin_upin_menu = "Pin/Unpin"
 $windows_blue = #4cc2ff
 
 settings {
-	showdelay = 0
+  showdelay = 0
 
   exclude {
     where = !process.is_explorer
