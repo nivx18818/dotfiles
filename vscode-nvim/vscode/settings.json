@@ -743,28 +743,28 @@
               "key": "h",
               "name": "Reset auxiliarybar size",
               "type": "command",
-              "command": "mc.resetAuxiliarybarSize"
+              "command": "multiCommand.resetAuxiliarybarSize"
             },
             {
               "key": "j",
               "name": "Reset panel size",
               "type": "command",
-              "command": "mc.resetPanelSize"
+              "command": "multiCommand.resetPanelSize"
             },
             {
               "key": "l",
               "name": "Reset sidebar size",
               "type": "command",
-              "command": "mc.resetSidebarSize"
+              "command": "multiCommand.resetSidebarSize"
             },
             {
               "key": "a",
               "name": "Reset layout size",
               "type": "commands",
               "commands": [
-                "mc.resetSidebarSize",
-                "mc.resetAuxiliarybarSize",
-                "mc.resetPanelSize"
+                "multiCommand.resetSidebarSize",
+                "multiCommand.resetAuxiliarybarSize",
+                "multiCommand.resetPanelSize"
               ]
             }
           ]
@@ -823,7 +823,7 @@
   // Multi Command
   "multiCommand.commands": [
     {
-      "command": "mc.resetSidebarSize",
+      "command": "multiCommand.resetSidebarSize",
       "sequence": [
         "workbench.action.focusSideBar",
         { "command": "workbench.action.decreaseViewSize", "repeat": 10 },
@@ -832,7 +832,7 @@
       ]
     },
     {
-      "command": "mc.resetAuxiliarybarSize",
+      "command": "multiCommand.resetAuxiliarybarSize",
       "sequence": [
         "workbench.action.focusAuxiliaryBar",
         { "command": "workbench.action.decreaseViewSize", "repeat": 10 },
@@ -841,9 +841,16 @@
       ]
     },
     {
-      "command": "mc.resetPanelSize",
+      "command": "multiCommand.resetPanelSize",
       "sequence": [
-        "workbench.action.focusPanel",
+        {
+          // Panel has a delay on startup, so we will wait before resizing
+          "command": "extension.multiCommand.execute",
+          "args": {
+            "interval": 100,
+            "sequence": ["workbench.action.focusPanel"]
+          }
+        },
         { "command": "workbench.action.decreaseViewSize", "repeat": 10 },
         { "command": "workbench.action.increaseViewSize", "repeat": 6 },
         "workbench.action.focusActiveEditorGroup"
