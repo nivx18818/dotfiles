@@ -462,13 +462,19 @@
           "command": "workbench.action.chat.open"
         },
         {
+          "key": "i",
+          "name": "Open inline chat",
+          "type": "command",
+          "command": "inlineChat.start"
+        },
+        {
           "key": "a",
           "name": "Code action",
           "type": "command",
           "command": "editor.action.quickFix"
         },
         {
-          "key": "i",
+          "key": "o",
           "name": "Organize imports",
           "type": "command",
           "command": "editor.action.organizeImports"
