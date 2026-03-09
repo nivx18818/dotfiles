@@ -717,6 +717,18 @@
           "command": "workbench.action.toggleActivityBarVisibility"
         },
         {
+          "key": "d",
+          "name": "Hide UI",
+          "type": "commands",
+          "commands": [
+            "workbench.action.closePanel",
+            "workbench.action.closeAuxiliaryBar",
+            "workbench.action.closeSidebar",
+            "workbench.action.activityBarLocation.hide",
+            "workbench.action.closeAllGroups"
+          ]
+        },
+        {
           "key": "t",
           "name": "Themes",
           "type": "command",
