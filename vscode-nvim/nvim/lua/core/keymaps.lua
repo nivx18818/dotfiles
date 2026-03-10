@@ -110,3 +110,24 @@ fold("zr", "editor.openAll", "Open all")
 fold("zb", "editor.foldAllBlockComments", "Close all block comments")
 fold("zg", "editor.foldAllMarkerRegions", "Close all regions")
 fold("zG", "editor.unfoldAllMarkerRegions", "Open all regions")
+
+-- kylechui/nvim-surround
+map("n", "gs", "<Plug>(nvim-surround-normal)", {
+    desc = "Add a surrounding pair around a motion (normal mode)",
+})
+
+map("n", "gss", "<Plug>(nvim-surround-normal-cur)", {
+    desc = "Add a surrounding pair around the current line (normal mode)",
+})
+
+map("n", "gS", "<Plug>(nvim-surround-normal-line)", {
+    desc = "Add a surrounding pair around a motion, on new lines (normal mode)",
+})
+
+map("n", "gSS", "<Plug>(nvim-surround-normal-cur-line)", {
+    desc = "Add a surrounding pair around the current line, on new lines (normal mode)",
+})
+
+map("x", "gs", "<Plug>(nvim-surround-visual)", {
+    desc = "Add a surrounding pair around a visual selection",
+})
