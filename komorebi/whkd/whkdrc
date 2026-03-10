@@ -51,6 +51,7 @@ alt + f                 : komorebic toggle-monocle
 
 # Window manager options
 alt + shift + r         : komorebic retile
+alt + shift + m         : komorebic minimize
 
 # Layouts
 alt + shift + x         : komorebic flip-layout horizontal
