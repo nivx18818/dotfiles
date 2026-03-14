@@ -64,8 +64,8 @@ alt + 3                 : komorebic focus-workspace 2
 alt + 4                 : komorebic focus-workspace 3
 
 # Cycle through workspaces
-alt + oem_comma : komorebic cycle-workspace previous
-alt + oem_period: komorebic cycle-workspace next
+alt + oem_comma         : komorebic cycle-workspace previous
+alt + oem_period        : komorebic cycle-workspace next
 alt + shift + oem_comma : komorebic cycle-move-to-workspace previous
 alt + shift + oem_period: komorebic cycle-move-to-workspace next
 
@@ -74,3 +74,15 @@ alt + shift + 1         : komorebic move-to-workspace 0
 alt + shift + 2         : komorebic move-to-workspace 1
 alt + shift + 3         : komorebic move-to-workspace 2
 alt + shift + 4         : komorebic move-to-workspace 3
+
+# Used by other apps
+#
+# ShareX
+# * alt + s
+# * alt + shift + s
+# * alt + ctrl + s
+# * alt + ctrl + shift + s
+# * alt + shift + v
+#
+# PowerToys
+# * alt + F1-F7
