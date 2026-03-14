@@ -78,6 +78,7 @@ alt + shift + 4         : komorebic move-to-workspace 3
 # Used by other apps
 #
 # ShareX
+# * alt + x
 # * alt + s
 # * alt + shift + s
 # * alt + ctrl + s
