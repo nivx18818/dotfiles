@@ -127,6 +127,11 @@
       "kind": "Exe",
       "id": "PowerToys.Settings.exe",
       "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "ShareX.exe",
+      "matching_strategy": "Equals"
     }
   ]
 }
