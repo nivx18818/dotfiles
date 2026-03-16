@@ -702,9 +702,9 @@
         },
         {
           "key": "j",
-          "name": "Toggle status bar",
+          "name": "Toggle panel",
           "type": "command",
-          "command": "workbench.action.toggleStatusbarVisibility"
+          "command": "workbench.action.togglePanel"
         },
         {
           "key": "l",
@@ -713,7 +713,13 @@
           "command": "workbench.action.toggleSidebarVisibility"
         },
         {
-          "key": ";",
+          "key": "J",
+          "name": "Toggle status bar",
+          "type": "command",
+          "command": "workbench.action.toggleStatusbarVisibility"
+        },
+        {
+          "key": "L",
           "name": "Toggle activity bar",
           "type": "command",
           "command": "workbench.action.toggleActivityBarVisibility"
