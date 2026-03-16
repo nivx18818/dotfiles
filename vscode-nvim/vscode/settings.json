@@ -120,12 +120,14 @@
   "explorer.compactFolders": false,
 
   "git.postCommitCommand": "push",
+  "git.enableCommitSigning": true,
   "scm.diffDecorations": "gutter",
   "scm.defaultViewMode": "tree",
   "scm.compactFolders": false,
 
   "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1
+    "asvetliakov.vscode-neovim": 1,
+    "VSpaceCode.vscode-which-key": 2
   },
   "extensions.ignoreRecommendations": true,
 
@@ -719,14 +721,8 @@
         {
           "key": "d",
           "name": "Hide UI",
-          "type": "commands",
-          "commands": [
-            "workbench.action.closePanel",
-            "workbench.action.closeAuxiliaryBar",
-            "workbench.action.closeSidebar",
-            "workbench.action.activityBarLocation.hide",
-            "workbench.action.closeAllGroups"
-          ]
+          "type": "command",
+          "command": "multiCommand.hideUI"
         },
         {
           "key": "t",
@@ -799,7 +795,9 @@
           "name": "Quit",
           "type": "commands",
           "commands": [
+            "workbench.action.closePanel",
             "workbench.action.closeAuxiliaryBar",
+            "workbench.action.closeSidebar",
             "workbench.action.closeWindow"
           ]
         },
@@ -807,11 +805,7 @@
           "key": "a",
           "name": "Quit all",
           "type": "commands",
-          "commands": [
-            "workbench.action.closeAuxiliaryBar",
-            "workbench.action.closeAllGroups",
-            "workbench.action.closeWindow"
-          ]
+          "commands": ["multiCommand.hideUI", "workbench.action.closeWindow"]
         }
       ]
     },
@@ -872,6 +866,16 @@
         { "command": "workbench.action.decreaseViewSize", "repeat": 10 },
         { "command": "workbench.action.increaseViewSize", "repeat": 6 },
         "workbench.action.focusActiveEditorGroup"
+      ]
+    },
+    {
+      "command": "multiCommand.hideUI",
+      "sequence": [
+        "workbench.action.closePanel",
+        "workbench.action.closeAuxiliaryBar",
+        "workbench.action.closeSidebar",
+        "workbench.action.activityBarLocation.hide",
+        "workbench.action.closeAllGroups"
       ]
     }
   ]
