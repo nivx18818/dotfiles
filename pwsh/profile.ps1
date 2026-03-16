@@ -144,3 +144,12 @@ function symlink {
 
     New-Item -ItemType SymbolicLink -Path $link -Target $target
 }
+
+# WSL Distros
+function arch {
+    wsl -d Arch --cd ~
+}
+
+function u22 {
+    wsl -d Ubuntu-22.04 --cd ~
+}
