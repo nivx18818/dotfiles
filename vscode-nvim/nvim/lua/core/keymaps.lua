@@ -35,6 +35,9 @@ map("n", "k", function()
   end
 end, { expr = true })
 
+-- Better yank entire buffer
+map("n", "yig", "<cmd>%y<cr>", { desc = "Yank inner global (persist cursor position)" })
+
 -- Better mark navigation
 map({ "n", "x", "o" }, "gm", function()
   return "`" .. vim.fn.getcharstr()

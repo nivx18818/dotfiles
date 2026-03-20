@@ -10,6 +10,9 @@ return {
         r = spec_pair('[', ']', { type = 'balanced' }),
         ['*'] = spec_pair('*', '*', { type = 'greedy' }),
         ['_'] = spec_pair('_', '_', { type = 'greedy' }),
+        g = function()
+          return { from = { line = 1, col = 1 }, to = { line = vim.fn.line("$"), col = 1 } }
+        end,
       }
     })
   end
