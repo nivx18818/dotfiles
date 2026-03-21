@@ -85,6 +85,28 @@ map("n", "gr", function() vim.fn.VSCodeNotify("editor.action.goToReferences") en
 map("v", "<", "<gv")
 map("v", ">", ">gv")
 
+-- Bypass comment continuation
+local function open_line_no_comment(cmd)
+  return function()
+    local fo = vim.opt.formatoptions:get()
+
+    -- temporarily disable comment continuation
+    vim.opt.formatoptions:remove("o")
+
+    -- simulate real keypress (o or O)
+    local keys = vim.api.nvim_replace_termcodes(cmd, true, false, true)
+    vim.api.nvim_feedkeys(keys, "n", false)
+
+    -- restore after execution
+    vim.schedule(function()
+      vim.opt.formatoptions = fo
+    end)
+  end
+end
+
+map("n", "go", open_line_no_comment("o"))
+map("n", "gO", open_line_no_comment("O"))
+
 -- Helper for fold‑related mappings
 -- Allow repeating with `.`
 local function fold(lhs, vscode_cmd, desc)
