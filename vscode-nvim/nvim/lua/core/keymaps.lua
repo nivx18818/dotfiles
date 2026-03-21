@@ -81,9 +81,6 @@ map("v", "#", '"vy?<C-r>v<CR>gv', { silent = true }) -- search backward for visu
 -- Go to Definition
 map("n", "gr", function() vim.fn.VSCodeNotify("editor.action.goToReferences") end, { silent = true })
 
--- Yank from first to last non-blank character
-map("n", "Y", "^yg_");
-
 -- Better indenting
 map("v", "<", "<gv")
 map("v", ">", ">gv")
