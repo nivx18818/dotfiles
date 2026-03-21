@@ -6,14 +6,15 @@ return {
     local spec_pair = mini_ai.gen_spec.pair
 
     mini_ai.setup({
+      n_lines = 200,
       mappings = {
         around_last = 'aN',
         inside_last = 'iN',
       },
       custom_textobjects = {
-        r = spec_pair('[', ']', { type = 'balanced' }),
         ['*'] = spec_pair('*', '*', { type = 'greedy' }),
         ['_'] = spec_pair('_', '_', { type = 'greedy' }),
+        r = spec_pair('[', ']', { type = 'balanced' }),
         g = function()
           return { from = { line = 1, col = 1 }, to = { line = vim.fn.line("$"), col = 1 } }
         end,
