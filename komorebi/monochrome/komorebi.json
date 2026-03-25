@@ -132,6 +132,11 @@
       "kind": "Exe",
       "id": "ShareX.exe",
       "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "pot.exe",
+      "matching_strategy": "Equals"
     }
   ]
 }
