@@ -2,7 +2,7 @@
   "window.commandCenter": false,
   "window.menuBarVisibility": "hidden",
   "window.menuStyle": "custom",
-  "window.title": "${dirty}${rootName}${separator}${activeEditorShort}${separator}${activeFolderMedium}",
+  "window.title": "${rootName}",
   "window.titleSeparator": " ⯌ ",
   "window.titleBarStyle": "native",
   "window.customTitleBarVisibility": "never",
