@@ -177,6 +177,10 @@
     "(auth)": "folder-auth",
     "bruno": "folder-bruno"
   },
+  "symbols.files.associations": {
+    "*.bru": "bruno",
+    "prisma.config.ts": "prisma"
+  },
 
   // indent-rainbow
   "indentRainbow.colors": [
