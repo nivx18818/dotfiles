@@ -127,7 +127,7 @@ fold("zC", "editor.foldRecursively", "Close recursively")
 fold("zO", "editor.unfoldRecursively", "Open recursively")
 
 fold("zm", "editor.foldAll", "Close all")
-fold("zr", "editor.openAll", "Open all")
+fold("zr", "editor.unfoldAll", "Open all")
 
 fold("zb", "editor.foldAllBlockComments", "Close all block comments")
 fold("zg", "editor.foldAllMarkerRegions", "Close all regions")
