@@ -517,6 +517,12 @@
           "command": "workbench.view.scm"
         },
         {
+          "key": "p",
+          "name": "Open Pull Requests view",
+          "type": "command",
+          "command": "pr:github.focus"
+        },
+        {
           "key": "l",
           "name": "View git log",
           "type": "command",
