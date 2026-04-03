@@ -184,7 +184,7 @@ widgets:
     type: "yasb.media.MediaWidget"
     options:
       label: "{title}{s}{artist}"
-      label_alt: "{artist}"
+      label_alt: ""
       separator: " • "
       callbacks:
         on_left: "toggle_media_menu"
