@@ -14,7 +14,7 @@
   "border_offset": -1,
   "border_colours": {
     "single": "#ececec",
-    "unfocused": "#6c7086",
+    "monocle": "#FFC799",
     "floating": "#ececec"
   },
   "stackbar": {
