@@ -82,7 +82,7 @@
 
   "breadcrumbs.enabled": false,
   "diffEditor.ignoreTrimWhitespace": false,
-  "editor.fontFamily": "'DankMono Nerd Font Mono', Consolas, 'Courier New', monospace",
+  "editor.fontFamily": "'DankMono Nerd Font', Consolas, 'Courier New', monospace",
   "editor.fontSize": 15,
   "editor.fontLigatures": true,
   "editor.lineHeight": 2,
@@ -133,6 +133,7 @@
 
   "terminal.integrated.cursorStyle": "block",
   "terminal.integrated.cursorBlinking": false,
+  "terminal.integrated.fontFamily": "'DankMono Nerd Font Mono', Consolas, 'Courier New', monospace",
   "terminal.integrated.fontLigatures.enabled": true,
   "terminal.integrated.initialHint": false,
   "terminal.integrated.smoothScrolling": true,
