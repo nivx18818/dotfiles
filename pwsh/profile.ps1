@@ -29,8 +29,84 @@ if ($Env:TERM_PROGRAM -ne "vscode") {
     Set-PSReadLineKeyHandler -Key 'Ctrl+n' -Function HistorySearchForward
 }
 
-function omp-init {
-    oh-my-posh init pwsh --config "$Env:DOTFILES\oh-my-posh\$OmpTheme.omp.json" > $Env:DOTFILES\oh-my-posh\omp-init.ps1
+function Run-ProfileScript {
+    param(
+        [Parameter(Position=0)] [string]$Name,
+        [Parameter(ValueFromRemainingArguments=$true)] [string[]]$Args,
+        [switch]$DotSource,
+        [switch]$List,
+        [string]$Filter
+    )
+
+    $scriptsDir = Join-Path $PSScriptRoot 'scripts'
+
+    # If user asked to list available scripts (or didn't pass a name), show suggestions
+    if ($List -or -not $Name) {
+        if (-not (Test-Path $scriptsDir)) {
+            Write-Warning "Scripts directory not found: $scriptsDir"
+            return
+        }
+
+        $items = Get-ChildItem -Path $scriptsDir -File -ErrorAction SilentlyContinue |
+            Where-Object {
+                if ($Filter) { $_.BaseName -like "*$Filter*" } else { $true }
+            } | Sort-Object -Property Name
+
+        if (-not $items) {
+            Write-Output "No scripts found in $scriptsDir"
+            return
+        }
+
+        # Print a simple two-column list: name and full path
+        $items | ForEach-Object {
+            $name = $_.BaseName
+            Write-Output (("{0,-30} {1}" -f $name, $_.FullName))
+        }
+
+        return
+    }
+
+    # Resolve candidate script paths (absolute, relative, or name under scripts dir)
+    $candidates = @()
+    if ([System.IO.Path]::IsPathRooted($Name) -or $Name -match '[\\/]') {
+        $candidates += $Name
+    } else {
+        $candidates += Join-Path $scriptsDir $Name
+        $candidates += Join-Path $scriptsDir ($Name + '.ps1')
+    }
+
+    $scriptPath = $candidates | Where-Object { Test-Path $_ } | Select-Object -First 1
+
+    if (-not $scriptPath) {
+        Write-Error "Script not found in ${scriptsDir}: $Name"
+        return
+    }
+
+    if ($DotSource) {
+        . $scriptPath @Args
+    } else {
+        & $scriptPath @Args
+    }
+}
+Set-Alias run Run-ProfileScript
+
+# Register tab-completion for script names (completes base filename without extension)
+$profileScriptsDir = Join-Path $PSScriptRoot 'scripts'
+if (Test-Path $profileScriptsDir) {
+    try {
+        Register-ArgumentCompleter -CommandName Run-ProfileScript -ParameterName Name -ScriptBlock {
+            param($commandName, $parameterName, $wordToComplete, $commandAst, $fakeBoundParameters)
+
+            $wc = if ($wordToComplete) { "$wordToComplete*" } else { '*' }
+            Get-ChildItem -Path $profileScriptsDir -File -ErrorAction SilentlyContinue |
+                Where-Object { $_.BaseName -like $wc } |
+                ForEach-Object {
+                    [System.Management.Automation.CompletionResult]::new($_.BaseName, $_.BaseName, 'ParameterValue', $_.FullName)
+                }
+        }
+    } catch {
+        # Ignore completion registration errors (older PS versions)
+    }
 }
 
 # Better git clone
