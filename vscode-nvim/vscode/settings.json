@@ -84,7 +84,7 @@
   "diffEditor.ignoreTrimWhitespace": false,
   "editor.fontFamily": "'DankMono Nerd Font Mono', Consolas, 'Courier New', monospace",
   "editor.fontSize": 15,
-  "editor.fontLigatures": false,
+  "editor.fontLigatures": true,
   "editor.lineHeight": 2,
   "editor.wordWrap": "bounded",
   "editor.wordWrapColumn": 120,
