@@ -32,7 +32,7 @@ scoop install extras/nilesoft-shell
 ```
 
 ```powershell
-$Env:DOTFILES = "path\to\this\repository"
+$Env:DOTFILES = "path\to\this\repo"
 ```
 
 ```powershell

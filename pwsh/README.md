@@ -26,12 +26,6 @@
   . "D:\code\dotfiles\pwsh\profile.ps1"
   ```
 
-- Allow the execution of PowerShell scripts if you haven't already done so:
-
-  ```powershell
-  Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-  ```
-
 - Restart your PowerShell session to apply the changes.
 
 - Run `omp-init` to initialize the Oh My Posh theme:

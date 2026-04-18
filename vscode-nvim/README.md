@@ -49,7 +49,7 @@ This setup allows you to use Neovim as the backend for VSCode's editing capabili
 - Create a symbolic link from this repository's `nvim` folder to your Neovim configuration directory:
 
   ```powershell
-  $Env:DOTFILES = "path\to\this\repository"
+  $Env:DOTFILES = "path\to\this\repo"
   ```
 
   ```powershell

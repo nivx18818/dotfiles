@@ -40,7 +40,7 @@ scoop install yasb
 - Open the profile file with your favorite text editor and add the following lines at the end of the file:
 
   ```powershell
-  $Env:DOTFILES = "path\to\this\repository"
+  $Env:DOTFILES = "path\to\this\repo"
   $Env:YASB_CONFIG_HOME="$Env:DOTFILES\yasb"
   ```
 

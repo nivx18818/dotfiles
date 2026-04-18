@@ -59,7 +59,7 @@ scoop update komorebi whkd
 - Open the profile file with your favorite text editor and add the following lines at the end of the file:
 
   ```powershell
-  $Env:DOTFILES = "path\to\this\repository"
+  $Env:DOTFILES = "path\to\this\repo"
   $Env:KOMOREBI_CONFIG_HOME="$Env:DOTFILES\komorebi"
   $Env:WHKD_CONFIG_HOME="$Env:DOTFILES\komorebi\whkd"
   ```
