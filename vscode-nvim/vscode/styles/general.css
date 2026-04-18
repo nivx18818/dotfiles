@@ -22,11 +22,6 @@
     scale: 1.1;
 }
 
-/* fix Power Mode extension's issue */
-.monaco-editor .lines-content > .view-lines > .view-line > span {
-    width: inherit;
-}
-
 /* replace VSCode watermark */
 .editor-group-watermark .letterpress {
     display: grid;
