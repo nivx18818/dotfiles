@@ -14,6 +14,8 @@ This repository contains my personal dotfiles and editor configuration. It's int
 
 ## What’s in this repo
 
+- [`cava`](https://github.com/karlstav/cava/) — console-based audio visualizer configuration.
+- [`git`](https://git-scm.com/) — Git configuration.
 - [`kanata`](https://github.com/jtroo/kanata/) — keyboard remapper configuration.
 - [`komorebi`](https://github.com/LGUG2Z/komorebi) — tiling window manager for Windows configuration.
 - [`nilesoft-shell`](https://github.com/moudey/Shell) — Windows File Explorer context menu manager configuration.
