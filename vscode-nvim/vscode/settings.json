@@ -119,11 +119,15 @@
 
   "explorer.compactFolders": false,
 
-  "git.postCommitCommand": "push",
-  "git.enableCommitSigning": true,
-  "scm.diffDecorations": "gutter",
-  "scm.defaultViewMode": "tree",
   "scm.compactFolders": false,
+  "scm.defaultViewMode": "tree",
+  "scm.diffDecorations": "gutter",
+  "git.enableCommitSigning": true,
+  "git.inputValidation": true,
+  "git.inputValidationLength": 100,
+  "git.inputValidationSubjectLength": 100,
+  "git.openRepositoryInParentFolders": "always",
+  "git.postCommitCommand": "push",
 
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1,
