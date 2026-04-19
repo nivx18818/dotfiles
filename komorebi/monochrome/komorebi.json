@@ -137,6 +137,16 @@
       "kind": "Exe",
       "id": "pot.exe",
       "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "Docker Desktop.exe",
+      "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "NexusKey.exe",
+      "matching_strategy": "Equals"
     }
   ]
 }
