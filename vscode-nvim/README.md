@@ -18,6 +18,34 @@ This setup allows you to use Neovim as the backend for VSCode's editing capabili
     scoop install main/neovim
     ```
 
+- Install [`tree-sitter-cli`](https://github.com/tree-sitter/tree-sitter/blob/master/crates/cli/README.md) (installed via your package manager, not npm).
+  - Winget
+
+    ```powershell
+    winget install tree-sitter.tree-sitter-cli
+    ```
+
+  - Scoop
+
+    ```powershell
+    scoop bucket add main
+    scoop install main/tree-sitter
+    ```
+
+- Install `gcc` (a C compiler is required to build the Neovim Tree-sitter parsers).
+  - Winget
+
+    ```powershell
+    winget install MSYS2.MSYS2
+    ```
+
+  - Scoop
+
+    ```powershell
+    scoop bucket add main
+    scoop install main/mingw
+    ```
+
 - Install [VSCode](https://code.visualstudio.com/).
 
 - Install the [VSCode Neovim](https://marketplace.visualstudio.com/items?itemName=asvetliakov.vscode-neovim) and [Which Key](https://marketplace.visualstudio.com/items?itemName=VSpaceCode.whichkey) extensions for VSCode.

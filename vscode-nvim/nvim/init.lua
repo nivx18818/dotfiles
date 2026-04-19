@@ -13,4 +13,12 @@ require("core.options");
 require("core.keymaps");
 require("core.autocmds");
 
-require("lazy").setup("plugins");
+require("lazy").setup(
+  "plugins",
+  {
+    change_detection = {
+      enabled = false,
+      notify = false,
+    },
+  }
+);
