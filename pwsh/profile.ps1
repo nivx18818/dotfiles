@@ -31,62 +31,24 @@ if ($Env:TERM_PROGRAM -ne "vscode") {
 
 function Run-ProfileScript {
     param(
-        [Parameter(Position=0)] [string]$Name,
-        [Parameter(ValueFromRemainingArguments=$true)] [string[]]$Args,
-        [switch]$DotSource,
-        [switch]$List,
-        [string]$Filter
+        [Parameter(Position=0, Mandatory)] [string]$Script,
+        [Parameter(ValueFromRemainingArguments=$true)] [object[]]$ScriptArgs
     )
 
     $scriptsDir = Join-Path $PSScriptRoot 'scripts'
+    $scriptPath = $Script
 
-    # If user asked to list available scripts (or didn't pass a name), show suggestions
-    if ($List -or -not $Name) {
-        if (-not (Test-Path $scriptsDir)) {
-            Write-Warning "Scripts directory not found: $scriptsDir"
-            return
-        }
+    if (-not [System.IO.Path]::IsPathRooted($Script) -and $Script -notmatch '[\\/]') {
+        $scriptFile = if ($Script.EndsWith('.ps1')) { $Script } else { "$Script.ps1" }
+        $scriptPath = Join-Path $scriptsDir $scriptFile
+    }
 
-        $items = Get-ChildItem -Path $scriptsDir -File -ErrorAction SilentlyContinue |
-            Where-Object {
-                if ($Filter) { $_.BaseName -like "*$Filter*" } else { $true }
-            } | Sort-Object -Property Name
-
-        if (-not $items) {
-            Write-Output "No scripts found in $scriptsDir"
-            return
-        }
-
-        # Print a simple two-column list: name and full path
-        $items | ForEach-Object {
-            $name = $_.BaseName
-            Write-Output (("{0,-30} {1}" -f $name, $_.FullName))
-        }
-
+    if (-not (Test-Path $scriptPath)) {
+        Write-Error "Script not found: $scriptPath"
         return
     }
 
-    # Resolve candidate script paths (absolute, relative, or name under scripts dir)
-    $candidates = @()
-    if ([System.IO.Path]::IsPathRooted($Name) -or $Name -match '[\\/]') {
-        $candidates += $Name
-    } else {
-        $candidates += Join-Path $scriptsDir $Name
-        $candidates += Join-Path $scriptsDir ($Name + '.ps1')
-    }
-
-    $scriptPath = $candidates | Where-Object { Test-Path $_ } | Select-Object -First 1
-
-    if (-not $scriptPath) {
-        Write-Error "Script not found in ${scriptsDir}: $Name"
-        return
-    }
-
-    if ($DotSource) {
-        . $scriptPath @Args
-    } else {
-        & $scriptPath @Args
-    }
+    & pwsh -NoLogo -NoProfile -File $scriptPath @ScriptArgs
 }
 Set-Alias run Run-ProfileScript
 
@@ -94,7 +56,7 @@ Set-Alias run Run-ProfileScript
 $profileScriptsDir = Join-Path $PSScriptRoot 'scripts'
 if (Test-Path $profileScriptsDir) {
     try {
-        Register-ArgumentCompleter -CommandName Run-ProfileScript -ParameterName Name -ScriptBlock {
+        Register-ArgumentCompleter -CommandName Run-ProfileScript, run -ParameterName Script -ScriptBlock {
             param($commandName, $parameterName, $wordToComplete, $commandAst, $fakeBoundParameters)
 
             $wc = if ($wordToComplete) { "$wordToComplete*" } else { '*' }
