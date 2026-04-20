@@ -1,39 +1,4 @@
 local map = vim.keymap.set
-local vscode = require("vscode")
-local vscode_neovim = require("vscode-neovim")
-
--- Tell VSCode Neovim to treat `r` as operator-pending mode
-map({ "n", "x" }, "r", function()
-  vscode_neovim.call("setContext", {
-    args = { "neovim.fullMode", "no" }
-  })
-
-  vim.schedule(function()
-    vscode_neovim.call("setContext", {
-      args = { "neovim.fullMode", vim.fn.mode(1) }
-    })
-  end)
-
-  return "r"
-end, { expr = true })
-
--- Better up and down
--- Fix folds were automatically opening when navigating with j, k
-map("n", "j", function()
-  if vim.v.count == 0 then
-    vscode.action("cursorDown")
-  else
-    return "j"
-  end
-end, { expr = true })
-
-map("n", "k", function()
-  if vim.v.count == 0 then
-    vscode.action("cursorUp")
-  else
-    return "k"
-  end
-end, { expr = true })
 
 -- Better yank entire buffer
 map("n", "yig", "<cmd>%y<cr>", { desc = "Yank inner global (persist cursor position)" })
@@ -78,9 +43,6 @@ map("n", "#", "#N", { silent = true }) -- same for backwards search
 map("v", "*", '"vy/<C-r>v<CR>gv', { silent = true }) -- search forward for visual selection, reselect it
 map("v", "#", '"vy?<C-r>v<CR>gv', { silent = true }) -- search backward for visual selection, reselect it
 
--- Go to Definition
-map("n", "gr", function() vim.fn.VSCodeNotify("editor.action.goToReferences") end, { silent = true })
-
 -- Better indenting
 map("v", "<", "<gv")
 map("v", ">", ">gv")
@@ -106,46 +68,3 @@ end
 
 map("n", "go", open_line_no_comment("o"))
 map("n", "gO", open_line_no_comment("O"))
-
--- Helper for fold‑related mappings
--- Allow repeating with `.`
-local function fold(lhs, vscode_cmd, desc)
-  map("n", lhs, function()
-    local op = vscode.to_op(function(ctx)
-      vscode.action(vscode_cmd, { range = ctx.range })
-    end)
-    return op() .. "_"
-  end, { expr = true, desc = desc })
-end
-
--- Fold mappings
-fold("zc", "editor.fold", "Close fold")
-fold("zo", "editor.unfold", "Open fold")
-fold("za", "editor.toggleFold", "Toggle fold")
-
-fold("zC", "editor.foldRecursively", "Close recursively")
-fold("zO", "editor.unfoldRecursively", "Open recursively")
-
-fold("zm", "editor.foldAll", "Close all")
-fold("zr", "editor.unfoldAll", "Open all")
-
-fold("zb", "editor.foldAllBlockComments", "Close all block comments")
-fold("zg", "editor.foldAllMarkerRegions", "Close all regions")
-fold("zG", "editor.unfoldAllMarkerRegions", "Open all regions")
-
--- kylechui/nvim-surround
-map("n", "gs", "<Plug>(nvim-surround-normal)", {
-    desc = "Add a surrounding pair around a motion (normal mode)",
-})
-map("n", "gss", "<Plug>(nvim-surround-normal-cur)", {
-    desc = "Add a surrounding pair around the current line (normal mode)",
-})
-map("n", "gS", "<Plug>(nvim-surround-normal-line)", {
-    desc = "Add a surrounding pair around a motion, on new lines (normal mode)",
-})
-map("n", "gSS", "<Plug>(nvim-surround-normal-cur-line)", {
-    desc = "Add a surrounding pair around the current line, on new lines (normal mode)",
-})
-map("x", "gs", "<Plug>(nvim-surround-visual)", {
-    desc = "Add a surrounding pair around a visual selection",
-})

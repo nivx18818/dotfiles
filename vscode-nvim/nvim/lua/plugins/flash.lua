@@ -6,6 +6,12 @@ return {
   config = function(_, opts)
     require("flash").setup(opts);
 
+    vim.api.nvim_set_hl(0, "FlashCursor", { reverse = true })
+
+    if not vim.g.vscode then
+      return
+    end
+
     local vscode = require('vscode')
     local current_theme = vscode.get_config("workbench.colorTheme")
 
@@ -20,8 +26,6 @@ return {
       vim.api.nvim_set_hl(0, "FlashLabel", { bg = "#ffc799", fg = "#101010", bold = true })
       vim.api.nvim_set_hl(0, "FlashMatch", { bg = "#323232", fg = "#ffffff" })
     end
-
-    vim.api.nvim_set_hl(0, "FlashCursor", { reverse = true })
   end,
   keys = {
     { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
