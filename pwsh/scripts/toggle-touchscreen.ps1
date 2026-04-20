@@ -7,10 +7,11 @@ if (-not $devices) {
     exit
 }
 
+Write-Host "[!] Requires gsudo: https://github.com/gerardog/gsudo"
+
 foreach ($device in $devices) {
     if ($device.Status -eq "OK") {
         Write-Host "Disabling: $($device.FriendlyName)"
-        # Use gsudo to run as admin: https://github.com/gerardog/gsudo
         sudo { Disable-PnpDevice -InstanceId $args[0] -Confirm:$false } -args $device.InstanceId
     }
     else {
