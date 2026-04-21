@@ -9,6 +9,18 @@
     "command": "workbench.action.openGlobalKeybindingsFile"
   },
 
+  // Chat
+  {
+    "key": "ctrl+.",
+    "command": "workbench.action.chat.openModePicker",
+    "when": "inChat"
+  },
+  {
+    "key": "ctrl+m",
+    "command": "workbench.action.chat.openModelPicker",
+    "when": "inChat"
+  },
+
   // Which Key
   {
     "key": "space",
@@ -103,17 +115,5 @@
     "command": "workbench.action.terminal.sendSequence",
     "args": { "text": "\u001b[C" },
     "when": "terminalFocus"
-  },
-
-  // Chat
-  {
-    "key": "ctrl+n",
-    "command": "workbench.action.chat.openModePicker",
-    "when": "inChat"
-  },
-  {
-    "key": "ctrl+m",
-    "command": "workbench.action.chat.openModelPicker",
-    "when": "inChat"
   }
 ]
