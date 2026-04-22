@@ -1,0 +1,120 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://windhawk.net/schemas/mod-styles.nested.schema.json",
+  "title": "Windhawk Styler Mod Settings (Nested / DX Format)",
+  "description": "A nested, human-friendly representation of Windhawk styler mod settings. Flatten to the Windhawk flat bracket-notation format with ConvertTo-WindhawkSettings.ps1.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Optional instance-level $schema URI (editor helper)."
+    },
+
+    "styleConstants": {
+      "type": "array",
+      "description": "Named token definitions. Each entry is a 'Name=Value' string. Reference tokens anywhere in controlStyles values using $Name (e.g. '$Background', '$Radius'). Flattens to styleConstants[0], styleConstants[1], ...",
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Za-z_][A-Za-z0-9_]*=.+$",
+        "description": "Format: 'Name=Value'. Name must be a valid identifier. Value is any scalar style value: hex color, named color, number, or thickness."
+      },
+      "uniqueItems": true
+    },
+
+    "controlStyles": {
+      "type": "object",
+      "description": "XAML element style rules keyed by target selector. Each key is a XAML target path; its value is an array of property assignment strings. Since all styles for a target live under one key, duplicates are naturally impossible. Flattens to controlStyles[N].target and controlStyles[N].styles[M] in key-insertion order.",
+      "additionalProperties": {
+        "type": "array",
+        "description": "One or more XAML property assignments for this target. Flattens to controlStyles[N].styles[0], controlStyles[N].styles[1], etc.",
+        "items": {
+          "$ref": "#/definitions/xamlStyleValue"
+        },
+        "minItems": 1
+      },
+      "propertyNames": {
+        "$ref": "#/definitions/xamlTarget"
+      }
+    },
+
+    "resourceVariables": {
+      "type": "object",
+      "description": "XAML resource dictionary overrides keyed by resource variable name. Each key is the resource name; its value is the replacement. Flattens to resourceVariables[N].variableKey and resourceVariables[N].value.",
+      "additionalProperties": {
+        "type": "string",
+        "description": "Replacement value. Accepts a hex color (#AARRGGBB or #RRGGBB), named color, number, or thickness string."
+      },
+      "propertyNames": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+
+  "definitions": {
+    "xamlTarget": {
+      "type": "string",
+      "minLength": 1,
+      "description": "A XAML element selector path. Supports: qualified type names, namespace aliases (taskbar:, systemtray:), #Name IDs, [Attribute=Value] attribute selectors, > child combinators, [N] positional child index, and @VisualStateName on the target (scopes the entire rule to a parent element's visual state)."
+    },
+
+    "xamlStyleValue": {
+      "type": "string",
+      "minLength": 1,
+      "description": "A XAML property assignment string. Four forms:\n  (1) Scalar:       'Property=Value'\n  (2) XAML object:  'Property:=<XamlElement ... />'\n  (3) State-scoped: 'Property@VisualStateName=Value'\n  (4) State+object: 'Property@VisualStateName:=<XamlElement ... />'\nAll forms accept $ConstantName references in the value position."
+    }
+  },
+
+  "$defs": {
+    "visualStateNames": {
+      "description": "Common visual state names for @State suffixes on both targets and style values.",
+      "generic": ["Normal", "PointerOver", "Pressed", "Disabled"],
+      "checked": ["Checked", "CheckedPointerOver", "CheckedPressed"],
+      "active": ["ActiveNormal", "ActivePointerOver", "ActivePressed"],
+      "taskbar": [
+        "CommonStates",
+        "RunningIndicatorStates",
+        "ActiveRunningIndicator",
+        "InactiveRunningIndicator"
+      ]
+    },
+    "xamlBrushTypes": {
+      "SolidColorBrush": "Fill:=<SolidColorBrush Color=\"#FF1E1E2E\" />",
+      "AcrylicBrush": "Fill:=<AcrylicBrush TintColor=\"...\" TintOpacity=\"0.8\" FallbackColor=\"...\" />",
+      "WindhawkBlur": "Fill:=<WindhawkBlur BlurAmount=\"20\" TintColor=\"#80000000\" />  — no named colors, no FallbackColor",
+      "ImageBrush": "Fill:=<ImageBrush Stretch=\"UniformToFill\" ImageSource=\"C:\\path.png\" />",
+      "LinearGradientBrush": "Fill:=<LinearGradientBrush StartPoint=\"0,0.5\" EndPoint=\"1,0.5\"><GradientStop Color=\"Red\" Offset=\"0\" /><GradientStop Color=\"Blue\" Offset=\"1\" /></LinearGradientBrush>",
+      "CompositeTransform3D": "Transform3D:=<CompositeTransform3D TranslateX=\"-1059\" />"
+    },
+    "themeResourceKeys": {
+      "accent": [
+        "SystemAccentColor",
+        "SystemAccentColorDark1",
+        "SystemAccentColorDark2",
+        "SystemAccentColorLight1",
+        "SystemAccentColorLight2"
+      ],
+      "chrome": [
+        "SystemChromeAltHighColor",
+        "SystemChromeLowColor",
+        "SystemChromeHighColor",
+        "SystemChromeMediumLowColor"
+      ],
+      "surface": [
+        "SurfaceStrokeColorDefault",
+        "ControlFillColorDefault",
+        "ControlFillColorSecondary"
+      ],
+      "base": [
+        "SystemBaseHighColor",
+        "SystemBaseLowColor",
+        "SystemBaseMediumColor",
+        "SystemAltHighColor",
+        "SystemAltLowColor",
+        "SystemAltMediumColor"
+      ]
+    }
+  }
+}

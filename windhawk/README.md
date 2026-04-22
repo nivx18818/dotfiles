@@ -23,3 +23,21 @@ For UI-related mods such as:
 - Windows 11 Taskbar Styler
 
 Open the **Advanced** tab of each mod, then go to the **Mod settings** section and paste the corresponding JSON file from this folder.
+
+## Custom JSON schema
+
+This folder uses a custom JSON schema; it is not the standard schema used by Windhawk mods.
+
+Run the [windhawk-flatten](../pwsh/scripts/winhawk-flatten.ps1) PowerShell script to convert the JSON files in this folder into a file suitable for pasting into a mod's Advanced → Mod settings.
+
+Example usage:
+
+```powershell
+run windhawk-flatten monochrome taskbar
+```
+
+Use tools such as [watchexec](https://github.com/watchexec/watchexec) to automatically run the script when a JSON file is changed.
+
+```powershell
+watchexec -w "./windhawk/monochrome" -d 300 pwsh ./pwsh/scripts/windhawk-flatten.ps1 monochrome taskbar
+```
