@@ -98,6 +98,7 @@ widgets:
       label_zero_index: false
       hide_empty_workspaces: true
       hide_if_offline: false
+      enable_scroll_switching: true
       animation: true
   komorebi_control:
     type: "komorebi.control.KomorebiControlWidget"
