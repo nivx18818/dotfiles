@@ -1,0 +1,87 @@
+{
+  "$schema": "../schema.json",
+
+  "styleConstants": [
+    "Background=#101010",
+    "BackgroundHover=#303030",
+    "Foreground=#ececec",
+    "MutedForeground=#a0a0a0",
+    "Radius=0"
+  ],
+
+  "controlStyles": {
+    "Grid#RootGrid > Taskbar.TaskbarBackground > Grid": [
+      "Background=$Background",
+      "BorderThickness=0"
+    ],
+    "Rectangle#BackgroundFill": [
+      "Fill=$Background"
+    ],
+    "Rectangle#BackgroundStroke": [
+      "Fill=Transparent"
+    ],
+    "Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton]": [
+      "Visibility=Collapsed"
+    ],
+    "Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Rectangle#RunningIndicator": [
+      "Fill=$MutedForeground",
+      "Fill@ActiveRunningIndicator=$Foreground",
+      "RadiusX=$Radius",
+      "RadiusY=$Radius"
+    ],
+    "Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#BackgroundElement": [
+      "Background=$Background",
+      "Background@InactivePointerOver=$BackgroundHover",
+      "Background@ActivePointerOver=$BackgroundHover",
+      "Background@MultiWindowPointerOver=$BackgroundHover",
+      "BorderBrush=$Background",
+      "CornerRadius=$Radius"
+    ],
+    "Taskbar.TaskListLabeledButtonPanel@CommonStates > Border#MultiWindowElement": [
+      "Background=$Background",
+      "Background@InactivePointerOver=$BackgroundHover",
+      "Background@ActivePointerOver=$BackgroundHover",
+      "Background@MultiWindowPointerOver=$BackgroundHover",
+      "BorderBrush=$Background",
+      "CornerRadius=$Radius"
+    ],
+    "Taskbar.TaskItemThumbnailView > Grid@CommonStates > Border#BackgroundBorder": [
+      "Background=$Background",
+      "Background@PointerOver=$BackgroundHover",
+      "CornerRadius=$Radius"
+    ],
+    "Button#CloseButton": [
+      "CornerRadius=$Radius"
+    ],
+    "SystemTray.ChevronIconView > Grid#ContainerGrid@ > Border#BackgroundBorder": [
+      "Background=$Background",
+      "Background@PointerOver=$BackgroundHover",
+      "Background@CheckedPointerOver=$BackgroundHover",
+      "BorderThickness=0",
+      "CornerRadius=$Radius"
+    ],
+    "SystemTray.IconView > Grid#ContainerGrid@ > Border#BackgroundBorder": [
+      "Background=$Background",
+      "Background@PointerOver=$BackgroundHover",
+      "Background@CheckedPointerOver=$BackgroundHover",
+      "BorderThickness=0",
+      "CornerRadius=$Radius"
+    ],
+    "SystemTray.OmniButton > Grid@CommonStates > Border#BackgroundBorder": [
+      "Background=$Background",
+      "Background@PointerOver=$BackgroundHover",
+      "Background@CheckedPointerOver=$BackgroundHover",
+      "BorderThickness=0",
+      "CornerRadius=$Radius"
+    ],
+    "Border#OverflowFlyoutBackgroundBorder": [
+      "Background=$Background",
+      "CornerRadius=$Radius"
+    ],
+    "ToolTip > ContentPresenter#LayoutRoot": [
+      "Background=$Background",
+      "BorderThickness=0",
+      "CornerRadius=$Radius"
+    ]
+  }
+}
