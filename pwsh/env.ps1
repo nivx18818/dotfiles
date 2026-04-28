@@ -3,10 +3,15 @@ param(
 )
 
 $Env:DOTFILES="D:\code\dotfiles"
+$Env:XDG_CONFIG_HOME="$HOME\.config"
+
 $Env:KOMOREBI_CONFIG_HOME="$Env:DOTFILES\komorebi\$Theme"
 $Env:WHKD_CONFIG_HOME="$Env:DOTFILES\komorebi\whkd"
 $Env:YASB_CONFIG_HOME="$Env:DOTFILES\yasb\$Theme"
-$Env:XDG_CONFIG_HOME="$HOME\.config"
+
+$Env:OPENCODE_CONFIG="$Env:DOTFILES\opencode\config.json"
+$Env:OPENCODE_TUI_CONFIG="$Env:DOTFILES\opencode\tui.json"
+$Env:EDITOR="neovide"
 
 $Env:PIPX_HOME="D:\apps\pipx\share\pipx"
 $Env:PIPX_BIN_DIR="D:\apps\pipx\bin"
