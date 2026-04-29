@@ -26,20 +26,9 @@ vim.api.nvim_create_autocmd("User", {
 
 require("lazy").setup("nivx.plugins", {
   ui = {
-    icons = vim.g.have_nerd_font and {} or {
-      cmd = "⌘",
-      config = "🛠",
-      event = "📅",
-      ft = "📂",
-      init = "⚙",
-      keys = "🗝",
-      plugin = "🔌",
-      runtime = "💻",
-      require = "🌙",
-      source = "📄",
-      start = "🚀",
-      task = "📌",
-      lazy = "💤 ",
+    change_detection = {
+      enabled = false,
+      notify = false,
     },
   },
 })

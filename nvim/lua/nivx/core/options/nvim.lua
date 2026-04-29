@@ -1,6 +1,4 @@
--- ==============================
--- 🌐 General Behavior
--- ==============================
+local opt = vim.opt
 
 -- Leader keys
 vim.g.mapleader = " "
@@ -12,7 +10,6 @@ vim.g.snacks_animate = true       -- enable Snacks plugin animations
 vim.g.markdown_recommended_style = 0 -- disable markdown's default tab settings
 
 -- Better colors and file handling
-local opt = vim.opt
 opt.termguicolors = true          -- enable true color
 opt.fileencoding = "utf-8"        -- default file encoding
 opt.confirm = true                -- prompt before quitting unsaved files
@@ -25,10 +22,7 @@ opt.writebackup = false           -- disable write-backup
 opt.undofile = true               -- persistent undo history
 opt.undolevels = 10000             -- max undo steps
 
--- ==============================
--- 🖱️ UI & Appearance
--- ==============================
-
+-- UI & Appearance
 opt.number = true                 -- show line numbers
 opt.relativenumber = true         -- relative line numbers
 opt.cursorline = true             -- highlight current line
@@ -62,10 +56,7 @@ opt.winminwidth = 5               -- minimum window width
 opt.smoothscroll = true           -- smooth scrolling
 opt.jumpoptions = "view"          -- retain view after jumping
 
--- ==============================
--- 🧠 Editing Behavior
--- ==============================
-
+-- Editing Behavior
 opt.mouse = "a"                   -- enable mouse support
 opt.wrap = true                   -- enable line wrapping
 opt.breakindent = true            -- keep indent when wrapping
@@ -78,28 +69,17 @@ opt.virtualedit = "block"         -- allow block selection past line end
 opt.completeopt = "menu,menuone,noselect" -- better completion experience
 opt.shortmess:append({ W = true, I = true, c = true, C = true }) -- reduce message noise
 
--- ==============================
--- 🔍 Search & Navigation
--- ==============================
-
-opt.ignorecase = true             -- ignore case in search
-opt.smartcase = true              -- override ignorecase if search has capitals
+-- Search & Navigation
 opt.inccommand = "nosplit"        -- live preview substitutions
 opt.grepformat = "%f:%l:%c:%m"    -- grep result format
 opt.grepprg = "rg --vimgrep"      -- use ripgrep for :grep
 
--- ==============================
--- 🪟 Windows & Splits
--- ==============================
-
+-- Windows & Splits
 opt.splitright = true             -- vertical split opens to the right
 opt.splitbelow = true             -- horizontal split opens below
 opt.splitkeep = "screen"          -- keep text stable when splitting
 
--- ==============================
--- 🧾 Session Management
--- ==============================
-
+-- Session Management
 opt.sessionoptions = {
   "buffers",                      -- restore opened buffers
   "curdir",                       -- restore working directory
@@ -111,30 +91,8 @@ opt.sessionoptions = {
   "folds",                        -- restore folds
 }
 
--- ==============================
--- ⚡ Performance & Timing
--- ==============================
-
-opt.updatetime = 200              -- faster cursor-hold and diagnostics
-opt.timeoutlen = 300              -- shorter key-sequence timeout
-
--- ==============================
--- 📚 Spell Checking
--- ==============================
-
+-- Spell Checking
 opt.spelllang = { "en", "vi", "la" } -- spell-check languages
 
--- ==============================
--- 🪄 Clipboard Integration
--- ==============================
-
-vim.schedule(function()
-  -- don’t use system clipboard if in SSH session (OSC52 handles it)
-  opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus"
-end)
-
--- ==============================
--- 🧩 Command-line Completion
--- ==============================
-
+-- Command-line Completion
 opt.wildmode = "longest:full,full" -- command-line completion behavior

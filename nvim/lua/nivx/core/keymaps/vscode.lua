@@ -1,7 +1,3 @@
-if not vim.g.vscode then
-  return
-end
-
 local map = vim.keymap.set
 local vscode = require("vscode")
 local vscode_neovim = require("vscode-neovim")
@@ -39,6 +35,9 @@ map("n", "k", function()
   end
 end, { expr = true })
 
+-- Clear search highlight on escape
+map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and Clear hlsearch" })
+
 -- Go to references via VS Code command
 map("n", "gr", function() vim.fn.VSCodeNotify("editor.action.goToReferences") end, { silent = true })
 
@@ -53,7 +52,6 @@ local function fold(lhs, vscode_cmd, desc)
   end, { expr = true, desc = desc })
 end
 
--- Fold mappings
 fold("zc", "editor.fold", "Close fold")
 fold("zo", "editor.unfold", "Open fold")
 fold("za", "editor.toggleFold", "Toggle fold")

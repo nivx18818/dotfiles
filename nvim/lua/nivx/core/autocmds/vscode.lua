@@ -1,7 +1,3 @@
-if not vim.g.vscode then
-  return
-end
-
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 local vscode_neovim = require("vscode-neovim")
@@ -26,6 +22,7 @@ autocmd({ "TextChanged", "TextChangedI" }, {
   end,
 })
 
+-- Set mode for vscode-neovim
 autocmd({ "VimEnter", "ModeChanged" }, {
   callback = function()
     vscode_neovim.call("setContext", {
@@ -33,3 +30,4 @@ autocmd({ "VimEnter", "ModeChanged" }, {
     })
   end,
 })
+
