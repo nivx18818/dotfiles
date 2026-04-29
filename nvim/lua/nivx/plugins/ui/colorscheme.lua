@@ -1,5 +1,22 @@
 return {
   {
+    "datsfilipe/vesper.nvim",
+    priority = 1000,
+    opts = {
+      italics = {
+        comments = true,
+        keywords = false,
+        functions = false,
+        strings = false,
+        variables = false,
+      }
+    },
+    config = function(_, opts)
+      require('vesper').setup(opts)
+      vim.cmd.colorscheme("vesper")
+    end
+  },
+  {
     "olivercederborg/poimandres.nvim",
     lazy = false,
     priority = 1000,
@@ -55,7 +72,6 @@ return {
           NeoTreeHint = { fg = p.teal2 },
         }
       })
-      vim.cmd.colorscheme "poimandres"
     end,
   },
   {
