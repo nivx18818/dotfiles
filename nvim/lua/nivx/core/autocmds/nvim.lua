@@ -3,7 +3,7 @@ local autocmd = vim.api.nvim_create_autocmd
 
 -- Close some filetypes with <q>
 vim.api.nvim_create_autocmd("FileType", {
-  group = augroup("close_with_q"),
+  group = augroup("close_with_q", { clear = true }),
   pattern = {
     "PlenaryTestPopup",
     "checkhealth",
