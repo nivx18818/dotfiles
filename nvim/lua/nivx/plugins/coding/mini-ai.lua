@@ -1,12 +1,13 @@
 return {
   "nvim-mini/mini.ai",
+  vscode = true,
   version = "*",
   config = function()
     local mini_ai = require('mini.ai')
     local spec_pair = mini_ai.gen_spec.pair
 
     mini_ai.setup({
-      n_lines = 200,
+      n_lines = 500,
       mappings = {
         around_last = 'aN',
         inside_last = 'iN',

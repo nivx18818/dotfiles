@@ -27,7 +27,7 @@ return {
         inactiveBorderColor        = { fg = "FloatBorder" },
         optionsTextColor           = { fg = "Function" },
         searchingActiveBorderColor = { fg = "MatchParen", bold = true },
-        selectedLineBgColor        = { bg = "Visual" }, -- set to `default` to have no background colour
+        selectedLineBgColor        = { bg = "Visual" }, -- set to `default` to have no background color
         unstagedChangesColor       = { fg = "DiagnosticError" },
       },
       win = {

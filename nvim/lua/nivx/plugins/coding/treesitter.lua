@@ -1,31 +1,11 @@
 return {
   { -- Highlight, edit, and navigate code
     "nvim-treesitter/nvim-treesitter",
+    vscode = true,
     build = ":TSUpdate",
     main = "nvim-treesitter.configs", -- Sets main module to use for opts
     opts = {
-      ensure_installed = {
-        "bash",
-        "c",
-        "diff",
-        "lua",
-        "luadoc",
-        "markdown",
-        "markdown_inline",
-        "query",
-        "vim",
-        "vimdoc",
-        "html",
-        "css",
-        "javascript",
-        "typescript",
-        "python",
-        "json",
-        "jsdoc",
-        "tsx",
-      },
-      -- Autoinstall languages that are not installed
-      auto_install = true,
+      install_dir = vim.fn.stdpath("data") .. "/site",
 
       autopairs = {
         enable = true,
@@ -89,8 +69,89 @@ return {
         enable = true,
       },
     },
+    config = function(_, opts)
+      local function get_compiler()
+        if vim.fn.executable("gcc") == 1 then
+          return "gcc"
+        end
+        if vim.fn.executable("clang") == 1 then
+          return "clang"
+        end
+        if vim.fn.executable("cl") == 1 then
+          return "cl"
+        end
+        return nil
+      end
+
+      local parsers = {
+        "bash",
+        "c",
+        "diff",
+        "lua",
+        "luadoc",
+        "markdown",
+        "markdown_inline",
+        "query",
+        "vim",
+        "vimdoc",
+        "html",
+        "css",
+        "javascript",
+        "typescript",
+        "python",
+        "json",
+        "jsdoc",
+        "tsx",
+      }
+
+      local treesitter = require("nvim-treesitter")
+
+      treesitter.setup(opts)
+
+      local compiler = get_compiler()
+
+      if compiler then
+        vim.env.CC = compiler
+        treesitter.install(parsers)
+      end
+
+      vim.api.nvim_create_autocmd("FileType", {
+        callback = function(args)
+          pcall(vim.treesitter.start, args.buf)
+        end,
+      })
+    end
   },
-  { "nvim-treesitter/nvim-treesitter-textobjects" },
+  {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    vscode = true,
+    branch = "main",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    opts = {
+      select = {
+        lookahead = true,
+      },
+    },
+    config = function(_, opts)
+      require("nvim-treesitter-textobjects").setup(opts)
+
+      local map = vim.keymap.set
+      local textobjects_select = require("nvim-treesitter-textobjects.select")
+
+      map({ "x", "o" }, "af", function()
+        textobjects_select.select_textobject("@function.outer", "textobjects")
+      end)
+      map({ "x", "o" }, "if", function()
+        textobjects_select.select_textobject("@function.inner", "textobjects")
+      end)
+      map({ "x", "o" }, "ac", function()
+        textobjects_select.select_textobject("@class.outer", "textobjects")
+      end)
+      map({ "x", "o" }, "ic", function()
+        textobjects_select.select_textobject("@class.inner", "textobjects")
+      end)
+    end,
+  },
   { "nvim-treesitter/nvim-treesitter-context" },
   { "nvim-treesitter/playground" },
 }

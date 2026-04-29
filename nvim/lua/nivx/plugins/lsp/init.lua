@@ -84,7 +84,7 @@ return {
       { "<leader>ca", vim.lsp.buf.code_action, desc = "Code Action" },
       { "<leader>rn", vim.lsp.buf.rename, desc = "Rename Symbol" },
       {
-        "<leader>f",
+        "<leader>cf",
         function()
           vim.lsp.buf.format({ async = true })
         end,

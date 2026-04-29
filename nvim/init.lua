@@ -25,6 +25,14 @@ vim.api.nvim_create_autocmd("User", {
 })
 
 require("lazy").setup("nivx.plugins", {
+  defaults = {
+    cond = function(plugin)
+      if vim.g.vscode then
+        return plugin.vscode == true -- only load plugins explicitly marked for vscode
+      end
+      return true
+    end,
+  },
   ui = {
     change_detection = {
       enabled = false,
