@@ -14,20 +14,21 @@ This repository contains my personal dotfiles and editor configuration. It's int
 
 ## What’s in this repo
 
-- [`cava`](https://github.com/karlstav/cava/) — console-based audio visualizer configuration.
-- [`git`](https://git-scm.com/) — Git configuration.
-- [`kanata`](https://github.com/jtroo/kanata/) — keyboard remapper configuration.
-- [`komorebi`](https://github.com/LGUG2Z/komorebi) — tiling window manager for Windows configuration.
-- [`nilesoft-shell`](https://github.com/moudey/Shell) — Windows File Explorer context menu manager configuration.
-- [`neovim`](https://github.com/neovim/neovim) — text editor configuration.
-- [`oh-my-posh`](https://github.com/JanDeDobbeleer/oh-my-posh) — PowerShell theme configuration.
-- [`powershell`](https://github.com/PowerShell/PowerShell) — PowerShell configuration.
-- [`raycast`](https://www.raycast.com) — multi-platform application launcher and productivity tool configuration.
-- `vscode-nvim` — configuration for Visual Studio Code and a dedicated Neovim setup used exclusively within VS Code, powered by the [`vscode-neovim`](https://github.com/vscode-neovim/vscode-neovim) extension.
-- [`wezterm`](https://github.com/wezterm/wezterm) — terminal emulator configuration.
-- [`windhawk`](https://github.com/windhawk/windhawk) — Windows customization tool configuration.
-- [`windows-terminal`](https://github.com/microsoft/terminal) — Windows Terminal configuration.
-- [`yasb`](https://github.com/amnweb/yasb) — Windows status bar configuration.
+- [`cava`](https://github.com/karlstav/cava/) — console-based audio visualizer.
+- [`git`](https://git-scm.com/) — version control system.
+- [`kanata`](https://github.com/jtroo/kanata/) — keyboard remapper.
+- [`komorebi`](https://github.com/LGUG2Z/komorebi) — tiling window manager for Windows.
+- [`neovide`](https://github.com/neovide/neovide) - graphical user interface for Neovim.
+- [`nilesoft-shell`](https://github.com/moudey/Shell) — Windows File Explorer context menu manager.
+- [`neovim`](https://github.com/neovim/neovim) — terminal-based text editor.
+- [`oh-my-posh`](https://github.com/JanDeDobbeleer/oh-my-posh) — PowerShell theme.
+- [`powershell`](https://github.com/PowerShell/PowerShell) — command-line shell and scripting language.
+- [`raycast`](https://www.raycast.com) — multi-platform application launcher and productivity tool.
+- [`vscode`](https://github.com/microsoft/vscode) — AI code editor.
+- [`wezterm`](https://github.com/wezterm/wezterm) — terminal emulator.
+- [`windhawk`](https://github.com/windhawk/windhawk) — Windows customization tool.
+- [`windows-terminal`](https://github.com/microsoft/terminal) — terminal application for Windows.
+- [`yasb`](https://github.com/amnweb/yasb) — Windows status bar.
 
 > [!NOTE]
 >
