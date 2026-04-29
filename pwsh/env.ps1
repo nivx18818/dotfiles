@@ -9,6 +9,8 @@ $Env:KOMOREBI_CONFIG_HOME="$Env:DOTFILES\komorebi\$Theme"
 $Env:WHKD_CONFIG_HOME="$Env:DOTFILES\komorebi\whkd"
 $Env:YASB_CONFIG_HOME="$Env:DOTFILES\yasb\$Theme"
 
+$Env:NEOVIDE_CONFIG="$Env:DOTFILES\neovide\config.toml"
+
 $Env:OPENCODE_CONFIG="$Env:DOTFILES\opencode\config.json"
 $Env:OPENCODE_TUI_CONFIG="$Env:DOTFILES\opencode\tui.json"
 $Env:EDITOR="neovide"
