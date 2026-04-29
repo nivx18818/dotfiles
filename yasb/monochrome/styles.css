@@ -114,6 +114,10 @@
 /* ======= */
 
 /* Home */
+.home-widget {
+    cursor: pointer;
+}
+
 .home-menu {
     margin-left: 6px;
     background-color: var(--background);
@@ -122,6 +126,7 @@
 .home-menu .menu-item {
     padding: 8px 10px 10px 8px;
     margin-left: 6px;
+    cursor: pointer;
 }
 
 .home-menu .menu-item:hover {
@@ -131,6 +136,7 @@
 /* Komorebi Workspaces */
 .komorebi-workspaces .ws-btn {
     padding: 8px;
+    cursor: pointer;
 }
 
 .komorebi-workspaces .ws-btn.active {
@@ -139,6 +145,9 @@
 }
 
 /* Komorebi Active Layout */
+.komorebi-active-layout {
+    cursor: pointer;
+}
 
 .komorebi-layout-menu {
     background-color: var(--background);
@@ -146,6 +155,7 @@
 
 .komorebi-layout-menu .menu-item {
     padding: 4px 8px;
+    cursor: pointer;
 }
 
 .komorebi-layout-menu .menu-item-icon {
@@ -207,6 +217,10 @@
 }
 
 /* Active Window */
+.active-window-widget {
+    cursor: pointer;
+}
+
 .active-window-widget .widget-container .label,
 .active-window-widget .widget-container .label.alt {
     margin: 6px 0;
@@ -216,6 +230,10 @@
 }
 
 /* Clock */
+.clock-widget {
+    cursor: pointer;
+}
+
 .calendar,
 .calendar .calendar-table::item {
     background-color: var(--background);
@@ -223,6 +241,7 @@
 
 .calendar .calendar-table::item {
     color: var(--muted-foreground);
+    cursor: pointer;
 }
 
 .calendar .calendar-table::item:hover {
@@ -269,15 +288,25 @@
 /* Systray */
 .systray .button {
     padding: 0 2px;
+    cursor: pointer;
+}
+
+.systray .button:hover {
+    opacity: 0.8;
 }
 
 .systray .unpinned-visibility-btn {
     padding: 4px;
     font-family: "Segoe Fluent Icons";
     font-size: var(--icon);
+    cursor: pointer;
 }
 
 /* Media */
+.media-widget {
+    cursor: pointer;
+}
+
 .media-widget .btn {
     min-width: 0;
     max-width: 0;
@@ -334,6 +363,11 @@
     min-height: 40px;
     max-height: 40px;
     font-size: 16px;
+    cursor: pointer;
+}
+
+.media-menu .btn:hover {
+    opacity: 0.8;
 }
 
 .media-menu .btn.prev {
@@ -346,6 +380,8 @@
 
 .media-menu .btn.disabled {
     color: var(--muted-foreground);
+    cursor: not-allowed;
+    opacity: 1;
 }
 
 .media-menu .playback-time {
@@ -366,6 +402,10 @@
 }
 
 /* Power Menu */
+.power-menu-widget {
+    cursor: pointer;
+}
+
 .power-menu-popup,
 .power-menu-popup .buttons,
 .power-menu-overlay {
@@ -386,6 +426,7 @@
     width: 160px;
     height: 240px;
     background-color: var(--background);
+    cursor: pointer;
 }
 
 .power-menu-popup .button .label {
