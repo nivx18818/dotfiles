@@ -3,6 +3,7 @@ $isAdmin = ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIde
 )
 
 if (-not $isAdmin) {
-    Write-Error "Please run this script in an elevated PowerShell session (Run as Administrator)."
-    exit 1
+    Write-Host "Please run this script in an elevated PowerShell session (Run as Administrator)." -ForegroundColor Red
 }
+
+return $isAdmin

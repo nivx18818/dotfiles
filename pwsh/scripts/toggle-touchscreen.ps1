@@ -1,4 +1,4 @@
-& (Join-Path -Path $PSScriptRoot -ChildPath "..\utils\require-admin.ps1")
+if (-not (& "$PSScriptRoot\..\utils\require-admin.ps1")) { exit 1 }
 
 $devices = Get-PnpDevice | Where-Object {
     $_.FriendlyName -like "*touch screen*" -and $_.Status -ne "Unknown"

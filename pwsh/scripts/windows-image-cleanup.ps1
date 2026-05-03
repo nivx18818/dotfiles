@@ -1,3 +1,3 @@
-& (Join-Path -Path $PSScriptRoot -ChildPath "..\utils\require-admin.ps1")
+if (-not (& "$PSScriptRoot\..\utils\require-admin.ps1")) { exit 1 }
 
 Dism.exe /Online /Cleanup-Image /StartComponentCleanup
