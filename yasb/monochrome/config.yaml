@@ -337,6 +337,8 @@ widgets:
       sleep_timer: 0
       hide_empty: true
       bar_type: "waves"
+      callbacks:
+        on_left: "reload_cava"
   taskbar:
     type: "yasb.taskbar.TaskbarWidget"
     options:
@@ -345,8 +347,6 @@ widgets:
       show_only_visible: false
       strict_filtering: true
       monitor_exclusive: true
-      animation:
-        enabled: true
       preview:
         enabled: true
         width: 240

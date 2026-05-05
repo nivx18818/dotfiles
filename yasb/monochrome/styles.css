@@ -1,29 +1,29 @@
 :root {
-    --background: #101010;
-    --foreground: #ececec;
+  --background: #101010;
+  --foreground: #ececec;
 
-    --accent: #ececec25;
-    --muted-foreground: #a0a0a0;
+  --accent: #ececec25;
+  --muted-foreground: #a0a0a0;
 
-    --destructive: #ff8080;
+  --destructive: #ff8080;
 
-    --ring: var(--foreground);
+  --ring: var(--foreground);
 
-    --border: 2px solid var(--ring);
+  --border: 2px solid var(--ring);
 
-    --icon: 14px;
+  --icon: 14px;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    border: none;
-    outline: none;
-    background-color: transparent;
-    color: var(--foreground);
-    font-family: "JetBrainsMono NFP";
-    font-size: 12px;
-    font-weight: 600;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: var(--foreground);
+  font-family: "JetBrainsMono NFP";
+  font-size: 12px;
+  font-weight: 600;
 }
 
 /* ======= */
@@ -32,81 +32,81 @@
 
 /* Bar */
 .yasb-bar {
-    padding-right: 4px;
-    background-color: var(--background);
+  padding-right: 4px;
+  background-color: var(--background);
 }
 
 /* Widget Group */
 .container-left .widget {
-    margin: 0 8px;
+  margin: 0 8px;
 }
 
 .container-right .widget {
-    margin: 0 4px;
+  margin: 0 4px;
 }
 
 /* Context menu */
 .context-menu {
-    background-color: var(--background);
+  background-color: var(--background);
 }
 
 .context-menu,
 .context-menu .menu-checkbox {
-    padding: 4px 0;
+  padding: 4px 0;
 }
 
 .context-menu::right-arrow {
-    width: 8px;
-    height: 8px;
-    padding-right: 24px;
+  width: 8px;
+  height: 8px;
+  padding-right: 24px;
 }
 
 .context-menu::item,
 .context-menu .menu-checkbox {
-    margin: 2px 6px;
-    padding: 6px 12px;
-    min-width: 100px;
+  margin: 2px 6px;
+  padding: 6px 12px;
+  min-width: 100px;
 }
 
 .context-menu::item:selected,
 .context-menu .menu-checkbox:hover {
-    background-color: var(--accent);
+  background-color: var(--accent);
 }
 
 .context-menu::separator {
-    height: 0;
+  height: 0;
 }
 
 .context-menu::item:disabled {
-    color: var(--muted-foreground);
+  color: var(--muted-foreground);
 }
 
 .context-menu .submenu::item:disabled {
-    margin: 0;
+  margin: 0;
 }
 
 .context-menu .menu-checkbox .checkbox {
-    margin: 0;
-    padding: 8px 16px;
+  margin: 0;
+  padding: 8px 16px;
 }
 
 .context-menu .menu-checkbox .checkbox::indicator {
-    width: 4px;
-    height: 4px;
+  width: 4px;
+  height: 4px;
 }
 
 .context-menu .menu-checkbox .checkbox::indicator:checked {
-    background-color: var(--foreground);
+  background-color: var(--foreground);
 }
 
 .context-menu .menu-checkbox .checkbox::indicator:unchecked {
-    background-color: var(--background);
+  background-color: var(--background);
 }
 
 /* Tooltip */
 .tooltip {
-    padding: 4px 8px;
-    background-color: var(--background);
+  padding: 4px 8px;
+  background-color: var(--background);
 }
 
 /* ======= */
@@ -114,144 +114,152 @@
 /* ======= */
 
 /* Home */
-.home-widget {
-    cursor: pointer;
+.home-widget:hover {
+  opacity: 0.8;
+  cursor: pointer;
 }
 
 .home-menu {
-    margin-left: 6px;
-    background-color: var(--background);
+  margin-left: 6px;
+  background-color: var(--background);
 }
 
 .home-menu .menu-item {
-    padding: 8px 10px 10px 8px;
-    margin-left: 6px;
-    cursor: pointer;
+  padding: 8px 10px 10px 8px;
+  margin-left: 6px;
+  cursor: pointer;
 }
 
 .home-menu .menu-item:hover {
-    background-color: var(--accent);
+  background-color: var(--accent);
 }
 
 /* Komorebi Workspaces */
 .komorebi-workspaces .ws-btn {
-    padding: 8px;
-    cursor: pointer;
+  padding: 8px;
+}
+
+.komorebi-workspaces .ws-btn:hover {
+  opacity: 0.8;
+  cursor: pointer;
 }
 
 .komorebi-workspaces .ws-btn.active {
-    margin-top: 2px;
-    border-bottom: var(--border);
+  margin-top: 2px;
+  border-bottom: var(--border);
 }
 
 /* Komorebi Active Layout */
-.komorebi-active-layout {
-    cursor: pointer;
+.komorebi-active-layout:hover {
+  opacity: 0.8;
+  cursor: pointer;
 }
 
 .komorebi-layout-menu {
-    background-color: var(--background);
+  background-color: var(--background);
 }
 
 .komorebi-layout-menu .menu-item {
-    padding: 4px 8px;
-    cursor: pointer;
+  padding: 4px 8px;
+  cursor: pointer;
 }
 
 .komorebi-layout-menu .menu-item-icon {
-    background-color: transparent;
-    font-size: var(--icon);
+  background-color: transparent;
+  font-size: var(--icon);
 }
 
 .komorebi-layout-menu .menu-item-text {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 .komorebi-layout-menu .menu-item:hover {
-    background-color: var(--accent);
+  background-color: var(--accent);
 }
 
 /* Taskbar */
 .taskbar-widget .app-container.foreground {
-    border-bottom: var(--border);
+  border-bottom: var(--border);
 }
 
 .taskbar-widget .app-container.foreground .app-title:hover {
-    margin: 4px 2px;
-    background-color: var(--foreground);
-    color: var(--background);
+  margin: 4px 2px;
+  background-color: var(--foreground);
+  color: var(--background);
 }
 
 .taskbar-widget .app-container.flashing {
-    background-color: #ffc799;
+  background-color: #ffc799;
 }
 
 .taskbar-widget .app-container.running {
-    margin: 3px 2px;
-    background-color: var(--background);
+  margin: 3px 2px;
+  background-color: var(--background);
 }
 
 .taskbar-widget .app-container.running .app-title:hover {
-    margin: 3px 2px;
-    background-color: var(--foreground);
-    color: var(--background);
+  margin: 3px 2px;
+  background-color: var(--foreground);
+  color: var(--background);
 }
 
 .taskbar-widget .app-container .app-title {
-    padding: 0 6px;
-    color: var(--foreground);
+  padding: 0 6px;
+  color: var(--foreground);
 }
 
 /* Taskbar preview popup is very limited in styling options, do not use margins/paddings here */
 
 .taskbar-preview {
-    background-color: var(--background);
+  background-color: var(--background);
 }
 
 .taskbar-preview.flashing {
-    background-color: #ffc799;
+  background-color: #ffc799;
 }
 
 .taskbar-preview .header {
-    padding: 4px 0 12px 0;
+  padding: 4px 0 12px 0;
 }
 
 /* Active Window */
-.active-window-widget {
-    cursor: pointer;
+.active-window-widget:hover {
+  opacity: 0.8;
+  cursor: pointer;
 }
 
 .active-window-widget .widget-container .label,
 .active-window-widget .widget-container .label.alt {
-    margin: 6px 0;
-    padding: 0 4px;
-    background-color: var(--foreground);
-    color: var(--background);
+  margin: 6px 0;
+  padding: 0 4px;
+  background-color: var(--foreground);
+  color: var(--background);
 }
 
 /* Clock */
-.clock-widget {
-    cursor: pointer;
+.clock-widget:hover {
+  opacity: 0.8;
+  cursor: pointer;
 }
 
 .calendar,
 .calendar .calendar-table::item {
-    background-color: var(--background);
+  background-color: var(--background);
 }
 
 .calendar .calendar-table::item {
-    color: var(--muted-foreground);
-    cursor: pointer;
+  color: var(--muted-foreground);
+  cursor: pointer;
 }
 
 .calendar .calendar-table::item:hover {
-    background-color: var(--accent);
-    color: var(--foreground);
+  background-color: var(--accent);
+  color: var(--foreground);
 }
 
 .calendar .calendar-table::item:selected {
-    background-color: var(--foreground);
-    color: var(--background);
+  background-color: var(--foreground);
+  color: var(--background);
 }
 
 .calendar .day-label,
@@ -259,185 +267,189 @@
 .calendar .date-label,
 .calendar .week-label,
 .calendar .holiday-label {
-    min-width: 180px;
-    max-width: 180px;
-    font-size: 16px;
-    font-weight: 700;
+  min-width: 180px;
+  max-width: 180px;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .calendar .day-label {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .calendar .month-label {
-    color: var(--muted-foreground);
-    font-weight: normal;
+  color: var(--muted-foreground);
+  font-weight: normal;
 }
 
 .calendar .date-label {
-    margin-top: -4px;
-    font-size: 64px;
-    font-weight: 900;
+  margin-top: -4px;
+  font-size: 64px;
+  font-weight: 900;
 }
 
 .calendar .holiday-label {
-    color: var(--muted-foreground);
-    font-size: 12px;
+  color: var(--muted-foreground);
+  font-size: 12px;
 }
 
 /* Systray */
 .systray .button {
-    padding: 0 2px;
-    cursor: pointer;
-}
-
-.systray .button:hover {
-    opacity: 0.8;
+  padding: 0 2px;
 }
 
 .systray .unpinned-visibility-btn {
-    padding: 4px;
-    font-family: "Segoe Fluent Icons";
-    font-size: var(--icon);
-    cursor: pointer;
+  padding: 4px;
+  font-family: "Segoe Fluent Icons";
+  font-size: var(--icon);
+}
+
+.systray .button:hover,
+.systray .unpinned-visibility-btn:hover {
+  opacity: 0.8;
+  cursor: pointer;
 }
 
 /* Media */
-.media-widget {
-    cursor: pointer;
+.media-widget:hover,
+.media-menu .btn:hover {
+  opacity: 0.8;
+  cursor: pointer;
 }
 
 .media-widget .btn {
-    min-width: 0;
-    max-width: 0;
+  min-width: 0;
+  max-width: 0;
 }
 
 .media-menu {
-    min-width: 420px;
-    max-width: 420px;
-    background-color: var(--background);
+  min-width: 420px;
+  max-width: 420px;
+  background-color: var(--background);
 }
 
 .media-menu .thumbnail {
-    border: var(--border);
+  border: var(--border);
 }
 
 .media-menu .title,
 .media-menu .artist,
 .media-menu .source {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .media-menu .title,
 .media-menu .artist {
-    margin-left: 10px;
-    color: var(--foreground);
-    font-size: 16px;
+  margin-left: 10px;
+  color: var(--foreground);
+  font-size: 16px;
 }
 
 .media-menu .artist {
-    color: var(--muted-foreground);
-    font-size: 13px;
+  color: var(--muted-foreground);
+  font-size: 13px;
 }
 
 .media-menu .source {
-    padding: 2px 6px;
-    background-color: var(--foreground);
-    color: var(--background);
-    font-size: 13px;
+  padding: 2px 6px;
+  background-color: var(--foreground);
+  color: var(--background);
+  font-size: 13px;
 }
 
 .media-menu .source.brave {
-    background-color: #fb542b;
-    color: #f0f0f0;
+  background-color: #fb542b;
+  color: #f0f0f0;
 }
 
 .media-menu .source.spotify {
-    background-color: #1ed760;
-    color: #121212;
+  background-color: #1ed760;
+  color: #121212;
 }
 
 .media-menu .btn {
-    min-width: 40px;
-    max-width: 40px;
-    min-height: 40px;
-    max-height: 40px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.media-menu .btn:hover {
-    opacity: 0.8;
+  min-width: 40px;
+  max-width: 40px;
+  min-height: 40px;
+  max-height: 40px;
+  font-size: 16px;
 }
 
 .media-menu .btn.prev {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 .media-menu .btn.play {
-    font-size: 32px;
+  font-size: 32px;
 }
 
 .media-menu .btn.disabled {
-    color: var(--muted-foreground);
-    cursor: not-allowed;
-    opacity: 1;
+  color: var(--muted-foreground);
+  cursor: not-allowed;
+  opacity: 1;
 }
 
 .media-menu .playback-time {
-    margin: 10px 0 4px 0;
+  margin: 10px 0 4px 0;
 }
 
 .media-menu .progress-slider {
-    height: 4px;
-    background-color: var(--accent);
+  height: 4px;
+  background-color: var(--accent);
 }
 
 .media-menu .progress-slider::groove {
-    border-radius: 0;
+  border-radius: 0;
 }
 
 .media-menu .progress-slider::sub-page {
-    background-color: var(--foreground);
+  background-color: var(--foreground);
+}
+
+/* Cava */
+.cava-widget:hover {
+  opacity: 0.8;
+  cursor: pointer;
 }
 
 /* Power Menu */
-.power-menu-widget {
-    cursor: pointer;
+.power-menu-widget:hover {
+  opacity: 0.8;
+  cursor: pointer;
 }
 
 .power-menu-popup,
 .power-menu-popup .buttons,
 .power-menu-overlay {
-    background-color: #00000026;
+  background-color: #00000026;
 }
 
 .power-menu-popup .button.hover {
-    background-color: #ffffff26;
+  background-color: #ffffff26;
 }
 
 .power-menu-overlay .uptime {
-    margin-bottom: 20px;
-    color: var(--muted-foreground);
-    font-size: 14px;
+  margin-bottom: 20px;
+  color: var(--muted-foreground);
+  font-size: 14px;
 }
 
 .power-menu-popup .button {
-    width: 160px;
-    height: 240px;
-    background-color: var(--background);
-    cursor: pointer;
+  width: 160px;
+  height: 240px;
+  background-color: var(--background);
+  cursor: pointer;
 }
 
 .power-menu-popup .button .label {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .power-menu-popup .button .icon {
-    font-size: 64px;
+  font-size: 64px;
 }
 
 .power-menu-popup .button.cancel .icon,
 .power-menu-popup .button.cancel .label {
-    color: var(--destructive);
+  color: var(--destructive);
 }
