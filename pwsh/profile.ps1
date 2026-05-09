@@ -29,6 +29,48 @@ if ($Env:TERM_PROGRAM -ne "vscode") {
     Set-PSReadLineKeyHandler -Key 'Ctrl+n' -Function HistorySearchForward
 }
 
+# Wrapper around Windows sudo that properly elevates PowerShell cmdlets, aliases,
+# scriptblocks, and previous commands while passing native executables directly.
+function Invoke-Sudo {
+    begin {
+        function convertToBase64EncodedString([string]$cmdLine) {
+            [Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes($cmdLine))
+        }
+    }
+    end {
+        switch ($args[0]) {
+            $null {
+                sudo.exe pwsh -nol
+                break
+            }
+            '!!' {
+                $encoded = convertToBase64EncodedString "$(Get-History -c 1)"
+                sudo.exe pwsh -e $encoded
+                break
+            }
+            { $_ -is [scriptblock] } {
+                $encoded = convertToBase64EncodedString $_
+                sudo.exe pwsh -e $encoded
+                break
+            }
+            { Get-Command $_ -Type Application -ErrorAction Ignore } {
+                # Pass as-is for native command
+                sudo.exe $args
+                break
+            }
+            { Get-Command $_ -Type Cmdlet, ExternalScript, Alias -ErrorAction Ignore } {
+                $encoded = convertToBase64EncodedString "$args"
+                sudo.exe pwsh -e $encoded
+                break
+            }
+            default {
+                Write-Host "Cannot find '$_'" -ForegroundColor Red
+            }
+        }
+    }
+}
+Set-Alias sudo Invoke-Sudo
+
 function Run-ProfileScript {
     param(
         [Parameter(Position=0, Mandatory)] [string]$Script,
@@ -72,7 +114,7 @@ if (Test-Path $profileScriptsDir) {
 }
 
 # Better git clone
-function gclone {
+function Clone-Repository {
     param(
         [Parameter(Mandatory)]
         [string]$url,
@@ -100,12 +142,11 @@ function gclone {
         Set-Location $dir
     }
 }
+Set-Alias gclone Clone-Repository
 
 # Unix-like remove command with -r and -f flags
 
-Remove-Item Alias:rm -ErrorAction SilentlyContinue
-
-function rm {
+function Remove-Path {
     param(
         [Parameter(ValueFromRemainingArguments = $true)]
         [string[]]$Args
@@ -134,9 +175,11 @@ function rm {
         Remove-Item -Path $p -Recurse:$recursive -Force:$force -ErrorAction SilentlyContinue
     }
 }
+Remove-Item Alias:rm -ErrorAction SilentlyContinue
+Set-Alias rm Remove-Path
 
 # Unix-like copy command with optional -r
-function cp {
+function Copy-Path {
     param(
         [Parameter(Mandatory)] [string]$src,
         [Parameter(Mandatory)] [string]$dst,
@@ -145,9 +188,11 @@ function cp {
 
     Copy-Item -Path $src -Destination $dst -Recurse:$Recursive
 }
+Remove-Item Alias:cp -ErrorAction SilentlyContinue
+Set-Alias cp Copy-Path
 
 # Unix-like move command
-function mv {
+function Move-Path {
     param(
         [Parameter(Mandatory)] [string]$src,
         [Parameter(Mandatory)] [string]$dst
@@ -155,22 +200,25 @@ function mv {
 
     Move-Item -Path $src -Destination $dst
 }
+Set-Alias mv Move-Path
 
 # mkdir & cd
-function mkcd {
+function New-Directory {
     param([Parameter(Mandatory)] [string]$name)
     New-Item -ItemType Directory -Path $name | Out-Null
     Set-Location $name
 }
+Set-Alias mkcd New-Directory
 
 # Show the command's path (Unix-like)
-function which {
+function Get-CommandSource {
     param([Parameter(Mandatory)] [string]$name)
     (Get-Command $name).Source
 }
+Set-Alias which Get-CommandSource
 
 # Symbolic link command
-function symlink {
+function New-SymbolicLink {
     param(
         [Parameter(Mandatory)] [string]$link,
         [Parameter(Mandatory)] [string]$target
@@ -182,12 +230,20 @@ function symlink {
 
     New-Item -ItemType SymbolicLink -Path $link -Target $target
 }
+Set-Alias symlink New-SymbolicLink
 
 # WSL Distros
-function arch {
-    wsl -d Arch --cd ~
+function Enter-WslDistro {
+    param([Parameter(Position=0, Mandatory)][string]$Name)
+    wsl -d $Name --cd ~
 }
 
-function u22 {
-    wsl -d Ubuntu-22.04 --cd ~
+function Enter-WslArch {
+    Enter-WslDistro -Name 'Arch'
 }
+Set-Alias arch Enter-WslArch
+
+function Enter-WslUbuntu22 {
+    Enter-WslDistro -Name 'Ubuntu-22.04'
+}
+Set-Alias u22 Enter-WslUbuntu22
