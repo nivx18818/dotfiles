@@ -1,11 +1,12 @@
 {
   "window.commandCenter": false,
+  "window.customTitleBarVisibility": "never",
   "window.menuBarVisibility": "hidden",
   "window.menuStyle": "custom",
+  "window.newWindowProfile": "Clean",
   "window.title": "${rootName}",
-  "window.titleSeparator": " ⯌ ",
   "window.titleBarStyle": "native",
-  "window.customTitleBarVisibility": "never",
+  "window.titleSeparator": " ⯌ ",
   "window.zoomLevel": 0.5,
 
   "workbench.activityBar.location": "hidden",
@@ -116,12 +117,18 @@
   "chat.editor.wordWrap": "on",
   "chat.math.enabled": true,
   "chat.mcp.gallery.enabled": true,
+  "chat.subagents.allowInvocationsFromSubagents": true,
+  "chat.tips.enabled": false,
+  "chat.useNestedAgentsMdFiles": true,
+  "chat.viewSessions.orientation": "stacked",
+  "github.copilot.chat.copilotMemory.enabled": true,
 
   "explorer.compactFolders": false,
 
   "scm.compactFolders": false,
   "scm.defaultViewMode": "tree",
   "scm.diffDecorations": "gutter",
+  "git.addAICoAuthor": "off",
   "git.enableCommitSigning": true,
   "git.inputValidation": true,
   "git.inputValidationLength": 100,
@@ -205,7 +212,8 @@
     "frame": false
   },
   "custom-ui-style.external.imports": [
-    "file:///D:/code/dotfiles/vscode-nvim/vscode/styles/general.css"
+    "file:///D:/code/dotfiles/vscode/styles/general.css",
+    "file:///D:/scoop/apps/vscode/current/data/extensions/brandonkirbyson.vscode-animations-2.0.7/dist/updateHandler.js"
   ],
 
   // VSCode Animations
