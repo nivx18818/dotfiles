@@ -71,6 +71,10 @@ function Invoke-Sudo {
 }
 Set-Alias sudo Invoke-Sudo
 
+$ProfileScriptSources = @(
+    'omp-init'
+)
+
 function Run-ProfileScript {
     param(
         [Parameter(Position=0, Mandatory)] [string]$Script,
@@ -79,10 +83,12 @@ function Run-ProfileScript {
 
     $scriptsDir = Join-Path $PSScriptRoot 'scripts'
     $scriptPath = $Script
+    $scriptName
 
     if (-not [System.IO.Path]::IsPathRooted($Script) -and $Script -notmatch '[\\/]') {
         $scriptFile = if ($Script.EndsWith('.ps1')) { $Script } else { "$Script.ps1" }
         $scriptPath = Join-Path $scriptsDir $scriptFile
+        $scriptName = [System.IO.Path]::GetFileNameWithoutExtension($scriptFile)
     }
 
     if (-not (Test-Path $scriptPath)) {
@@ -90,7 +96,11 @@ function Run-ProfileScript {
         return
     }
 
-    & pwsh -NoLogo -NoProfile -File $scriptPath @ScriptArgs
+    if ($scriptName -in $ProfileScriptSources) {
+        . $scriptPath @ScriptArgs
+    } else {
+        & $scriptPath @ScriptArgs
+    }
 }
 Set-Alias run Run-ProfileScript
 
@@ -145,7 +155,6 @@ function Clone-Repository {
 Set-Alias gclone Clone-Repository
 
 # Unix-like remove command with -r and -f flags
-
 function Remove-Path {
     param(
         [Parameter(ValueFromRemainingArguments = $true)]
