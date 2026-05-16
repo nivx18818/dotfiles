@@ -1,3 +1,34 @@
+$dotEnvFile = Join-Path $PSScriptRoot ".env"
+
+if (Test-Path $dotEnvFile) {
+    Get-Content $dotEnvFile | ForEach-Object {
+        $line = $_.Trim()
+
+        # skip empty/comment
+        if ($line -match '^\s*$') { return }
+        if ($line -match '^\s*#') { return }
+
+        $name, $value = $line -split '=', 2
+
+        $name = $name.Trim()
+        $value = $value.Trim()
+
+        # remove surrounding quotes
+        if (
+            ($value.StartsWith('"') -and $value.EndsWith('"')) -or
+            ($value.StartsWith("'") -and $value.EndsWith("'"))
+        ) {
+            $value = $value.Substring(1, $value.Length - 2)
+        }
+
+        [Environment]::SetEnvironmentVariable(
+            $name,
+            $value,
+            'Process'
+        )
+    }
+}
+
 $envFile = Join-Path $PSScriptRoot "env.ps1"
 if (Test-Path $envFile) {
     . $envFile
