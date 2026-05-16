@@ -6,3 +6,5 @@
 *.bak
 cava/shaders
 oh-my-posh/omp-init.ps1
+.env*
+!.env.example
