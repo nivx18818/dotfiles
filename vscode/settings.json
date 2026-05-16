@@ -137,8 +137,7 @@
   "git.postCommitCommand": "push",
 
   "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1,
-    "VSpaceCode.vscode-which-key": 2
+    "asvetliakov.vscode-neovim": 1
   },
   "extensions.ignoreRecommendations": true,
 
