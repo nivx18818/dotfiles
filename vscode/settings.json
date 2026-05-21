@@ -184,6 +184,9 @@
     "server": "folder-database",
     "components": "folder-assets",
     "_components": "folder-assets",
+    "_utils": "folder-utils",
+    "_hooks": "folder-hooks",
+    "_types": "folder-blue-code",
     "(app)": "folder-app",
     "(auth)": "folder-auth",
     "bruno": "folder-bruno"
