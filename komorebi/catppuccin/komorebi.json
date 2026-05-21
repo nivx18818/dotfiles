@@ -152,6 +152,11 @@
       "kind": "Exe",
       "id": "NexusKey.exe",
       "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "CodexBar",
+      "matching_strategy": "Contains"
     }
   ]
 }
