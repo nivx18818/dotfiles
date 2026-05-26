@@ -29,6 +29,7 @@ This repository contains my personal dotfiles and editor configuration. It's int
 - [`windhawk`](https://github.com/windhawk/windhawk) — Windows customization tool.
 - [`windows-terminal`](https://github.com/microsoft/terminal) — terminal application for Windows.
 - [`yasb`](https://github.com/amnweb/yasb) — Windows status bar.
+- [`zed`](https://github.com/zed-industries/zed) - high-performance code editor.
 
 > [!NOTE]
 >
