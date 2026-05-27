@@ -7,7 +7,7 @@
 // from the command palette.
 [
   {
-    "context": "(vim_mode == normal || vim_mode == visual) || EmptyPane || SharedScreen",
+    "context": "vim_mode == normal || vim_mode == visual || EmptyPane || SharedScreen",
     "bindings": {
       "g s": "vim::PushAddSurrounds",
 
@@ -27,26 +27,72 @@
     },
   },
   {
-    "context": "vim_mode == normal",
+    "context": "vim_mode == insert",
     "bindings": {
-      "j": "editor::MoveDown",
-      "k": "editor::MoveUp",
+      "ctrl-\\": "copilot::Suggest",
+      "ctrl-i": "assistant::InlineAssist",
+      "ctrl-v": "editor::Paste",
     },
   },
   {
-    "context": "vim_mode == normal || vim_mode == visual",
+    "context": "!menu && (vim_mode == normal || vim_mode == visual)",
     "bindings": {
-      "w": "vim::NextSubwordStart",
+      "j": ["vim::Down", { "display_lines": true }],
+      "k": ["vim::Up", { "display_lines": true }],
+
       "b": "vim::PreviousSubwordStart",
       "e": "vim::NextSubwordEnd",
       "g e": "vim::PreviousSubwordEnd",
+
+      "g p": ["workspace::SendKeystrokes", "\" 0 p"],
+      "g P": ["workspace::SendKeystrokes", "\" 0 P"],
     },
   },
   {
-    "context": "vim_mode == visual",
+    "context": "!menu && VimCount && (vim_mode == normal || vim_mode == visual)",
     "bindings": {
-      "shift-j": "editor::MoveLineDown",
+      "j": "vim::Down",
+      "k": "vim::Up",
+    },
+  },
+  {
+    "context": "!menu && vim_mode == normal",
+    "bindings": {
+      "Y": ["workspace::SendKeystrokes", "y g _"],
+
+      // Temporary alternative for https://github.com/zed-industries/zed/discussions/57799
+      "space v g": "editor::SelectAll",
+      "space y g": ["workspace::SendKeystrokes", ": % y enter"],
+      "space c g": ["workspace::SendKeystrokes", "g g c G"],
+      "space d g": ["workspace::SendKeystrokes", "g g d G"],
+
+      "space v l": ["workspace::SendKeystrokes", "_ v g _"],
+      "space y l": ["workspace::SendKeystrokes", "_ y g _"],
+      "space c l": ["workspace::SendKeystrokes", "_ c g _"],
+      "space d l": ["workspace::SendKeystrokes", "_ d g _"],
+    },
+  },
+  {
+    "context": "!menu && vim_mode == visual",
+    "bindings": {
+      "shift-j": "editor::ToggleComments",
       "shift-k": "editor::MoveLineUp",
+
+      ">": ["workspace::SendKeystrokes", "> g v"],
+      "<": ["workspace::SendKeystrokes", "< g v"],
+    },
+  },
+  {
+    "context": "!menu && vim_mode == operator && vim_operator == gc",
+    "bindings": {
+      "o": [
+        "action::Sequence",
+        ["vim::InsertLineBelow", "vim::ToggleComments"],
+      ],
+      "O": [
+        "action::Sequence",
+        ["vim::InsertLineAbove", "vim::ToggleComments"],
+      ],
     },
   },
   {
@@ -60,11 +106,17 @@
       "x": "project_panel::Cut",
       "r": "project_panel::Rename",
       "R": "project_panel::RevealInFileManager",
+      "z": "project_panel::CollapseAllEntries",
     },
   },
   {
     "context": "Editor && (vim_mode == normal || vim_mode == visual)",
     "bindings": {
+      "m": "vim::PushMark",
+      "g m": ["workspace::SendKeystrokes", "`"],
+      "g M": ["workspace::SendKeystrokes", "'"],
+      "space d m": ["workspace::SendKeystrokes", ": d e l m space"],
+
       // +file/find
       "space f f": "file_finder::Toggle",
       "space f b": "tab_switcher::ToggleAll",
@@ -75,9 +127,10 @@
 
       // +search
       "space s s": "project_symbols::Toggle",
+      "space s o": "outline::Toggle",
       "space s g": "pane::DeploySearch",
 
-      // +taabs
+      // +tabs
       "space tab d": "pane::CloseAllItems",
       "space tab D": "workspace::CloseAllItemsAndPanes",
 
@@ -108,6 +161,15 @@
       "space c o": "editor::OrganizeImports",
       "space c f": "editor::Format",
 
+      // +diagnostics
+      "space d d": "diagnostics::Deploy",
+      "space d n": "editor::GoToDiagnostic",
+      "space d N": "editor::GoToPreviousDiagnostic",
+
+      // +git
+      "space g d": "editor::ToggleSelectedDiffHunks",
+      "space g u": "git::Restore",
+
       // +text
       "space x s": "editor::SortLinesCaseInsensitive",
       // +transform
@@ -120,10 +182,20 @@
         ["editor::ConvertToSnakeCase", "editor::ConvertToUpperCase"],
       ],
       "space x t T": "editor::ConvertToTitleCase",
+
+      // +ui
+      "space u m": "markdown::OpenPreview",
+      "space u M": "markdown::OpenPreviewToTheSide",
     },
   },
   {
-    "context": "!Terminal && (vim_mode == normal || vim_mode == visual || EmptyPane || SharedScreen)",
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "ctrl-i": "assistant::InlineAssist",
+    },
+  },
+  {
+    "context": "!Terminal && ((menu && !showing_completions) || EmptyPane || SharedScreen || vim_mode == normal || vim_mode == visual)",
     "bindings": {
       // +ui
       "space u h": "workspace::ToggleLeftDock",
@@ -131,9 +203,13 @@
       "space u j": "workspace::ToggleBottomDock",
       "space u l": "workspace::ToggleRightDock",
       "space u d": "workspace::CloseAllDocks",
+      "space u z": "workspace::ToggleCenteredLayout",
       "space u t": "theme_selector::Toggle",
       "space u i": "icon_theme_selector::Toggle",
       "space u x": "zed::Extensions",
+      "space u ,": "zed::OpenSettingsFile",
+      "space u .": "zed::OpenKeymapFile",
+      "space u L": "editor::ToggleRelativeLineNumbers",
     },
   },
   {
