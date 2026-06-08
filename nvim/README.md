@@ -58,7 +58,6 @@ This folder contains my personal Neovim configuration written in Lua.
   New-Item -ItemType SymbolicLink -Path "$Env:XDG_CONFIG_HOME\nvim" -Target "$Env:DOTFILES\nvim"
   ```
 
-
 ## Specific plugins
 
 ### cord.nvim
