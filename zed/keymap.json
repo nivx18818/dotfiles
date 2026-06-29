@@ -20,6 +20,7 @@
       "space g g": "git_panel::ToggleFocus",
       "space g h": "git::FileHistory",
       "space g b": "git::Blame",
+      "space g l": ["task::Spawn", { "task_name": "Lazygit" }],
 
       // +quit
       "space q q": "workspace::CloseWindow",
@@ -39,6 +40,8 @@
     "bindings": {
       "j": ["vim::Down", { "display_lines": true }],
       "k": ["vim::Up", { "display_lines": true }],
+
+      "s": "vim::HelixJumpToWord",
 
       "b": "vim::PreviousSubwordStart",
       "e": "vim::NextSubwordEnd",
@@ -75,7 +78,7 @@
   {
     "context": "!menu && vim_mode == visual",
     "bindings": {
-      "shift-j": "editor::ToggleComments",
+      "shift-j": "editor::MoveLineDown",
       "shift-k": "editor::MoveLineUp",
 
       ">": ["workspace::SendKeystrokes", "> g v"],
@@ -99,6 +102,7 @@
     "context": "ProjectPanel && !editing",
     "bindings": {
       "a": "project_panel::NewFile",
+      "A": "project_panel::NewDirectory",
       "d": "project_panel::Delete",
       "y": "project_panel::Copy",
       "Y": "workspace::CopyPath",
@@ -152,6 +156,7 @@
       "space b j": "pane::SplitAndMoveDown",
       "space b k": "pane::SplitAndMoveUp",
       "space b l": "pane::SplitAndMoveRight",
+      "space b y": "workspace::CopyRelativePath",
 
       // +code/chat/command
       "space c p": "command_palette::Toggle",
@@ -160,6 +165,7 @@
       "space c a": "editor::ToggleCodeActions",
       "space c o": "editor::OrganizeImports",
       "space c f": "editor::Format",
+      "space c s": ["task::Spawn", { "task_name": "CodeSnap" }],
 
       // +diagnostics
       "space d d": "diagnostics::Deploy",
@@ -209,20 +215,12 @@
       "space u x": "zed::Extensions",
       "space u ,": "zed::OpenSettingsFile",
       "space u .": "zed::OpenKeymapFile",
+      "space u /": "zed::OpenTasks",
       "space u L": "editor::ToggleRelativeLineNumbers",
     },
   },
   {
-    "context": "!Terminal",
-    "bindings": {
-      "ctrl-h": "workspace::ActivatePaneLeft",
-      "ctrl-k": "workspace::ActivatePaneUp",
-      "ctrl-j": "workspace::ActivatePaneDown",
-      "ctrl-l": "workspace::ActivatePaneRight",
-    },
-  },
-  {
-    "context": "!Terminal && (Pane || Dock)",
+    "context": "!Terminal && (Pane || Dock) && vim_mode != insert",
     "bindings": {
       "ctrl-w": null,
       "ctrl-w d": "pane::CloseActiveItem",
@@ -257,7 +255,13 @@
   {
     "context": "",
     "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-l": "workspace::ActivatePaneRight",
       "ctrl-/": "workspace::ToggleBottomDock",
+      "ctrl-shift-b": "multi_workspace::ToggleWorkspaceSidebar",
     },
   },
 ]
+
