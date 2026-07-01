@@ -17,6 +17,7 @@ This repository contains my personal dotfiles and editor configuration. It's int
 - [`cava`](https://github.com/karlstav/cava/) — console-based audio visualizer.
 - [`git`](https://git-scm.com/) — version control system.
 - [`kanata`](https://github.com/jtroo/kanata/) — keyboard remapper.
+- [`keyboards`](./keyboards/) — settings and notes for the keyboards I own.
 - [`komorebi`](https://github.com/LGUG2Z/komorebi) — tiling window manager for Windows.
 - [`neovide`](https://github.com/neovide/neovide) - graphical user interface for Neovim.
 - [`nilesoft-shell`](https://github.com/moudey/Shell) — Windows File Explorer context menu manager.

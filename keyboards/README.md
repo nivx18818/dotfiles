@@ -1,10 +1,17 @@
 # Keyboards
 
+## Owned Keyboards
+
+1. [**FL-Esports CMK75**](https://flesportsglobal.com/products/flesports-cmk75-tri-mode-mechanical-keyboard?variant=46139163410646) — my first mechanical keyboard.
+2. [**Wobkey Zen65**](https://www.wobkey.com/products/wobkey-zen-65-quick-release-tri-mode-mechanical-keyboard)
+
+## QMK/VIA
+
 > [!NOTE]
 >
 > Some Chinese vendors, including WOBKEY, have been listed by QMK for license violations related to incomplete source-code releases. The current list of offending vendors is available here: https://docs.qmk.fm/license_violations#offending-vendors.
 
-## VIA Setup
+### VIA Setup
 
 To configure the keyboard using VIA:
 
