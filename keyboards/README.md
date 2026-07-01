@@ -28,10 +28,28 @@ After loading both files, VIA will recognize the keyboard definition and restore
 
 ## Wobkey Zen65
 
-- Although marketed as a "QMK/VIA" keyboard, the Zen65 does not ship with the full QMK source code needed for complete QMK support. In practice, it mainly relies on VIA configuration files and does not offer the same level of customization as fully open-source QMK boards.
+> [!NOTE]
+>
+> Although marketed as a "QMK/VIA" keyboard, the Zen65 does not ship with the full QMK source code needed for complete QMK support. In practice, it mainly relies on VIA configuration files and does not offer the same level of customization as fully open-source QMK boards.
+
+> [!NOTE]
+>
+> The official driver software is completely unusable. While it can save settings to the keyboard, the firmware entirely ignores those settings. Use VIA for keymaps instead.
+
+### Sleeping time
 
 - Sleeping time on different colors (press `Fn + Y` or `KbPrSlp` to cycle through):
   - Red: 1 min
   - Green: 3 mins
   - Blue: 10 mins
   - White: 10+ mins
+
+- There is also a custom keycode `KbSeSlp` for deep sleeping time, which likewise has 4 levels, though the exact value of each level is unknown.
+
+- Default sleep timings:
+  - Primary sleeping time: 400 s
+  - Secondary sleeping time (deep sleep): 800 s
+
+> [!TIP]
+>
+> Leaving the sleep timings at their defaults is recommended over tweaking them.
